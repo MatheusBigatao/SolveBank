@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: linear-gradient(#171a4aed, #171a4aed, #171a4aed), url("../../../assets/Images/background-login-mobile.png");
+    background-image: linear-gradient(#171a4af6, #171a4af6, #171a4af6), url("../../../assets/Images/background-login-mobile.png");
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
