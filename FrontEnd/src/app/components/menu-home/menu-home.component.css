@@ -5,3 +5,8 @@
 .menu-icon {
   width: 18px;
 }
+
+header, .menu, li {
+  background-color: #2F2C79;
+  color: #FFFFFF;
+}

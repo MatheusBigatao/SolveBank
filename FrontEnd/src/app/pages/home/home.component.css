@@ -3,3 +3,41 @@
         width: 300px;
     }
 }
+
+body {
+    background-color: #171A4A;
+    color: white;
+}
+
+.card-home {
+    background-color: #FF9800;
+}
+
+.card-home button {
+    background-color: #171A4A;
+    color: #FFFFFF;
+}
+
+.card-home button:hover {
+    background-color: #2F2C79;
+}
+
+.balance-home {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.options button {
+    background-color: #FF9800;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 86px;
+}
+
+.options button img {
+    width: 30px;
+}
+
+.options button p {
+    font-size: 10px;
+}
