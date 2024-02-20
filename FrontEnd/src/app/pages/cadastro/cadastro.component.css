@@ -30,6 +30,8 @@ body {
 #formprincipal {
   display: flex;
   flex-wrap: wrap;
+  padding-left: 225px;
+  padding-right: 230px;
 }
 
 .form-group {
@@ -37,11 +39,40 @@ body {
   height: 78px;
   width: 350px;
 }
-
-.coluna {
+.coluna-nome {
   flex: 1;
-  margin-right: 25px; /* Adiciona margem entre as colunas */
-  margin-left: 30px;
+  margin-right: 30px; /* Adiciona margem entre as colunas */
+  margin-left: 35px;
+}
+
+.coluna-cpf {
+  flex: 1;
+  margin-right: 30px; /* Adiciona margem entre as colunas */
+  margin-left: 35px;
+}
+
+.coluna-senha {
+  flex: 1;
+  margin-right: 30px; /* Adiciona margem entre as colunas */
+  margin-left: 35px;
+}
+
+.coluna-sobrenome {
+  flex: 1;
+  margin-right: 30px; /* Adiciona margem entre as colunas */
+  margin-left: 35px;
+}
+
+.coluna-email {
+  flex: 1;
+  margin-right: 30px; /* Adiciona margem entre as colunas */
+  margin-left: 35px;
+}
+
+.coluna-confirmar {
+  flex: 1;
+  margin-right: 30px; /* Adiciona margem entre as colunas */
+  margin-left: 35px;
 }
 
 .inputdados {
@@ -115,7 +146,7 @@ input[type="email"] {
 
 @media (max-width: 768px) {
   .btn-criar-conta {
-    max-width: none; /* Removendo a largura máxima em telas menores */
+    max-width: 190px;
   }
 }
 

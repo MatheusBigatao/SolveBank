@@ -1,4 +1,3 @@
-<p>cadastro works!</p>
 <body>
   <div class="cadastro-form">
     <div>
@@ -10,7 +9,7 @@
     </div>
     <form [formGroup]="meuFormulario" (ngSubmit)="submitForm()">
       <div id="formprincipal">
-        <div class="coluna">
+        <div class="coluna-nome">
           <div class="form-group nome">
             <label for="nome">Nome:</label>
             <input
@@ -31,7 +30,33 @@
               >
             </div>
           </div>
+        </div>
 
+        <div class="coluna-sobrenome">
+          <div class="form-group sobrenome">
+            <label for="sobrenome">Sobrenome:</label>
+            <input
+              type="text"
+              id="sobrenome"
+              name="sobrenome"
+              placeholder="Insira o seu Sobrenome"
+              formControlName="sobrenome"
+            />
+            <div
+              class="campo-obrigatorio"
+              *ngIf="
+                meuFormulario.get('sobrenome')?.invalid &&
+                meuFormulario.get('sobrenome')?.touched
+              "
+            >
+              <span *ngIf="meuFormulario.get('sobrenome')?.errors?.['required']"
+                >Campo obrigatório</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="coluna-cpf">
           <div class="form-group cpf">
             <label for="cpf">CPF:</label>
             <input
@@ -56,6 +81,36 @@
               >
             </div>
           </div>
+        </div>
+
+        <div class="coluna-email">
+          <div class="form-group email">
+            <label for="email">E-mail:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Insira o seu E-mail"
+              formControlName="email"
+            />
+            <div
+              class="campo-obrigatorio"
+              *ngIf="
+                meuFormulario.get('email')?.invalid &&
+                meuFormulario.get('email')?.touched
+              "
+            >
+              <span *ngIf="meuFormulario.get('email')?.errors?.['required']"
+                >Campo obrigatório</span
+              >
+              <span *ngIf="meuFormulario.get('email')?.errors?.['email']"
+                >Email inválido</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="coluna-senha">
           <div class="form-group senha">
             <label for="senha">Senha:</label>
             <input
@@ -81,53 +136,8 @@
             </div>
           </div>
         </div>
-        <div class="coluna">
-          <div class="form-group sobrenome">
-            <label for="sobrenome">Sobrenome:</label>
-            <input
-              type="text"
-              id="sobrenome"
-              name="sobrenome"
-              placeholder="Insira o seu Sobrenome"
-              formControlName="sobrenome"
-            />
-            <div
-              class="campo-obrigatorio"
-              *ngIf="
-                meuFormulario.get('sobrenome')?.invalid &&
-                meuFormulario.get('sobrenome')?.touched
-              "
-            >
-              <span *ngIf="meuFormulario.get('sobrenome')?.errors?.['required']"
-                >Campo obrigatório</span
-              >
-            </div>
-          </div>
-          <div class="form-group email">
-            <label for="email">E-mail:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Insira o seu E-mail"
-              formControlName="email"
-            />
-            <div
-              class="campo-obrigatorio"
-              *ngIf="
-                meuFormulario.get('email')?.invalid &&
-                meuFormulario.get('email')?.touched
-              "
-            >
-              <span *ngIf="meuFormulario.get('email')?.errors?.['required']"
-                >Campo obrigatório</span
-              >
-              <span *ngIf="meuFormulario.get('email')?.errors?.['email']"
-                >Email inválido</span
-              >
-            </div>
-          </div>
 
+        <div class="coluna-confirmar">
           <div class="form-group confirmeSenha">
             <label for="confirmarSenha">Confirmar Senha:</label>
             <input
@@ -173,7 +183,7 @@
       </div>
     </form>
     <div class="direitos-autorais">
-      <p>Todos os direitos reservados CodeBank 2024 ©</p>
+      <p>Todos os direitos reservados CodeSolve 2024 ©</p>
     </div>
   </div>
 </body>

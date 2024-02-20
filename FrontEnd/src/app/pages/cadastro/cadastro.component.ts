@@ -37,7 +37,6 @@ export class CadastroComponent implements OnInit {
       senha: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
-        this.validarSenha(), // Adicionando validação personalizada
       ]),
       confirmarSenha: new FormControl('', Validators.required),
     });
