@@ -1,12 +1,11 @@
-@media screen and (min-width:350px){
-    .button-default{
-        width: 300px;
-    }
-}
-
 body {
     background-color: #171A4A;
     color: white;
+}
+
+.card-client {
+    background-color: #2F2C79;
+    margin-bottom: 100px;
 }
 
 .card-home {
@@ -22,12 +21,7 @@ body {
     background-color: #2F2C79;
 }
 
-.balance-home {
-    background: #FFFFFF;
-    color: #000000;
-}
-
-.options button {
+/* .options button {
     background-color: #FF9800;
     color: #FFFFFF;
     padding: 10px;
@@ -40,4 +34,4 @@ body {
 
 .options button p {
     font-size: 10px;
-}
+} */

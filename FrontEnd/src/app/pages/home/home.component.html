@@ -1,49 +1,98 @@
 <app-menu-home></app-menu-home>
+
 <body>
-  <section class="card-home mx-5 p-3 d-flex flex-column rounded-2">
-    <div class="d-flex gap-3">
-      <img src="assets/Images/icon-money-circle-home.svg" alt="Money Icon" />
-      <div>
-        <p class="mb-0">Suas Atividades</p>
-        <p class="mb-0">Aproveite tudo que a sua conta oferece</p>
+
+  <main *ngIf="isSmallScreen" class="d-flex flex-column align-items-center justify-content-center">
+    <section class="card-client px-5 py-3 container-fluid">
+      <p class="mb-0">Olá, Tanuki!</p>
+      <p>Ag 0001 Cc 1235213215-9</p>
+  
+      <div class="d-flex justify-content-center">
+        <div
+          class="card-home position-absolute p-3 d-flex flex-column rounded-2 gap-1"
+        >
+          <div class="d-flex gap-3">
+            <img
+              src="assets/Images/icon-money-circle-home.svg"
+              alt="Money Icon"
+            />
+            <div>
+              <p class="mb-0">Suas Atividades</p>
+              <p class="mb-0">Aproveite tudo que a sua conta oferece</p>
+            </div>
+          </div>
+          <button class="btn">Acompanhar</button>
+        </div>
       </div>
-    </div>
-    <button class="btn">Acompanhar</button>
-  </section>
+    </section>
+  
+    <section class="accordion mx-3 my-4 p-2" id="accordionBalance">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="d-flex gap-3 align-items-center accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            <img
+              src="assets/Images/icon-exchange-outline.svg"
+              alt="Exchange Icon"
+            />
+            <p class="mb-0">Saldo disponível</p>
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionBalance"
+        >
+          <div class="accordion-body">
+            <strong>R$ 21.535,91</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="options mb-5 d-flex flex-column gap-4">
+      <h4 class="mb-0 align-self-start">Meus Favoritos</h4>
+      <div class="d-flex justify-content-between gap-2">
+        <img src="assets/Images/icon-arrow-left-menu.svg" alt="Arrow Left Icon" />
+        <app-card-favorite-home
+          title="Pix"
+          image="assets/Images/icon-pix.svg"
+          altImage="Pix Icon"
+        ></app-card-favorite-home>
+        <app-card-favorite-home
+          title="Pagar"
+          image="assets/Images/icon-scan.svg"
+          altImage="Scan Icon"
+        ></app-card-favorite-home>
+        <app-card-favorite-home
+          title="Comprovantes"
+          image="assets/Images/icon-file-text.svg"
+          altImage="File Text Icon"
+        ></app-card-favorite-home>
+        <app-card-favorite-home
+          title="Transações"
+          image="assets/Images/icon-transfer.svg"
+          altImage="Transfer Icon"
+        ></app-card-favorite-home>
+        <img
+          src="assets/Images/icon-arrow-right-menu.svg"
+          alt="Arrow Right Icon"
+        />
+      </div>
+    </section>
+  
+    <section class="mx-3 mb-4 d-flex flex-column align-items-center gap-4">
+      <h4 class="mb-0 align-self-start">Meus Cartões</h4>
+      <img src="assets/Images/credit-card-orange.png" alt="Orange Credit Card" />
+      <img src="assets/Images/credit-card-black.png" alt="Black Credit Card" />
+    </section>
+    <app-navbar></app-navbar>
+  </main>
 
-  <section
-    class="balance-home mx-3 my-4 p-2 d-flex justify-content-around align-items-center"
-  >
-    <img src="assets/Images/icon-exchange-outline.svg" alt="Exchange Icon" />
-    <p class="mb-0">R$ 21.535,91</p>
-    <img src="assets/Images/icon-arrow-up.svg" alt="Arrow Up Icon" />
-  </section>
-
-  <section class="options my-4 d-flex justify-content-between">
-    <img src="assets/Images/icon-arrow-left-menu.svg" alt="Arrow Left Icon">
-    <button class="btn d-flex flex-column justify-content-center align-items-center gap-1">
-      <img src="assets/Images/icon-pix.svg" alt="Pix Icon">
-      <p class="mb-0">Pix</p>
-    </button>
-    <button class="btn d-flex flex-column justify-content-center align-items-center gap-1">
-      <img src="assets/Images/icon-scan.svg" alt="Scan Icon">
-      <p class="mb-0">Pagar</p>
-    </button>
-    <button class="btn d-flex flex-column justify-content-center align-items-center gap-1">
-      <img src="assets/Images/icon-file-text.svg" alt="File Text Icon">
-      <p class="mb-0">Comprovantes</p>
-    </button>
-    <button class="btn d-flex flex-column justify-content-center align-items-center gap-1">
-      <img src="assets/Images/icon-transfer.svg" alt="Transfer Icon">
-      <p class="mb-0">Transações</p>
-    </button>
-    <img src="assets/Images/icon-arrow-right-menu.svg" alt="Arrow Right Icon">
-  </section>
-
-  <section class="mx-3 d-flex flex-column align-items-center gap-4">
-    <h4 class="mb-0 align-self-start">Cartões</h4>
-    <img src="assets/Images/credit-card-orange.png" alt="Orange Credit Card" />
-    <img src="assets/Images/credit-card-black.png" alt="Black Credit Card" />
-  </section>
-  <app-navbar></app-navbar>
 </body>
