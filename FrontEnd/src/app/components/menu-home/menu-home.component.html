@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="isSmallScreen">
   <div class="px-5 py-4 d-flex justify-content-between align-items-center gap-4">
     <div class="d-flex gap-2">
       <a href="#">
@@ -110,4 +110,32 @@
       </div>
     </div>
   </div>
+</header>
+
+<header *ngIf="!isSmallScreen">
+    <div class="px-5 py-4 d-flex justify-content-between align-items-center gap-4">
+        <div class="d-flex justify-content-around align-items-center gap-2">
+            <img
+                src="assets/Images/logo-codesolve.png"
+                alt="Logo Codesolve"
+                class="codesolve-logo"
+            />
+            <p class="mb-0">|</p>
+            <p class="mb-0">Select</p>
+        </div>
+
+        <div>
+            <p class="mb-0">TANUKI</p>
+        </div>
+        
+        
+        <div class="d-flex gap-2">
+            <a href="#">
+                <img src="assets/Images/icon-bell-ring.svg" alt="Bell Ring Icon" />
+            </a>
+            <a href="#">
+                <img src="assets/Images/icon-question.svg" alt="Question Icon" />
+            </a>
+        </div>
+    </div>
 </header>
