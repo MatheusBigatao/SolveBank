@@ -17,3 +17,14 @@ button img {
 button p {
   font-size: 10px;
 }
+
+@media (min-width: 768px) {
+  button {
+    width: 110px;
+    height: 110px;
+  }
+
+  button p {
+    font-size: 14px;
+  }
+}
