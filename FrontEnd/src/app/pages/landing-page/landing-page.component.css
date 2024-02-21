@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(23, 26, 74, 0.85),
+      rgba(23, 26, 74, 0.85),
+      rgba(23, 26, 74, 0.85)
+    ),
+    url(../../../assets/Images/landing-page-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.bi-question-circle {
+  color: #ff9800;
+  position: relative;
+  top: 30px;
+  left: 22px;
+  font-size: 20px;
+}
+
+/* Carousel */
+
+.carousel-section {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  /* background: linear-gradient(#835004, #2f2c79, #2f2c79, #2f2c79, #2f2c79); */
+  background: linear-gradient(
+    rgba(131, 80, 4, 0.75),
+    rgba(47, 44, 121, 0.75),
+    rgba(47, 44, 121, 0.75),
+    rgba(47, 44, 121, 0.75),
+    rgba(47, 44, 121, 0.75)
+  );
+  width: 90%;
+  height: 72vh;
+  border-radius: 5px;
+  margin-top: 65px;
+}
+
+.carousel-indicators {
+  bottom: -55px;
+}
+
+.carousel-indicators button {
+  background-color: #835004;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.carousel-indicators .active {
+  background-color: #ff9800;
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding: 50px 25px;
+}
+
+.logo {
+  margin: 0 auto;
+}
+
+.logo-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  margin-top: 26px;
+}
+
+.logo-title-solve {
+  color: #ff9800;
+}
+
+.logo-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  margin: 28px 9px;
+}
+
+.card-img .img {
+  width: 220px;
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+}
+
+.title {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 23px;
+}
+
+.text {
+  text-align: center;
+  font-weight: normal;
+  font-size: 17px;
+}
+
+.img-paragraph {
+  margin: 20px 0;
+}
+
+.card-body .margin-title {
+  margin: 47px 0;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  font-size: 70px;
+  color: #ff9800;
+  width: 100%;
+}
+
+.button-group {
+  margin-top: 48px;
+  justify-content: space-evenly;
+}
+
+.btn {
+  background-color: #ff9800;
+  color: #fff;
+  width: 170px;
+  padding: 10px 8px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #835004;
+}
+
+/* Media queries */
+
+@media (min-width: 768px) {
+  body {
+    background: #171a4a;
+  }
+
+  .bi-question-circle {
+    top: 35px;
+    left: 39px;
+    font-size: 30px;
+  }
+
+  .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+  }
+
+  .card {
+    padding: 70px 25px;
+  }
+
+  .logo-title {
+    font-size: 75px;
+    margin-top: 40px;
+  }
+
+  .logo-text {
+    font-size: 33px;
+    margin: 80px 85px;
+  }
+
+  .card-img .img {
+    width: 370px;
+    top: 50px;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .text {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+
+  .img-paragraph {
+    margin: 30px 31px;
+  }
+
+  .card-body .margin-title {
+    margin: 93px 37px;
+  }
+
+  .icon {
+    font-size: 110px;
+  }
+
+  .button-group {
+    margin-top: 60px;
+  }
+
+  .btn {
+    width: 250px;
+    padding: 16px 6px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: linear-gradient(
+        rgba(23, 26, 74, 0.85),
+        rgba(23, 26, 74, 0.85),
+        rgba(23, 26, 74, 0.85)
+      ),
+      url(../../../assets/Images/landing-page-desktop-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+  }
+
+  .bi-question-circle {
+    left: 70px;
+    font-size: 19px;
+  }
+
+  .carousel {
+    height: 70vh;
+    margin-top: 55px;
+  }
+
+  .card {
+    padding: 40px 25px;
+  }
+
+  .logo-title {
+    font-size: 53px;
+    margin-top: 22px;
+  }
+
+  .logo-text {
+    margin: 44px 85px;
+    font-size: 22px;
+  }
+
+  .card-img .img {
+    width: 230px;
+    top: 10px;
+  }
+
+  .title {
+    font-size: 27px;
+  }
+
+  .text {
+    font-size: 19px;
+    padding: 0 30px;
+  }
+
+  .card-body .margin-title {
+    margin: 65px 37px;
+  }
+
+  .button-group {
+    margin-top: 50px;
+  }
+
+  .btn {
+    padding: 8px;
+  }
+}
