@@ -12,22 +12,22 @@ main {
 }
 
 .cadastro-form {
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #ff9800;
+  padding: 1.25rem;
+  border-radius: 0.313rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  color: var(--secondary);
   width: 70%;
 }
 
 .logo {
-  width: 210px;
+  width: 13.125rem;
   height: auto;
   margin: 0 auto;
   display: block;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   height: 78px;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@ main {
 }
 
 .inputdados {
-  width: calc(100% - 20px); /* Ajusta a largura dos inputs */
+  width: calc(100% - 1.25rem); /* Ajusta a largura dos inputs */
   margin-bottom: 1px; /* Adiciona margem inferior para espaçamento */
 }
 
@@ -48,7 +48,7 @@ main {
   }
 
   .title {
-    font-size: 30px; /* Tamanho da fonte para telas pequenas */
+    font-size: 1.875rem; /* Tamanho da fonte para telas pequenas */
   }
 
   .cadastro-form {
@@ -62,71 +62,75 @@ main {
 
 .title {
   text-align: center;
-  color: white;
-  margin-bottom: 20px;
-  font-size: 50px;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  font-size: 3.125rem;
   font-family: "Roboto", sans-serif;
 }
 
 label {
   display: block;
   font-weight: bold;
-  margin-bottom: 6px;
-  color: #ff9800;
+  margin-bottom: 0.375rem;
+  color: var(--secondary);
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"] {
   width: 100%;
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  padding: 0.625rem;
+  border: 0.125rem solid var(--gray);
+  border-radius: 0.5rem;
 }
 
 .campo-obrigatorio {
-  font-size: 12px;
-  color: red;
+  font-size: 0.75rem;
+  color: var(--danger);
 }
 
 .campo-obrigatorio-nome {
-  margin-top: 0px;
-  font-size: 12px;
-  color: red;
+  margin-top: 0;
+  font-size: 0.75rem;
+  color: var(--danger);
 }
 .btn-criar-conta {
-  background-color: #ff9800;
-  color: white;
-  border-radius: 7px;
+  background-color: var(--secondary);
+  color: var(--text);
+  border-radius: 0.438rem;
   cursor: pointer;
 
-  height: 43px;
+  height: 2.688rem;
   display: block;
   margin: 0 auto;
-  bottom: 20px;
+  bottom: 1.25rem;
   width: 50%; /* Definindo a largura como 100% para ocupar toda a largura do contêiner pai */
-  max-width: 175px; /* Definindo a largura máxima para evitar que o botão se expanda demais em telas grandes */
-  margin-top: 20px;
-  margin: 20px auto 0;
+  max-width: 10.938rem; /* Definindo a largura máxima para evitar que o botão se expanda demais em telas grandes */
+  margin-top: 1.25rem;
+  margin: 1.25rem auto 0;
 }
 
 @media (max-width: 768px) {
   .btn-criar-conta {
-    max-width: 190px;
+    max-width: 11.875rem;
   }
 }
 
 .btn-criar-conta:hover {
-  background-color: #835004;
+  background-color: var(--secondary-hover-dark);
+}
+
+.btn-criar-conta:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
 }
 
 .direitos-autorais {
-  color: rgb(255, 255, 255);
+  color: var(--text);
   position: relative;
-  bottom: 0px;
-  margin-top: 20px;
+  margin-top: 1.25rem;
+  bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px;
   text-align: center;
 }

@@ -1,5 +1,5 @@
-<header>
-  <div class="p-4 d-flex justify-content-center align-items-center gap-4">
+<header *ngIf="isSmallScreen">
+  <div class="px-5 py-4 d-flex justify-content-between align-items-center gap-4">
     <div class="d-flex gap-2">
       <a href="#">
         <img src="assets/Images/icon-bell-ring.svg" alt="Bell Ring Icon" />
@@ -8,14 +8,14 @@
         <img src="assets/Images/icon-question.svg" alt="Question Icon" />
       </a>
     </div>
-    <div class="d-flex justify-content-around align-items-center gap-2">
+    <div id="header-small-screen" class="d-flex justify-content-around align-items-center gap-2">
       <img
         src="assets/Images/logo-codesolve.png"
         alt="Logo Codesolve"
         class="codesolve-logo"
       />
       <p class="mb-0">|</p>
-      <p class="mb-0">Select</p>
+      <p class="mb-0">Kuniyoshi</p>
     </div>
 
     <a data-bs-toggle="offcanvas" href="#menuHome" aria-controls="menuHome">
@@ -23,7 +23,7 @@
     </a>
 
     <div
-      class="offcanvas offcanvas-start"
+      class="offcanvas offcanvas-start menu"
       tabindex="-1"
       id="menuHome"
       aria-labelledby="menuHome"
@@ -54,12 +54,6 @@
             <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item px-0">
-              <a href="#" class="nav-link d-flex align-items-center gap-3">
-                <img src="assets/Images/icon-account-logout.svg" alt="Account Logout Icon" class="menu-icon">
-                <p class="mb-0">Sair do App</p> 
-              </a>
-            </li>
             <li class="list-group-item px-0">
               <a href="#" class="nav-link d-flex justify-content-between">
                 <div class="d-flex gap-3">
@@ -105,9 +99,45 @@
                 <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
               </a>
             </li>
+            <li class="list-group-item px-0">
+              <a href="#" class="nav-link d-flex align-items-center gap-3">
+                <img src="assets/Images/icon-account-logout.svg" alt="Account Logout Icon" class="menu-icon">
+                <p class="mb-0">Sair do App</p> 
+              </a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 </header>
+
+<header *ngIf="!isSmallScreen">
+    <div id="header-desktop-screen" class="px-5 py-4 d-flex justify-content-between align-items-center gap-4">
+        <div class="d-flex justify-content-around align-items-center gap-2">
+            <img
+                src="assets/Images/logo-codesolve.png"
+                alt="Logo Codesolve"
+                class="codesolve-logo"
+            />
+            <p class="mb-0">|</p>
+            <p class="mb-0">Kuniyoshi</p>
+        </div>
+
+        <div>
+            <p class="mb-0">TANUKI</p>
+        </div>
+        
+        
+        <div class="d-flex gap-2">
+            <a href="#">
+                <img src="assets/Images/icon-bell-ring.svg" alt="Bell Ring Icon" />
+            </a>
+            <a href="#">
+                <img src="assets/Images/icon-question.svg" alt="Question Icon" />
+            </a>
+        </div>
+    </div>
+</header>
+
+

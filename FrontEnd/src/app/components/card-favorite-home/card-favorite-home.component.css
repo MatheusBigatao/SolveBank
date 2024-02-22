@@ -1,0 +1,30 @@
+button {
+    background-color: var(--secondary);
+    color: var(--text);
+    padding: 0.625rem;
+    width: 5.375rem;
+    height: 4.375rem;
+}
+
+button:hover {
+  background-color: var(--secondary-hover-dark);
+}
+
+button img {
+  width: 1.875rem;
+}
+
+button p {
+  font-size: 0.625rem;
+}
+
+@media (min-width: 768px) {
+  button {
+    width: 6.875rem;
+    height: 6.875rem;
+  }
+
+  button p {
+    font-size: 0.875rem;
+  }
+}

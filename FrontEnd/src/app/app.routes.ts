@@ -13,5 +13,5 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'recover-password', component: RecoverPasswordComponent },
   { path: 'splashscreen', component: SplashscreenComponent },
-  { path: 'tela-transacao', component: TelaTransacaoComponent },
+  { path: 'historico-transacoes', component: TelaTransacaoComponent },
 ];
