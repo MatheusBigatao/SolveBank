@@ -1,36 +1,51 @@
 <body>
-    <div class="login-form">
-        <img src="assets/Images/principal-icon-1.png" alt="Logo" class="logo">
-        <form>
-            <h1 class="title-login">
-                Acessar sua Conta
-            </h1>
-            <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
-                <div class="form-group">
-                    <label for="cpf">CPF</label>
-                    <input type="text" id="cpf" name="cpf" placeholder="123.456.789-10" formControlName="cpf">
-                </div>
-                <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" placeholder="Insira sua senha" formControlName="senha">
-                </div>
-                <div class="form-group">
-                    <a href="#" class="forgot-password">Esqueci minha senha</a>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Enter</button>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input type="checkbox" id="remember-me" name="remember-me" class="form-check-input" formControlName="lembrar">
-                        <label for="remember-me" class="form-check-label">Lembrar de mim</label>
-                    </div>
-                </div>
-            </form>
-        </form>
-    </div>
-    
-    <app-footer-rights></app-footer-rights>
+  <div class="login-form">
+    <img src="assets/Images/principal-icon-1.png" alt="Logo" class="logo" />
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+      <h1 class="title-login">Acessar sua Conta</h1>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input
+          type="text"
+          id="cpf"
+          name="cpf"
+          placeholder="123.456.789-01"
+          formControlName="cpf"
+          mask="000.000.000-00"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Insira sua senha"
+          formControlName="senha"
+        />
+      </div>
+      <div class="form-group">
+        <a routerLink="/recover-password" class="forgot-password">Esqueci minha senha</a>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input
+            type="checkbox"
+            id="remember-me"
+            name="remember-me"
+            class="form-check-input"
+            formControlName="lembrar"
+          />
+          <label for="remember-me" class="form-check-label"
+            >Lembrar de mim</label
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <app-footer-rights></app-footer-rights>
 </body>
-
-
