@@ -5,3 +5,17 @@
 .menu-icon {
   width: 18px;
 }
+
+header, .menu, li {
+  background-color: #2F2C79;
+  color: #FFFFFF;
+}
+
+/* Parte escrita no header  */
+#header-small-screen p {
+    font-size: 20px;
+}
+
+#header-desktop-screen p {
+    font-size: 24px;
+}

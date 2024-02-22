@@ -1,5 +1,43 @@
-@media screen and (min-width:350px){
-    .button-default{
-        width: 300px;
-    }
+body {
+    background-color: #171A4A;
+    color: white;
+}
+
+.card-client {
+    background-color: #2F2C79;
+    margin-bottom: 100px;
+}
+
+.card-home {
+    background-color: #FF9800;
+}
+
+.card-home button {
+    background-color: #171A4A;
+    color: #FFFFFF;
+}
+
+.card-home button:hover {
+    background-color: #2F2C79;
+}
+
+.scan {
+    color: black;
+}
+
+.accordion-desktop {
+    width: 400px;
+}
+
+.left-section {
+    width: 100px; /* Largura da seção à esquerda */
+    background-color: #2F2C79; /* Cor de fundo da seção */
+    float: left; /* Faz com que a seção flutue à esquerda */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui preenchimento e borda na largura e altura total */
+}
+
+/* Limpa o float */
+.clear {
+    clear: both;
 }

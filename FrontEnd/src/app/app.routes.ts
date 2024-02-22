@@ -13,4 +13,3 @@ export const routes: Routes = [
   { path: 'recover-password', component: RecoverPasswordComponent },
   { path: 'splashscreen', component: SplashscreenComponent}
 ]
-
