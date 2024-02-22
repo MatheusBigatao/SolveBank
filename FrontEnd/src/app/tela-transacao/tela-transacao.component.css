@@ -1,0 +1,201 @@
+.codesolve-logo {
+  width: 50px;
+}
+
+.menu-icon {
+  width: 18px;
+}
+
+header,
+.menu,
+li {
+  background-color: #2f2c79;
+  color: #ffffff;
+}
+
+p {
+  color: #ff9800;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+}
+.back-corpo {
+  background-color: #171a4a;
+}
+.body-saldo {
+  /*background-color: #171a4a;*/
+  display: flex;
+  /* align-items: center;*/
+}
+
+.exemplo {
+  color: red;
+  font-size: 5rem;
+  position: relative;
+  left: 10%;
+}
+
+.conjunto-saldo {
+  font-family: "Roboto", sans-serif;
+}
+.saldo {
+  color: #ff9800;
+  font-size: 32px;
+  margin-top: 0%;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.saldo-digitos {
+  color: white;
+  font-size: 25px;
+  margin-left: 1rem;
+}
+
+.linha-horizontal {
+  color: gray;
+  border: 1px solid;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.text-transações {
+  color: white;
+  font-size: 25px;
+  margin-left: 1rem;
+  margin-bottom: 4rem;
+  /*position: fixed;*/
+}
+
+.accordion {
+  margin-bottom: 20px;
+}
+.card {
+  background-color: #ff9800;
+
+  width: 100%; /* Define a largura inicial do accordion */
+  max-width: 600px; /* Define a largura máxima do accordion */
+  margin: 0 auto;
+  /*border: 1px solid #171a4a;*/
+}
+
+@media (min-width: 576px) {
+  .card {
+    max-width: 800px; /* Aumenta a largura máxima do accordion para telas maiores que 576px */
+  }
+}
+
+@media (min-width: 700px) {
+  .card {
+    max-width: 750px; /* Aumenta ainda mais a largura máxima do accordion para telas maiores que 992px */
+  }
+}
+
+.card-header {
+  color: #171a4a;
+}
+.card-body {
+  background: #171a4a;
+}
+
+.btn {
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 21px;
+}
+.btn svg {
+  margin-right: 9em; /* Adiciona margem à direita do ícone */
+  width: 2em; /* Define a largura do ícone */
+  height: 2em; /* Define a altura do ícone */
+}
+
+@media (max-width: 768px) {
+  .btn svg {
+    margin-right: 1em; /* Reduz a margem à direita do ícone em telas menores */
+    width: 1.5em; /* Reduz a largura do ícone em telas menores */
+    height: 1.5em; /* Reduz a altura do ícone em telas menores */
+  }
+}
+.seta {
+  margin-right: 0px;
+}
+.circle {
+  color: #171a4a;
+}
+.pix {
+  color: white;
+  font-size: 1.3rem;
+  top: 0%;
+  display: inline-flex;
+}
+
+.valor {
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 0px;
+  text-align: right;
+}
+/* navbar de cima*/
+
+main {
+  background-color: #171a4a;
+  color: white;
+}
+
+.card-client {
+  background-color: #2f2c79;
+  /*margin-bottom: 100px;*/
+}
+
+/*.conjunto-ola {
+}*/
+.text-ola {
+  color: white;
+  margin-left: 0px;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.agencia {
+  margin-bottom: 65px;
+  color: white;
+  margin-left: 0px;
+  font-size: 18px;
+}
+
+/*navbar inferior*/
+.nav {
+  flex-wrap: wrap; /* Permite que os itens se ajustem em várias linhas */
+}
+.nav-item {
+  list-style-type: none; /* Remove os marcadores de lista */
+  padding-right: 15px;
+  background-color: #171a4a;
+  margin-top: auto;
+}
+
+.nav-link {
+  display: inline-flex; /* Exibe os itens na mesma linha */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center; /* Alinha os itens horizontalmente */
+  text-decoration: none; /* Remove sublinhado dos links */
+
+  margin-bottom: 15px;
+}
+
+.nav-link img {
+  width: 100%; /* Ajusta o tamanho da imagem para ocupar 100% da largura do contêiner */
+  max-width: 40px; /* Define o tamanho máximo da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-bottom: 3px;
+  margin-top: 40px;
+}
+
+.nav-link p {
+  margin: 0; /* Remove as margens padrão do parágrafo */
+}
+
+@media screen and (max-width: 768px) {
+  .nav-link img {
+    max-width: 40px; /* Reduz o tamanho máximo da imagem em telas menores */
+  }
+}

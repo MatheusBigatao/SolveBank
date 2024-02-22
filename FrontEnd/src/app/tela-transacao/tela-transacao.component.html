@@ -1,0 +1,598 @@
+<header *ngIf="isSmallScreen">
+  <div
+    class="px-5 py-4 d-flex justify-content-between align-items-center gap-4"
+  >
+    <div class="d-flex gap-2">
+      <a href="#">
+        <img src="assets/Images/icon-bell-ring.svg" alt="Bell Ring Icon" />
+      </a>
+      <a href="#">
+        <img src="assets/Images/icon-question.svg" alt="Question Icon" />
+      </a>
+    </div>
+    <div class="d-flex justify-content-around align-items-center gap-2">
+      <img
+        src="assets/Images/logo-codesolve.png"
+        alt="Logo Codesolve"
+        class="codesolve-logo"
+      />
+      <p class="mb-0">|</p>
+      <p class="mb-0">Select</p>
+    </div>
+
+    <a data-bs-toggle="offcanvas" href="#menuHome" aria-controls="menuHome">
+      <img src="assets/Images/icon-list.svg" alt="Menu List Icon" />
+    </a>
+
+    <div
+      class="offcanvas offcanvas-start menu"
+      tabindex="-1"
+      id="menuHome"
+      aria-labelledby="menuHome"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">SolveBank</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <div class="d-flex justify-content-between mb-4">
+            <div class="d-flex gap-4">
+              <img
+                src="assets/Images/logo-codesolve.png"
+                alt="Logo Codesolve"
+                class="codesolve-logo"
+              />
+              <div>
+                <p class="mb-0 text-white">Tanuki</p>
+                <p class="mb-0 text-white">Ag 0001 Cc 1235213215-9</p>
+              </div>
+            </div>
+            <img
+              src="assets/Images/icon-arrow-right.svg"
+              alt="Arrow Right Icon"
+            />
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item px-0">
+              <a href="#" class="nav-link d-flex align-items-center gap-3">
+                <img
+                  src="assets/Images/icon-account-logout.svg"
+                  alt="Account Logout Icon"
+                  class="menu-icon"
+                />
+                <p class="mb-0">Sair do App</p>
+              </a>
+            </li>
+            <li class="list-group-item px-0">
+              <a href="#" class="nav-link d-flex justify-content-between">
+                <div class="d-flex gap-3">
+                  <img
+                    src="assets/Images/icon-money-menu.svg"
+                    alt="Money Icon"
+                    class="menu-icon"
+                  />
+                  <p class="mb-0">Saldo e Extrato</p>
+                </div>
+                <img
+                  src="assets/Images/icon-arrow-right.svg"
+                  alt="Arrow Right Icon"
+                />
+              </a>
+            </li>
+            <li class="list-group-item px-0">
+              <a href="#" class="nav-link d-flex justify-content-between">
+                <div class="d-flex gap-3">
+                  <img
+                    src="assets/Images/icon-transfer.svg"
+                    alt="Transfer Icon"
+                    class="menu-icon"
+                  />
+                  <p class="mb-0">Transações</p>
+                </div>
+                <img
+                  src="assets/Images/icon-arrow-right.svg"
+                  alt="Arrow Right Icon"
+                />
+              </a>
+            </li>
+            <li class="list-group-item px-0">
+              <a href="#" class="nav-link d-flex justify-content-between">
+                <div class="d-flex gap-3">
+                  <img
+                    src="assets/Images/icon-pix-menu.svg"
+                    alt="Pix Icon"
+                    class="menu-icon"
+                  />
+                  <p class="mb-0">Pix</p>
+                </div>
+                <img
+                  src="assets/Images/icon-arrow-right.svg"
+                  alt="Arrow Right Icon"
+                />
+              </a>
+            </li>
+            <li class="list-group-item px-0">
+              <a href="#" class="nav-link d-flex justify-content-between">
+                <div class="d-flex gap-3">
+                  <img
+                    src="assets/Images/icon-credit-card.svg"
+                    alt="Credit Card Icon"
+                    class="menu-icon"
+                  />
+                  <p class="mb-0">Meus Cartões</p>
+                </div>
+                <img
+                  src="assets/Images/icon-arrow-right.svg"
+                  alt="Arrow Right Icon"
+                />
+              </a>
+            </li>
+            <li class="list-group-item px-0">
+              <a href="#" class="nav-link d-flex justify-content-between">
+                <div class="d-flex gap-3">
+                  <img
+                    src="assets/Images/icon-external-link.svg"
+                    alt="External Link Icon"
+                    class="menu-icon"
+                  />
+                  <p class="mb-0">Meus Limites</p>
+                </div>
+                <img
+                  src="assets/Images/icon-arrow-right.svg"
+                  alt="Arrow Right Icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<header *ngIf="!isSmallScreen">
+  <div
+    class="px-5 py-4 d-flex justify-content-between align-items-center gap-4"
+  >
+    <div class="d-flex justify-content-around align-items-center gap-2">
+      <img
+        src="assets/Images/logo-codesolve.png"
+        alt="Logo Codesolve"
+        class="codesolve-logo"
+      />
+      <p class="mb-0">|</p>
+      <p class="mb-0">Select</p>
+    </div>
+
+    <div>
+      <p class="mb-0">TANUKI</p>
+    </div>
+
+    <div class="d-flex gap-2">
+      <a href="#">
+        <img src="assets/Images/icon-bell-ring.svg" alt="Bell Ring Icon" />
+      </a>
+      <a href="#">
+        <img src="assets/Images/icon-question.svg" alt="Question Icon" />
+      </a>
+    </div>
+  </div>
+</header>
+
+<!--texto olá tanuki-->
+
+<main
+  *ngIf="isSmallScreen"
+  class="d-flex flex-column align-items-center justify-content-center"
+>
+  <section class="card-client px-5 py-3 container-fluid">
+    <p class="text-ola">Olá, Tanuki!</p>
+    <p class="agencia">Ag 0001 Cc 1235213215-9</p>
+  </section>
+</main>
+
+<!--corpo transação-->
+<section class="back-corpo">
+  <div class="body-saldo flex-column">
+    <section class="conjunto-saldo container-fluid">
+      <p class="saldo">Saldo disponível</p>
+      <p class="saldo-digitos">R$ 30.000,00</p>
+      <hr class="linha-horizontal" />
+      <p class="text-transações">Minhas transações</p>
+    </section>
+  </div>
+
+  <!-- fazer acordion-->
+  <div class="accordion" id="accordionExample1">
+    <div class="card">
+      <div class="card-header" id="headingOne1">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne1"
+            aria-expanded="true"
+            aria-controls="collapseOne1"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="white"
+                  class="bi bi-calendar2-week"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"
+                  />
+                  <path
+                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <span>Segunda, 29 de Janeiro</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="white"
+                  class="bi bi-arrow-bar-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5M8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
+        </h5>
+      </div>
+
+      <div
+        id="collapseOne1"
+        class="collapse"
+        aria-labelledby="headingOne1"
+        data-parent="#accordionExample1"
+      >
+        <div class="card-body bg-blue">
+          <svg
+            class="circle"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#ff9800"
+            class="bi bi-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <circle cx="8" cy="8" r="8" />
+          </svg>
+          <p class="pix m-0 text-sm">Pix Recebido</p>
+          <p class="valor m-0 text-sm">
+            + R$ 190,00
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.15699 2.93099L9.76799 7.61599C9.86912 7.71821 9.92584 7.8562 9.92584 7.99999C9.92584 8.14378 9.86912 8.28177 9.76799 8.38399L5.15799 13.069C5.05691 13.1718 5.00028 13.3103 5.00028 13.4545C5.00028 13.5987 5.05691 13.7371 5.15799 13.84C5.20737 13.8906 5.26638 13.9309 5.33156 13.9584C5.39674 13.9859 5.46675 14 5.53749 14C5.60822 14 5.67824 13.9859 5.74342 13.9584C5.8086 13.9309 5.86761 13.8906 5.91699 13.84L10.527 9.15599C10.8299 8.84747 10.9996 8.43237 10.9996 7.99999C10.9996 7.56761 10.8299 7.15251 10.527 6.84399L5.91699 2.15999C5.8676 2.10919 5.80852 2.06881 5.74325 2.04123C5.67798 2.01366 5.60784 1.99945 5.53699 1.99945C5.46613 1.99945 5.396 2.01366 5.33073 2.04123C5.26546 2.06881 5.20638 2.10919 5.15699 2.15999C5.05591 2.26285 4.99928 2.40129 4.99928 2.54549C4.99928 2.6897 5.05591 2.82814 5.15699 2.93099Z"
+                fill="white"
+              />
+            </svg>
+          </p>
+          <hr class="linha-horizontal" />
+          <svg
+            class="circle"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#ff9800"
+            class="bi bi-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <circle cx="8" cy="8" r="8" />
+          </svg>
+          <p class="pix m-0 text-sm">Pix Recebido</p>
+          <p class="valor m-0 text-sm">
+            + R$ 950,00
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.15699 2.93099L9.76799 7.61599C9.86912 7.71821 9.92584 7.8562 9.92584 7.99999C9.92584 8.14378 9.86912 8.28177 9.76799 8.38399L5.15799 13.069C5.05691 13.1718 5.00028 13.3103 5.00028 13.4545C5.00028 13.5987 5.05691 13.7371 5.15799 13.84C5.20737 13.8906 5.26638 13.9309 5.33156 13.9584C5.39674 13.9859 5.46675 14 5.53749 14C5.60822 14 5.67824 13.9859 5.74342 13.9584C5.8086 13.9309 5.86761 13.8906 5.91699 13.84L10.527 9.15599C10.8299 8.84747 10.9996 8.43237 10.9996 7.99999C10.9996 7.56761 10.8299 7.15251 10.527 6.84399L5.91699 2.15999C5.8676 2.10919 5.80852 2.06881 5.74325 2.04123C5.67798 2.01366 5.60784 1.99945 5.53699 1.99945C5.46613 1.99945 5.396 2.01366 5.33073 2.04123C5.26546 2.06881 5.20638 2.10919 5.15699 2.15999C5.05591 2.26285 4.99928 2.40129 4.99928 2.54549C4.99928 2.6897 5.05591 2.82814 5.15699 2.93099Z"
+                fill="white"
+              />
+            </svg>
+          </p>
+          <hr class="linha-horizontal" />
+          <svg
+            class="circle"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#ff9800"
+            class="bi bi-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <circle cx="8" cy="8" r="8" />
+          </svg>
+          <p class="pix m-0 text-sm">Pix Enviado</p>
+          <p class="valor m-0 text-sm">
+            - R$ 300,00
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.15699 2.93099L9.76799 7.61599C9.86912 7.71821 9.92584 7.8562 9.92584 7.99999C9.92584 8.14378 9.86912 8.28177 9.76799 8.38399L5.15799 13.069C5.05691 13.1718 5.00028 13.3103 5.00028 13.4545C5.00028 13.5987 5.05691 13.7371 5.15799 13.84C5.20737 13.8906 5.26638 13.9309 5.33156 13.9584C5.39674 13.9859 5.46675 14 5.53749 14C5.60822 14 5.67824 13.9859 5.74342 13.9584C5.8086 13.9309 5.86761 13.8906 5.91699 13.84L10.527 9.15599C10.8299 8.84747 10.9996 8.43237 10.9996 7.99999C10.9996 7.56761 10.8299 7.15251 10.527 6.84399L5.91699 2.15999C5.8676 2.10919 5.80852 2.06881 5.74325 2.04123C5.67798 2.01366 5.60784 1.99945 5.53699 1.99945C5.46613 1.99945 5.396 2.01366 5.33073 2.04123C5.26546 2.06881 5.20638 2.10919 5.15699 2.15999C5.05591 2.26285 4.99928 2.40129 4.99928 2.54549C4.99928 2.6897 5.05591 2.82814 5.15699 2.93099Z"
+                fill="white"
+              />
+            </svg>
+          </p>
+          <hr class="linha-horizontal" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fazer acordion-->
+  <div class="accordion" id="accordionExample2">
+    <div class="card">
+      <div class="card-header" id="headingOne2">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne2"
+            aria-expanded="true"
+            aria-controls="collapseOne2"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="white"
+                  class="bi bi-calendar2-week"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"
+                  />
+                  <path
+                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <span>Domingo, 28 de Janeiro</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="white"
+                  class="bi bi-arrow-bar-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5M8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
+        </h5>
+      </div>
+
+      <div
+        id="collapseOne2"
+        class="collapse"
+        aria-labelledby="headingOne2"
+        data-parent="#accordionExample2"
+      >
+        <div class="card-body">
+          <svg
+            class="circle"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#ff9800"
+            class="bi bi-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <circle cx="8" cy="8" r="8" />
+          </svg>
+          <p class="pix m-0">Pix Enviado</p>
+          <p class="valor m-0">
+            - R$ 47,00
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.15699 2.93099L9.76799 7.61599C9.86912 7.71821 9.92584 7.8562 9.92584 7.99999C9.92584 8.14378 9.86912 8.28177 9.76799 8.38399L5.15799 13.069C5.05691 13.1718 5.00028 13.3103 5.00028 13.4545C5.00028 13.5987 5.05691 13.7371 5.15799 13.84C5.20737 13.8906 5.26638 13.9309 5.33156 13.9584C5.39674 13.9859 5.46675 14 5.53749 14C5.60822 14 5.67824 13.9859 5.74342 13.9584C5.8086 13.9309 5.86761 13.8906 5.91699 13.84L10.527 9.15599C10.8299 8.84747 10.9996 8.43237 10.9996 7.99999C10.9996 7.56761 10.8299 7.15251 10.527 6.84399L5.91699 2.15999C5.8676 2.10919 5.80852 2.06881 5.74325 2.04123C5.67798 2.01366 5.60784 1.99945 5.53699 1.99945C5.46613 1.99945 5.396 2.01366 5.33073 2.04123C5.26546 2.06881 5.20638 2.10919 5.15699 2.15999C5.05591 2.26285 4.99928 2.40129 4.99928 2.54549C4.99928 2.6897 5.05591 2.82814 5.15699 2.93099Z"
+                fill="white"
+              />
+            </svg>
+          </p>
+          <hr class="linha-horizontal" />
+          <svg
+            class="circle"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#ff9800"
+            class="bi bi-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <circle cx="8" cy="8" r="8" />
+          </svg>
+          <p class="pix m-0">Pix Recebido</p>
+          <p class="valor m-0">
+            + R$ 150,00
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.15699 2.93099L9.76799 7.61599C9.86912 7.71821 9.92584 7.8562 9.92584 7.99999C9.92584 8.14378 9.86912 8.28177 9.76799 8.38399L5.15799 13.069C5.05691 13.1718 5.00028 13.3103 5.00028 13.4545C5.00028 13.5987 5.05691 13.7371 5.15799 13.84C5.20737 13.8906 5.26638 13.9309 5.33156 13.9584C5.39674 13.9859 5.46675 14 5.53749 14C5.60822 14 5.67824 13.9859 5.74342 13.9584C5.8086 13.9309 5.86761 13.8906 5.91699 13.84L10.527 9.15599C10.8299 8.84747 10.9996 8.43237 10.9996 7.99999C10.9996 7.56761 10.8299 7.15251 10.527 6.84399L5.91699 2.15999C5.8676 2.10919 5.80852 2.06881 5.74325 2.04123C5.67798 2.01366 5.60784 1.99945 5.53699 1.99945C5.46613 1.99945 5.396 2.01366 5.33073 2.04123C5.26546 2.06881 5.20638 2.10919 5.15699 2.15999C5.05591 2.26285 4.99928 2.40129 4.99928 2.54549C4.99928 2.6897 5.05591 2.82814 5.15699 2.93099Z"
+                fill="white"
+              />
+            </svg>
+          </p>
+          <hr class="linha-horizontal" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fazer acordion-->
+  <div class="accordion" id="accordionExample3">
+    <div class="card">
+      <div class="card-header" id="headingOne3">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne3"
+            aria-expanded="true"
+            aria-controls="collapseOne3"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="white"
+                  class="bi bi-calendar2-week"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"
+                  />
+                  <path
+                    d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <span>Sabádo, 27 de Janeiro</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="white"
+                  class="seta bi bi-arrow-bar-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5M8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
+        </h5>
+      </div>
+
+      <div
+        id="collapseOne3"
+        class="collapse"
+        aria-labelledby="headingOne3"
+        data-parent="#accordionExample3"
+      >
+        <div class="card-body">
+          <svg
+            class="circle"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#ff9800"
+            class="bi bi-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <circle cx="8" cy="8" r="8" />
+          </svg>
+          <p class="pix m-0">Pix Enviado</p>
+          <p class="valor m-0">
+            - R$ 500,00
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.15699 2.93099L9.76799 7.61599C9.86912 7.71821 9.92584 7.8562 9.92584 7.99999C9.92584 8.14378 9.86912 8.28177 9.76799 8.38399L5.15799 13.069C5.05691 13.1718 5.00028 13.3103 5.00028 13.4545C5.00028 13.5987 5.05691 13.7371 5.15799 13.84C5.20737 13.8906 5.26638 13.9309 5.33156 13.9584C5.39674 13.9859 5.46675 14 5.53749 14C5.60822 14 5.67824 13.9859 5.74342 13.9584C5.8086 13.9309 5.86761 13.8906 5.91699 13.84L10.527 9.15599C10.8299 8.84747 10.9996 8.43237 10.9996 7.99999C10.9996 7.56761 10.8299 7.15251 10.527 6.84399L5.91699 2.15999C5.8676 2.10919 5.80852 2.06881 5.74325 2.04123C5.67798 2.01366 5.60784 1.99945 5.53699 1.99945C5.46613 1.99945 5.396 2.01366 5.33073 2.04123C5.26546 2.06881 5.20638 2.10919 5.15699 2.15999C5.05591 2.26285 4.99928 2.40129 4.99928 2.54549C4.99928 2.6897 5.05591 2.82814 5.15699 2.93099Z"
+                fill="white"
+              />
+            </svg>
+          </p>
+          <hr class="linha-horizontal" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- nav inferior-->
+
+  <nav class="p-4">
+    <ul class="nav justify-content-between justify-content-lg-center gap-5">
+      <li class="nav-item">
+        <a href="#" class="nav-link d-flex">
+          <img src="assets/Images/icon-home.svg" alt="Home Icon" />
+          <p class="m-0 text-white">Início</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link d-flex">
+          <img src="assets/Images/icon-pix.svg" alt="Home Icon" />
+          <p class="m-0 text-white">Pix</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link d-flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50px"
+            height="auto"
+            fill="white"
+            class="bi bi-currency-dollar"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"
+            />
+          </svg>
+          <p class="m-0 text-white">Investimentos</p>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</section>
