@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #171a4a;
+    background-color: var(--background);
     flex-direction: column;
     font-family: "Roboto";
 }
@@ -13,28 +13,28 @@ h1{
     justify-content: center;
     align-items: center;
     justify-content: center;
-    color: #ff9800;
-    font-size: 64px;
+    color: var(--secondary);
+    font-size: 4rem;
     font-weight: bold;
 }
 
 img{
-    width: 500px;
-    height: 372px;
+    width: 31.25rem;
+    height: 23.25rem;
     position: inherit;
     display: flex;
     align-items: center;
-    margin-top: -60px;
+    margin-top: -3.75rem;
     opacity: 0.5;
 }
 
 span{
-    color: white;
+    color: var(--text);
 }
 
 h2{
-   color: white; 
-   font-size: 22px;
+   color: var(--text); 
+   font-size: 1.375rem;
 }
 
 footer{
@@ -42,7 +42,7 @@ footer{
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
+    color: var(--text);
     white-space: nowrap;
 
 }

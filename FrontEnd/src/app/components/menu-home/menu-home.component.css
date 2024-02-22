@@ -1,21 +1,21 @@
 .codesolve-logo {
-  width: 30px;
+  width: 1.875rem;
 }
 
 .menu-icon {
-  width: 18px;
+  width: 1.125rem;
 }
 
 header, .menu, li {
-  background-color: #2F2C79;
-  color: #FFFFFF;
+  background-color: var(--primary);
+  color: var(--text);
 }
 
 /* Parte escrita no header  */
 #header-small-screen p {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 #header-desktop-screen p {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
