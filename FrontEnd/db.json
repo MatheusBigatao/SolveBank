@@ -1,34 +1,66 @@
 {
   "users": [
     {
-      "id": 1,
-      "nome": "John",
-      "sobrenome": "Doe",
-      "email": "john@example.com",
-      "cpf": "12345678901",
+      "id": "476605ad-7297-4f5e-97fb-001ada30ac59",
+      "nome": "Matheus",
+      "email": "matheus@teste.com",
+      "sobrenome": "Zarpellon",
+      "cpf": "123.456.789-01",
       "senha": "123456"
     },
     {
-      "id": 2,
-      "nome": "Jane",
-      "sobrenome": "Doe",
-      "email": "jane@example.com",
-      "cpf": "23456789012",
+      "id": "86e31c50-b3ca-40a2-9088-78b5a303e4d0",
+      "nome": "Marcus",
+      "email": "marcus@teste.com",
+      "sobrenome": "Vogado",
+      "cpf": "123.456.789-10",
       "senha": "123456"
     }
   ],
   "contas": [
     {
+      "id": "64aac5db-3f96-410f-bc80-64ff30f92966",
       "agencia": 1313,
-      "conta": 1234,
-      "saldo": 1000.0,
-      "usuarioId": 1
+      "conta": 325093,
+      "saldo": 0,
+      "usuarioId": "476605ad-7297-4f5e-97fb-001ada30ac59"
     },
     {
+      "id": "9436e7e3-381c-4391-8297-8e3d773e66e8",
       "agencia": 1313,
-      "conta": 5678,
-      "saldo": 500.0,
-      "usuarioId": 2
+      "conta": 705927,
+      "saldo": 0,
+      "usuarioId": "86e31c50-b3ca-40a2-9088-78b5a303e4d0"
+    }
+  ],
+  "transacoes": [
+    {
+      "id": 1,
+      "valor": 100,
+      "data": "2023-04-02",
+      "contaOrigem": "64aac5db-3f96-410f-bc80-64ff30f92966",
+      "contaDestino": "9436e7e3-381c-4391-8297-8e3d773e66e8"
+    },
+    {
+      "id": 1,
+      "valor": 299,
+      "data": "2023-04-02",
+      "contaOrigem": "9436e7e3-381c-4391-8297-8e3d773e66e8",
+      "contaDestino": "64aac5db-3f96-410f-bc80-64ff30f92966"
+    },
+    {
+      "id": 1,
+      "valor": 50,
+      "data": "2023-3-02",
+      "contaOrigem": "64aac5db-3f96-410f-bc80-64ff30f92966",
+      "contaDestino": "9436e7e3-381c-4391-8297-8e3d773e66e8"
+    },
+    {
+      "id": 1,
+      "valor": 100,
+      "data": "2023-05-02",
+      "contaOrigem": "9436e7e3-381c-4391-8297-8e3d773e66e8",
+      "contaDestino": "64aac5db-3f96-410f-bc80-64ff30f92966"
     }
   ]
 }

@@ -56,6 +56,11 @@ input[type="password"] {
     text-decoration: none;
 }
 
+.campo-obrigatorio {
+    font-size: 12px;
+    color: #dc4c64;
+  }
+
 .btn {
     padding: 10px 20px;
     background-color: #007bff;
