@@ -103,123 +103,215 @@
     <app-navbar></app-navbar>
   </main>
 
-  <main *ngIf="!isSmallScreen">
-    <section class="d-flex justify-content-center gap-5 p-5">
-      <div class="accordion accordion-desktop p-2" id="accordionBalance">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="d-flex gap-3 align-items-center accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="false"
-              aria-controls="collapseOne"
-            >
-              <img
-                src="assets/Images/icon-exchange-outline.svg"
-                alt="Exchange Icon"
-              />
-              <p class="mb-0">Saldo disponível</p>
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionBalance"
-          >
-            <div class="accordion-body">
-              <strong>R$ 21.535,91</strong>
-              <p class="mt-4 mb-1">Limite +</p>
-              <div class="d-flex justify-content-between">
-                <p>R$ 200,00</p>
-                <i class="bi bi-currency-dollar"></i>
-              </div>
-            </div>
-          </div>
+<style>
+    .row {
+        display: flex;
+    }
+
+    main {
+        /* height: 100dvh; */
+    }
+    .left-section {
+        flex: 1;
+        width: 300px;
+        height: 100dvh;
+        /* background-color: lightgray;  */
+    }
+
+    .left-section li {
+      background-color: #2F2C79;
+      color: #FFFFFF;
+    }
+
+    .menu-icon {
+      width: 18px;
+    }
+
+    .right-section {
+        flex: 1;
+        height: 100dvh;
+        /* height: 100vh; */
+        /* background-color: lightblue;  */
+    }
+</style>
+<main *ngIf="!isSmallScreen">
+    <section class="">
+        <div class="left-section">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-money-menu.svg" alt="Money Icon" class="menu-icon">
+                            <p class="mb-0">Saldo e Extrato</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-transfer.svg" alt="Transfer Icon" class="menu-icon">
+                            <p class="mb-0">Transações</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-pix-menu.svg" alt="Pix Icon" class="menu-icon">
+                            <p class="mb-0">Pix</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-credit-card.svg" alt="Credit Card Icon" class="menu-icon">
+                            <p class="mb-0">Meus Cartões</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-external-link.svg" alt="External Link Icon" class="menu-icon">
+                            <p class="mb-0">Meus Limites</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex align-items-center gap-3">
+                        <img src="assets/Images/icon-account-logout.svg" alt="Account Logout Icon" class="menu-icon">
+                        <p class="mb-0">Sair do App</p> 
+                    </a>
+                </li>
+            </ul>
         </div>
-      </div>
+        <div class="right-section">
 
-      <div class="accordion p-2 accordion-desktop" id="accordionFutureRelease">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="d-flex gap-3 align-items-center accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >
-              <img
-                src="assets/Images/icon-graph-up-arrow.svg"
-                alt="Graph Up Arrow Icon"
-                class="p-1"
-              />
-              <p class="mb-0">Lançamentos Futuros</p>
-            </button>
-          </h2>
-          <div
-            id="collapseTwo"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionFutureRelease"
-          >
-            <div class="accordion-body d-flex flex-column">
-              <strong class="mb-4">Sem Lançamentos</strong>
-              <p class="mt-4 mb-1"></p>
-              <div class="d-flex justify-content-between">
-                <p>Não existe lançamentos</p>
-                <i class="bi bi-upc-scan scan"></i>
-              </div>
-            </div>
-          </div>
+            <section class="d-flex justify-content-center gap-5 p-5">
+                <div class="accordion accordion-desktop p-2" id="accordionBalance">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="d-flex gap-3 align-items-center accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="false"
+                                aria-controls="collapseOne"
+                            >
+                                <img
+                                    src="assets/Images/icon-exchange-outline.svg"
+                                    alt="Exchange Icon"
+                                />
+                                <p class="mb-0">Saldo disponível</p>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionBalance"
+                        >
+                            <div class="accordion-body">
+                                <strong>R$ 21.535,91</strong>
+                                <p class="mt-4 mb-1">Limite +</p>
+                                <div class="d-flex justify-content-between">
+                                    <p>R$ 200,00</p>
+                                    <i class="bi bi-currency-dollar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="accordion p-2 accordion-desktop" id="accordionFutureRelease">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="d-flex gap-3 align-items-center accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="collapseTwo"
+                            >
+                                <img
+                                    src="assets/Images/icon-graph-up-arrow.svg"
+                                    alt="Graph Up Arrow Icon"
+                                    class="p-1"
+                                />
+                                <p class="mb-0">Lançamentos Futuros</p>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFutureRelease"
+                        >
+                            <div class="accordion-body d-flex flex-column">
+                                <strong class="mb-4">Sem Lançamentos</strong>
+                                <p class="mt-4 mb-1"></p>
+                                <div class="d-flex justify-content-between">
+                                    <p>Não existe lançamentos</p>
+                                    <i class="bi bi-upc-scan scan"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="px-5 pb-5 d-flex flex-column gap-4">
+                <h4 class="mb-0 align-self-start">Meus Favoritos</h4>
+                <div class="d-flex justify-content-between gap-2">
+                    <img
+                        src="assets/Images/icon-arrow-left-menu.svg"
+                        alt="Arrow Left Icon"
+                    />
+                    <app-card-favorite-home
+                        title="Pix"
+                        image="assets/Images/icon-pix.svg"
+                        altImage="Pix Icon"
+                    ></app-card-favorite-home>
+                    <app-card-favorite-home
+                        title="Pagar"
+                        image="assets/Images/icon-scan.svg"
+                        altImage="Scan Icon"
+                    ></app-card-favorite-home>
+                    <app-card-favorite-home
+                        title="Comprovantes"
+                        image="assets/Images/icon-file-text.svg"
+                        altImage="File Text Icon"
+                    ></app-card-favorite-home>
+                    <app-card-favorite-home
+                        title="Transações"
+                        image="assets/Images/icon-transfer.svg"
+                        altImage="Transfer Icon"
+                    ></app-card-favorite-home>
+                    <img
+                        src="assets/Images/icon-arrow-right-menu.svg"
+                        alt="Arrow Right Icon"
+                    />
+                </div>
+            </section>
+    
+            <section class="pt-3 pb-4 px-5 d-flex flex-column align-items-center gap-4">
+                <h4 class="mb-0 align-self-start">Meus Cartões</h4>
+                <div class="d-flex gap-5">
+                    <img
+                        src="assets/Images/credit-card-orange-desktop.png"
+                        alt="Orange Credit Card"
+                    />
+                    <img src="assets/Images/credit-card-black-desktop.png" alt="Black Credit Card" />
+                </div>
+            </section>
         </div>
-      </div>
     </section>
 
-    <section class="px-5 pb-5 d-flex flex-column gap-4">
-      <h4 class="mb-0 align-self-start">Meus Favoritos</h4>
-      <div class="d-flex justify-content-between gap-2">
-        <img
-          src="assets/Images/icon-arrow-left-menu.svg"
-          alt="Arrow Left Icon"
-        />
-        <app-card-favorite-home
-          title="Pix"
-          image="assets/Images/icon-pix.svg"
-          altImage="Pix Icon"
-        ></app-card-favorite-home>
-        <app-card-favorite-home
-          title="Pagar"
-          image="assets/Images/icon-scan.svg"
-          altImage="Scan Icon"
-        ></app-card-favorite-home>
-        <app-card-favorite-home
-          title="Comprovantes"
-          image="assets/Images/icon-file-text.svg"
-          altImage="File Text Icon"
-        ></app-card-favorite-home>
-        <app-card-favorite-home
-          title="Transações"
-          image="assets/Images/icon-transfer.svg"
-          altImage="Transfer Icon"
-        ></app-card-favorite-home>
-        <img
-          src="assets/Images/icon-arrow-right-menu.svg"
-          alt="Arrow Right Icon"
-        />
-      </div>
-    </section>
-
-    <section class="pt-3 pb-4 px-5 d-flex flex-column align-items-center gap-4">
-      <h4 class="mb-0 align-self-start">Meus Cartões</h4>
-      <div class="d-flex gap-5">
-        <img
-          src="assets/Images/credit-card-orange-desktop.png"
-          alt="Orange Credit Card"
-        />
-        <img src="assets/Images/credit-card-black-desktop.png" alt="Black Credit Card" />
-      </div>
-    </section>
   </main>
 </body>

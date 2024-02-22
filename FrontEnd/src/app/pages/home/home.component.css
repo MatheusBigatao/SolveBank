@@ -28,3 +28,16 @@ body {
 .accordion-desktop {
     width: 400px;
 }
+
+.left-section {
+    width: 100px; /* Largura da seção à esquerda */
+    background-color: #2F2C79; /* Cor de fundo da seção */
+    float: left; /* Faz com que a seção flutue à esquerda */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui preenchimento e borda na largura e altura total */
+}
+
+/* Limpa o float */
+.clear {
+    clear: both;
+}
