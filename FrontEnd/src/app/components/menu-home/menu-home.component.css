@@ -11,9 +11,11 @@ header, .menu, li {
   color: #FFFFFF;
 }
 
-p {
-  color: #FF9800;
-  font-weight: 400;
-  font-size: 24px;
-  font-family: 'Roboto', sans-serif;
+/* Parte escrita no header  */
+#header-small-screen p {
+    font-size: 20px;
+}
+
+#header-desktop-screen p {
+    font-size: 24px;
 }
