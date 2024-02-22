@@ -13,7 +13,7 @@ import { CarouselModule } from 'primeng/carousel';
 })
 export class HomeComponent {
   
-  isSmallScreen: boolean = window.innerWidth < 768;
+  isSmallScreen: boolean = window.innerWidth < 1120;
 
   constructor() {
     this.checkScreenSize();
@@ -25,7 +25,7 @@ export class HomeComponent {
   }
 
   checkScreenSize() {
-    this.isSmallScreen = window.innerWidth < 768;
+    this.isSmallScreen = window.innerWidth < 1120;
   }
 } 
 

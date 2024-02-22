@@ -9,7 +9,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './menu-home.component.css'
 })
 export class MenuHomeComponent {
-    isSmallScreen: boolean = window.innerWidth < 768;
+    isSmallScreen: boolean = window.innerWidth < 1130;
 
     constructor() {
       this.checkScreenSize();
@@ -21,6 +21,6 @@ export class MenuHomeComponent {
     }
   
     checkScreenSize() {
-      this.isSmallScreen = window.innerWidth < 768;
+      this.isSmallScreen = window.innerWidth < 1130;
     }
 }
