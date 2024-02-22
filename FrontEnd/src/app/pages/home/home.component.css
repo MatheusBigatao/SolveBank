@@ -1,39 +1,39 @@
 body {
-    background-color: #171A4A;
-    color: white;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 .card-client {
-    background-color: #2F2C79;
-    margin-bottom: 100px;
+    background-color: var(--primary);
+    margin-bottom: 6.25rem;
 }
 
 .card-home {
-    background-color: #FF9800;
+    background-color: var(--secondary);
 }
 
 .card-home button {
-    background-color: #171A4A;
-    color: #FFFFFF;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 .card-home button:hover {
-    background-color: #2F2C79;
+    background-color: var(--primary);
 }
 
 .scan {
-    color: black;
+    color: var(--black);
 }
 
 .accordion-desktop {
-    width: 400px;
+    width: 25rem;
 }
 
 .left-section {
-    width: 100px; /* Largura da seção à esquerda */
-    background-color: #2F2C79; /* Cor de fundo da seção */
+    width: 6.25rem; /* Largura da seção à esquerda */
+    background-color: var(--primary); /* Cor de fundo da seção */
     float: left; /* Faz com que a seção flutue à esquerda */
-    padding: 20px; /* Espaçamento interno */
+    padding: 1.25rem; /* Espaçamento interno */
     box-sizing: border-box; /* Inclui preenchimento e borda na largura e altura total */
 }
 

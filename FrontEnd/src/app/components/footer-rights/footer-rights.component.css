@@ -4,11 +4,10 @@ footer {
     left: 0;
     width: 100%;
     /* background-color: #f5f5f5; */
-    padding: 10px;
+    padding: 0.625rem;
     text-align: center;
 }
 
 footer p {
-    color: white;
-
+    color: var(--text);
 }
