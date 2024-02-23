@@ -16,13 +16,13 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-cadastro',
+  selector: 'app-signUp',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, NgxMaskPipe, NgxMaskDirective],
-  templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.css',
+  templateUrl: './signUp.component.html',
+  styleUrl: './signUp.component.css',
 })
-export class CadastroComponent implements OnInit {
+export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.signUpForm.value)

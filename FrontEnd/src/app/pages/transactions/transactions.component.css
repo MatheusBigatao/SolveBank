@@ -19,7 +19,7 @@ header,
 .menu,
 li {
   background-color: var(--primary);
-  color: #FFFFFF;
+  color: var(--text);
 }
 
 p {
