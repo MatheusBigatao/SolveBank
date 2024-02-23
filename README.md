@@ -56,7 +56,11 @@ Execute a instalação dos módulos
 ```
 npm install
 ```
-
+Inicialize o server do Angular com o comando abaixo
+```
+ng serve
+```
+Acesse o site pelo caminho http://localhost:4200/
 ## Demonstração
 
 **Aqui estão algumas capturas de tela do nosso aplicativo:**
