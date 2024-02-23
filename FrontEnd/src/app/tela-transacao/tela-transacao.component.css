@@ -1,31 +1,43 @@
+.desktop-container {
+  background-color: var(--primary);
+  min-height: 100%;
+}
+
+.navbar-mobile {
+  background-color: var(--background);
+}
+
 .codesolve-logo {
-  width: 50px;
+  width: 3.125rem;
 }
 
 .menu-icon {
-  width: 18px;
+  width: 1.125rem;
 }
 
 header,
 .menu,
 li {
-  background-color: #2f2c79;
-  color: #ffffff;
+  background-color: var(--primary);
+  color: #FFFFFF;
 }
 
 p {
-  color: #ff9800;
+  color: var(--secondary);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
 }
+
 .back-corpo {
-  background-color: #171a4a;
+  min-height: 100%;
+  background-color: var(--background);
 }
+
 .body-saldo {
-  /*background-color: #171a4a;*/
+  /* background-color: #171a4a; */
   display: flex;
-  /* align-items: center;*/
+  /* align-items: center; */
 }
 
 .exemplo {
@@ -38,71 +50,75 @@ p {
 .conjunto-saldo {
   font-family: "Roboto", sans-serif;
 }
+
 .saldo {
-  color: #ff9800;
-  font-size: 32px;
+  color: var(--secondary);
+  font-size: 2rem;
   margin-top: 0%;
-  margin-bottom: 0px;
-  margin-left: 10px;
+  margin-bottom: 0;
+  margin-left: 0.625rem;
 }
 
 .saldo-digitos {
-  color: white;
-  font-size: 25px;
+  color: #FFFFFF;
+  font-size: 1.563rem;
   margin-left: 1rem;
 }
 
 .linha-horizontal {
   color: gray;
-  border: 1px solid;
+  border: 0.063rem solid;
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
 .text-transações {
-  color: white;
-  font-size: 25px;
+  color: #FFFFFF;
+  font-size: 1.563rem;
   margin-left: 1rem;
   margin-bottom: 4rem;
-  /*position: fixed;*/
+  /* position: fixed; */
 }
 
 .accordion {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
-.card {
-  background-color: #ff9800;
 
-  width: 100%; /* Define a largura inicial do accordion */
-  max-width: 600px; /* Define a largura máxima do accordion */
+.card {
+  background-color: var(--secondary);
+
+  width: 100%;  /* Define a largura inicial do accordion */
+  max-width: 37.5rem;  /*  Define a largura máxima do accordion */
   margin: 0 auto;
-  /*border: 1px solid #171a4a;*/
+  /* border: 1px solid #171a4a; */
 }
 
 @media (min-width: 576px) {
   .card {
-    max-width: 800px; /* Aumenta a largura máxima do accordion para telas maiores que 576px */
+    max-width: 50rem; /* Aumenta a largura máxima do accordion para telas maiores que 576px */
   }
 }
 
 @media (min-width: 700px) {
   .card {
-    max-width: 750px; /* Aumenta ainda mais a largura máxima do accordion para telas maiores que 992px */
+    max-width: 46.875rem;  /* Aumenta ainda mais a largura máxima do accordion para telas maiores que 992px */
   }
 }
 
 .card-header {
-  color: #171a4a;
+  color: var(--background);
 }
 .card-body {
-  background: #171a4a;
+  background: var(--background);
 }
 
 .btn {
   text-decoration: none;
-  color: white;
+  color: #FFFFFF;
   font-family: "Roboto", sans-serif;
-  font-size: 21px;
+  font-size: 1.313rem;
 }
+
 .btn svg {
   margin-right: 9em; /* Adiciona margem à direita do ícone */
   width: 2em; /* Define a largura do ícone */
@@ -117,49 +133,49 @@ p {
   }
 }
 .seta {
-  margin-right: 0px;
+  margin-right: 0;
 }
 .circle {
-  color: #171a4a;
+  color: var(--background);
 }
 .pix {
-  color: white;
+  color: #FFFFFF;
   font-size: 1.3rem;
   top: 0%;
   display: inline-flex;
 }
 
 .valor {
-  color: white;
+  color: #FFFFFF;
   font-size: 1.1rem;
-  margin-top: 0px;
+  margin-top: 0;
   text-align: right;
 }
 /* navbar de cima*/
 
 main {
-  background-color: #171a4a;
-  color: white;
+  background-color: var(--background);
+  color: #FFFFFF;
 }
 
 .card-client {
-  background-color: #2f2c79;
+  background-color: var(--primary);
   /*margin-bottom: 100px;*/
 }
 
 /*.conjunto-ola {
 }*/
 .text-ola {
-  color: white;
-  margin-left: 0px;
-  font-size: 20px;
+  color: #FFFFFF;
+  margin-left: 0;
+  font-size: 1.25rem;
   margin-bottom: 0;
 }
 .agencia {
-  margin-bottom: 65px;
-  color: white;
-  margin-left: 0px;
-  font-size: 18px;
+  margin-bottom: 4.063rem;
+  color: #FFFFFF;
+  margin-left: 0;
+  font-size: 1.125rem;
 }
 
 /*navbar inferior*/
@@ -168,8 +184,8 @@ main {
 }
 .nav-item {
   list-style-type: none; /* Remove os marcadores de lista */
-  padding-right: 15px;
-  background-color: #171a4a;
+  padding-right: 0.938rem;
+  background-color: var(--background);
   margin-top: auto;
 }
 
@@ -179,15 +195,15 @@ main {
   align-items: center; /* Alinha os itens horizontalmente */
   text-decoration: none; /* Remove sublinhado dos links */
 
-  margin-bottom: 15px;
+  margin-bottom: 0.938rem;
 }
 
 .nav-link img {
   width: 100%; /* Ajusta o tamanho da imagem para ocupar 100% da largura do contêiner */
-  max-width: 40px; /* Define o tamanho máximo da imagem */
+  max-width: 2.5rem; /* Define o tamanho máximo da imagem */
   height: auto; /* Mantém a proporção da imagem */
-  margin-bottom: 3px;
-  margin-top: 40px;
+  margin-bottom: 0.188rem;
+  margin-top: 2.5rem;
 }
 
 .nav-link p {
@@ -196,6 +212,6 @@ main {
 
 @media screen and (max-width: 768px) {
   .nav-link img {
-    max-width: 40px; /* Reduz o tamanho máximo da imagem em telas menores */
+    max-width: 2.5rem; /* Reduz o tamanho máximo da imagem em telas menores */
   }
 }

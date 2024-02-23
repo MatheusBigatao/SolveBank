@@ -1,0 +1,14 @@
+li {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.menu-icon {
+  width: 1.125rem;
+}
+
+.menu-desktop {
+    width: 18.75rem;
+    min-height: 100dvh;
+    padding: 1.25rem;
+}
