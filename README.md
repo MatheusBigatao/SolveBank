@@ -42,6 +42,21 @@
 - **Atendimento dedicado:** Entre em contato com nossa equipe de suporte dedicada a qualquer momento para obter assistência personalizada e solucionar suas dúvidas.
 - **Recursos de autoatendimento:** Acesse uma ampla variedade de recursos de autoatendimento, incluindo perguntas frequentes e tutoriais em vídeo, para resolver suas questões de forma rápida e fácil.
 
+## Como instalar
+
+Em seu terminal, faça um clone do repositório
+```
+git clone https://github.com/Code-Solve/SolveBank.git
+```
+Entre na pasta "FrontEnd" pelo terminal
+```
+cd SolveBank/FrontEnd
+```
+Execute a instalação dos módulos
+```
+npm install
+```
+
 ## Demonstração
 
 **Aqui estão algumas capturas de tela do nosso aplicativo:**
