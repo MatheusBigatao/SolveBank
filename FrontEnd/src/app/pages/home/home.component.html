@@ -1,6 +1,6 @@
 <app-menu-home></app-menu-home>
 
-<body>
+<body class="p-0 m-0">
   <main
     *ngIf="isSmallScreen"
     class="d-flex flex-column align-items-center justify-content-center"
@@ -51,48 +51,34 @@
           class="accordion-collapse collapse"
           data-bs-parent="#accordionBalance"
         >
-          <div class="accordion-body">
-            <strong>R$ 21.535,91</strong>
+          <div class="accordion-body d-flex gap-4">
+            <strong>R$ 21.535,91</strong> 
+            <a class="text-dark">Extrato</a>   
           </div>
+
         </div>
       </div>
-    </section>
-
-    <section class="options mb-5 d-flex flex-column gap-4">
-      <h4 class="mb-0 align-self-start">Meus Favoritos</h4>
-      <div class="d-flex justify-content-between gap-2">
-        <img
-          src="assets/Images/icon-arrow-left-menu.svg"
-          alt="Arrow Left Icon"
-        />
-        <app-card-favorite-home
-          title="Pix"
-          image="assets/Images/icon-pix.svg"
-          altImage="Pix Icon"
-        ></app-card-favorite-home>
-        <app-card-favorite-home
-          title="Pagar"
-          image="assets/Images/icon-scan.svg"
-          altImage="Scan Icon"
-        ></app-card-favorite-home>
-        <app-card-favorite-home
-          title="Comprovantes"
-          image="assets/Images/icon-file-text.svg"
-          altImage="File Text Icon"
-        ></app-card-favorite-home>
-        <app-card-favorite-home
-          title="Transações"
-          image="assets/Images/icon-transfer.svg"
-          altImage="Transfer Icon"
-        ></app-card-favorite-home>
-        <img
-          src="assets/Images/icon-arrow-right-menu.svg"
-          alt="Arrow Right Icon"
-        />
+    </section>   
+    <section class="options mb-3 d-flex align-items-center justify-content-center"> 
+      <div class="d-flex justify-content-center content-cards">
+        <p-carousel [value]="cards" class="w-100" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+          <ng-template let-card pTemplate="item">
+              <div class="border-1 surface-border border-round m-1 gap-1 text-start w-100">
+                  <div class="mb-3 ">
+                    <app-card-favorite-home
+                    title="{{card.title}}"
+                    image="{{card.image}}"
+                    altImage="{{card.altImage}}"
+                ></app-card-favorite-home>
+                  </div>                           
+              </div>
+          </ng-template>
+      </p-carousel>   
+        
       </div>
     </section>
 
-    <section class="mx-3 mb-4 d-flex flex-column align-items-center gap-4">
+    <section id="my-cards" class="mx-3 mb-4 d-flex flex-column align-items-center gap-4">
       <h4 class="mb-0 align-self-start">Meus Cartões</h4>
       <img
         src="assets/Images/credit-card-orange.png"
@@ -103,39 +89,8 @@
     <app-navbar></app-navbar>
   </main>
 
-<style>
-    .row {
-        display: flex;
-    }
-
-    main {
-        /* height: 100dvh; */
-    }
-    .left-section {
-        flex: 1;
-        width: 300px;
-        height: 100dvh;
-        /* background-color: lightgray;  */
-    }
-
-    .left-section li {
-      background-color: #2F2C79;
-      color: #FFFFFF;
-    }
-
-    .menu-icon {
-      width: 18px;
-    }
-
-    .right-section {
-        flex: 1;
-        height: 100dvh;
-        /* height: 100vh; */
-        /* background-color: lightblue;  */
-    }
-</style>
-<main *ngIf="!isSmallScreen">
-    <section class="">
+<main *ngIf="!isSmallScreen" class="main-container">
+    <section class="section-content">
         <div class="left-section">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item px-0">
@@ -193,8 +148,8 @@
         </div>
         <div class="right-section">
 
-            <section class="d-flex justify-content-center gap-5 p-5">
-                <div class="accordion accordion-desktop p-2" id="accordionBalance">
+            <section class="d-flex justify-content-center gap-5 pt-5">
+                <div class="accordion accordion-desktop p-2 " id="accordionBalance">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button
@@ -214,7 +169,7 @@
                         </h2>
                         <div
                             id="collapseOne"
-                            class="accordion-collapse collapse"
+                            class="accordion-collapse collapse show"
                             data-bs-parent="#accordionBalance"
                         >
                             <div class="accordion-body">
@@ -250,7 +205,7 @@
                         </h2>
                         <div
                             id="collapseTwo"
-                            class="accordion-collapse collapse"
+                            class="accordion-collapse collapse show"
                             data-bs-parent="#accordionFutureRelease"
                         >
                             <div class="accordion-body d-flex flex-column">
@@ -264,54 +219,37 @@
                         </div>
                     </div>
                 </div>
-            </section>
-    
-            <section class="px-5 pb-5 d-flex flex-column gap-4">
-                <h4 class="mb-0 align-self-start">Meus Favoritos</h4>
+            </section>          
+            <section class="pb-2 mt-3 d-flex flex-column align-items-center gap-4 pt-2">
+                <h4 class="mb-0 ms-5 align-self-center">Acesso Rápido</h4>
                 <div class="d-flex justify-content-between gap-2">
-                    <img
-                        src="assets/Images/icon-arrow-left-menu.svg"
-                        alt="Arrow Left Icon"
-                    />
-                    <app-card-favorite-home
-                        title="Pix"
-                        image="assets/Images/icon-pix.svg"
-                        altImage="Pix Icon"
-                    ></app-card-favorite-home>
-                    <app-card-favorite-home
-                        title="Pagar"
-                        image="assets/Images/icon-scan.svg"
-                        altImage="Scan Icon"
-                    ></app-card-favorite-home>
-                    <app-card-favorite-home
-                        title="Comprovantes"
-                        image="assets/Images/icon-file-text.svg"
-                        altImage="File Text Icon"
-                    ></app-card-favorite-home>
-                    <app-card-favorite-home
-                        title="Transações"
-                        image="assets/Images/icon-transfer.svg"
-                        altImage="Transfer Icon"
-                    ></app-card-favorite-home>
-                    <img
-                        src="assets/Images/icon-arrow-right-menu.svg"
-                        alt="Arrow Right Icon"
-                    />
-                </div>
+                  <p-carousel [value]="cards" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+                    <ng-template let-card pTemplate="item">
+                        <div class="border-1 surface-border border-round m-2 text-center py-2">
+                            <div class="mb-2">
+                              <app-card-favorite-home
+                              title="{{card.title}}"
+                              image="{{card.image}}"
+                              altImage="{{card.altImage}}"
+                          ></app-card-favorite-home>
+                            </div>                           
+                        </div>
+                    </ng-template>
+                </p-carousel>                   
+                </div>                 
             </section>
-    
-            <section class="pt-3 pb-4 px-5 d-flex flex-column align-items-center gap-4">
-                <h4 class="mb-0 align-self-start">Meus Cartões</h4>
+            <hr class="text-light">
+            <section class="pb-3 d-flex flex-column align-items-center gap-4">
+                <h4 class="mb-0 ms-5 align-self-center">Meus Cartões</h4>
                 <div class="d-flex gap-5">
                     <img
                         src="assets/Images/credit-card-orange-desktop.png"
                         alt="Orange Credit Card"
                     />
                     <img src="assets/Images/credit-card-black-desktop.png" alt="Black Credit Card" />
-                </div>
+                </div>                
             </section>
         </div>
     </section>
-
   </main>
 </body>

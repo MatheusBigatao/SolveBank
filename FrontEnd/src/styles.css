@@ -35,6 +35,11 @@
     --gray-dark: #999;
     --black: #000;
     --blue: #007bff;
+    
+    body{
+      min-height: 100dvh;
+      background-color: var(--background);
+    }
 }
 
 .font-default{

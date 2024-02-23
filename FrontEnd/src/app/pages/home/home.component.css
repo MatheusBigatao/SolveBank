@@ -30,14 +30,48 @@ body {
 }
 
 .left-section {
-    width: 6.25rem; /* Largura da seção à esquerda */
-    background-color: var(--primary); /* Cor de fundo da seção */
-    float: left; /* Faz com que a seção flutue à esquerda */
-    padding: 1.25rem; /* Espaçamento interno */
-    box-sizing: border-box; /* Inclui preenchimento e borda na largura e altura total */
+    width: 6.25rem;
+    /* Largura da seção à esquerda */
+    background-color: var(--primary);
+    /* Cor de fundo da seção */
+    float: left;
+    /* Faz com que a seção flutue à esquerda */
+    padding: 1.25rem;
+    /* Espaçamento interno */
+    box-sizing: border-box;
+    /* Inclui preenchimento e borda na largura e altura total */
+    flex: 1;
+    width: 300px;
+    height: 100dvh;
 }
 
-/* Limpa o float */
-.clear {
-    clear: both;
+.right-section {
+    flex: 1;
+    height: 100dvh;
+}
+
+.row {
+    display: flex;
+}
+
+.left-section li {
+    background-color: #2F2C79;
+    color: #FFFFFF;
+}
+
+.menu-icon {
+    width: 18px;
+}
+
+.section-content{
+    min-height: 100dvh;
+}
+
+#my-cards img{
+    width: 95%;
+}
+
+.content-cards{
+    max-width: 85%;
+    justify-content: center;
 }
