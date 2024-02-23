@@ -1,9 +1,9 @@
 button {
     background-color: var(--secondary);
     color: var(--text);
-    padding: 0.625rem;
-    width: 5.375rem;
-    height: 4.375rem;
+    padding: 0.225rem;
+    width: 10rem !important;
+    height: 10rem !important;
 }
 
 button:hover {
@@ -11,20 +11,27 @@ button:hover {
 }
 
 button img {
-  width: 1.875rem;
+  /* width: 1.875rem; */
+  width: 50%;
 }
 
 button p {
   font-size: 0.625rem;
+  font-size: 1.225rem;
 }
 
-@media (min-width: 768px) {
+@media screen and  (max-width: 1120px) {
   button {
-    width: 6.875rem;
-    height: 6.875rem;
+    width: 4.875rem !important;
+    height: 3.875rem !important;
+    padding: 0.125rem !important;
+  }
+  
+  button img {
+    width: 1.875rem;
   }
 
   button p {
-    font-size: 0.875rem;
+    font-size: 0.675rem;
   }
 }
