@@ -3,11 +3,12 @@ import { MenuHomeComponent } from '../../components/menu-home/menu-home.componen
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { CardFavoriteHomeComponent } from '../../components/card-favorite-home/card-favorite-home.component';
 import { CarouselModule } from 'primeng/carousel';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MenuHomeComponent, NavbarComponent, CardFavoriteHomeComponent, CarouselModule],
+  imports: [MenuHomeComponent, NavbarComponent, CardFavoriteHomeComponent, CarouselModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -70,9 +71,5 @@ export class HomeComponent {
 
     ]
   }
-
-
-
-
 }
 

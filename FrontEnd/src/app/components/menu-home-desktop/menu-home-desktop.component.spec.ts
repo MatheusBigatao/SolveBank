@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CadastroComponent } from './cadastro.component';
+import { MenuHomeDesktopComponent } from './menu-home-desktop.component';
 
-describe('CadastroComponent', () => {
-  let component: CadastroComponent;
-  let fixture: ComponentFixture<CadastroComponent>;
+describe('MenuHomeDesktopComponent', () => {
+  let component: MenuHomeDesktopComponent;
+  let fixture: ComponentFixture<MenuHomeDesktopComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CadastroComponent]
+      imports: [MenuHomeDesktopComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CadastroComponent);
+    fixture = TestBed.createComponent(MenuHomeDesktopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

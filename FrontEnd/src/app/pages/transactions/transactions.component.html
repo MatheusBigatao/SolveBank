@@ -1,0 +1,235 @@
+<app-menu-home></app-menu-home>
+
+<!--texto olá tanuki-->
+
+<main
+  *ngIf="isSmallScreen"
+  class="d-flex flex-column align-items-center justify-content-center"
+>
+  <section class="card-client px-5 py-3 container-fluid">
+    <p class="text-ola">Olá, Tanuki!</p>
+    <p class="agencia">Ag 0001 Cc 1235213215-9</p>
+  </section>
+</main>
+
+<!--corpo transação-->
+<body class="desktop-container">
+<section class="d-flex">
+  <app-menu-home-desktop *ngIf="!isSmallScreen"></app-menu-home-desktop>
+
+  <section class="back-corpo flex-fill">
+    <div class="body-saldo flex-column">
+      <section class="conjunto-saldo container-fluid">
+        <p class="saldo">Saldo disponível</p>
+        <p class="saldo-digitos">R$ 30.000,00</p>
+        <hr class="linha-horizontal" />
+        <p class="text-transações">Minhas transações</p>
+      </section>
+    </div>
+  
+    <!-- fazer acordion-->
+  
+    <div class="accordion" id="accordionExample1">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between" id="headingOne1">
+          <button
+            class="btn btn-link w-100 d-flex justify-content-between align-items-center"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne1"
+            aria-expanded="true"
+            aria-controls="collapseOne1"
+          >
+            <div class="w-100 d-flex justify-content-between align-items-center">
+              <div class="d-flex gap-3">
+                <i class="bi bi-calendar2-week"></i>
+                <span>Segunda, 29 de Janeiro</span>
+              </div>
+              <i class="bi bi-chevron-compact-down"></i>
+            </div>
+          </button>
+        </div>
+  
+        <div
+          id="collapseOne1"
+          class="collapse"
+          aria-labelledby="headingOne1"
+          data-parent="#accordionExample1"
+        >
+          <div class="card-body bg-blue">
+            <div class="d-flex align-items-center gap-2">
+              <img src="assets/Images/icon-circle.svg" alt="Circle Icon" />
+              <p class="pix m-0 text-sm">Pix Recebido</p>
+            </div>
+            <p
+              class="valor m-0 text-sm d-flex justify-content-end align-items-center gap-2"
+            >
+              + R$ 190,00
+              <img
+                src="assets/Images/icon-arrow-right.svg"
+                alt="Arrow Right Icon"
+              />
+            </p>
+            <hr class="linha-horizontal" />
+            <div class="d-flex align-items-center gap-2">
+              <img src="assets/Images/icon-circle.svg" alt="Circle Icon" />
+              <p class="pix m-0 text-sm">Pix Recebido</p>
+            </div>
+            <p
+              class="valor m-0 text-sm d-flex justify-content-end align-items-center gap-2"
+            >
+              + R$ 950,00
+              <img
+                src="assets/Images/icon-arrow-right.svg"
+                alt="Arrow Right Icon"
+              />
+            </p>
+            <hr class="linha-horizontal" />
+            <div class="d-flex align-items-center gap-2">
+              <img src="assets/Images/icon-circle.svg" alt="Circle Icon" />
+              <p class="pix m-0 text-sm">Pix Enviado</p>
+            </div>
+            <p
+              class="valor m-0 text-sm d-flex justify-content-end align-items-center gap-2"
+            >
+              - R$ 300,00
+              <img
+                src="assets/Images/icon-arrow-right.svg"
+                alt="Arrow Right Icon"
+              />
+            </p>
+            <hr class="linha-horizontal" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fazer acordion-->
+  
+    <div class="accordion" id="accordionExample2">
+      <div class="card">
+        <div class="card-header" id="headingOne2">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link w-100 d-flex justify-content-between align-items-center"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne2"
+              aria-expanded="true"
+              aria-controls="collapseOne2"
+            >
+              <div
+                class="w-100 d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex gap-3">
+                  <i class="bi bi-calendar2-week"></i>
+                  <span>Domingo, 28 de Janeiro</span>
+                </div>
+                <i class="bi bi-chevron-compact-down"></i>
+              </div>
+            </button>
+          </h5>
+        </div>
+  
+        <div
+          id="collapseOne2"
+          class="collapse"
+          aria-labelledby="headingOne2"
+          data-parent="#accordionExample2"
+        >
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2">
+              <img src="assets/Images/icon-circle.svg" alt="Circle Icon" />
+              <p class="pix m-0">Pix Enviado</p>
+            </div>
+            <p
+              class="valor m-0 d-flex justify-content-end align-items-center gap-2"
+            >
+              - R$ 47,00
+              <img
+                src="assets/Images/icon-arrow-right.svg"
+                alt="Arrow Right Icon"
+              />
+            </p>
+            <hr class="linha-horizontal" />
+            <div class="d-flex align-items-center gap-2">
+              <img src="assets/Images/icon-circle.svg" alt="Circle Icon" />
+              <p class="pix m-0">Pix Recebido</p>
+            </div>
+            <p
+              class="valor m-0 d-flex justify-content-end align-items-center gap-2"
+            >
+              + R$ 150,00
+              <img
+                src="assets/Images/icon-arrow-right.svg"
+                alt="Arrow Right Icon"
+              />
+            </p>
+            <hr class="linha-horizontal" />
+          </div>
+        </div>
+      </div>
+    </div>
+  
+      <!-- fazer acordion-->
+  
+      <div class="accordion" id="accordionExample3">
+        <div class="card">
+          <div
+            class="card-header d-flex justify-content-between"
+            id="headingOne3"
+          >
+            <button
+              class="btn btn-link w-100 d-flex justify-content-between align-items-center"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne3"
+              aria-expanded="true"
+              aria-controls="collapseOne3"
+            >
+              <div
+                class="w-100 d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex gap-3">
+                  <i class="bi bi-calendar2-week"></i>
+                  <span>Sábado, 27 de Janeiro</span>
+                </div>
+                <i class="bi bi-chevron-compact-down"></i>
+              </div>
+            </button>
+          </div>
+  
+          <div
+            id="collapseOne3"
+            class="collapse"
+            aria-labelledby="headingOne3"
+            data-parent="#accordionExample3"
+          >
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-2">
+                <img src="assets/Images/icon-circle.svg" alt="Circle Icon" />
+                <p class="pix m-0">Pix Enviado</p>
+              </div>
+              <p
+                class="valor m-0 d-flex justify-content-end align-items-center gap-2"
+              >
+                - R$ 500,00
+                <img
+                  src="assets/Images/icon-arrow-right.svg"
+                  alt="Arrow Right Icon"
+                />
+              </p>
+              <hr class="linha-horizontal" />
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- nav inferior-->
+  
+  </section>
+</section>
+<div class="navbar-mobile">
+
+  <app-navbar *ngIf="isSmallScreen"></app-navbar>
+</div>
+</body>

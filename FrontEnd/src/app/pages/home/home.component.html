@@ -53,7 +53,7 @@
         >
           <div class="accordion-body d-flex gap-4">
             <strong>R$ 21.535,91</strong> 
-            <a class="text-dark">Extrato</a>   
+            <a class="text-dark" [routerLink]="['/transactions']">Extrato</a>   
           </div>
 
         </div>
@@ -177,7 +177,10 @@
                                 <p class="mt-4 mb-1">Limite +</p>
                                 <div class="d-flex justify-content-between">
                                     <p>R$ 200,00</p>
-                                    <i class="bi bi-currency-dollar"></i>
+                                    <div>
+                                      <a class="text-dark" [routerLink]="['/transactions']">Extrato</a>
+                                      <i class="bi bi-currency-dollar"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
