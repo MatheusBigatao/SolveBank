@@ -11,5 +11,7 @@ namespace SolveBank.Entities.Models
     {
         [Key]
         public Guid Id { get; set; }
+        public string CodigoDoBanco { get; set; }
+        public List<Usuario> Usuarios { get; set; }
     }
 }

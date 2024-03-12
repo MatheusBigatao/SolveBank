@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Entities.Models
 {
-    public class TPagamento
+    public class TPagamento : Transacao
     {
-        [Key]
-        public Guid Id { get; set; }
+        public string Beneficiario { get; set; }
+        public string NumeroBoleto { get; set; }
     }
 }

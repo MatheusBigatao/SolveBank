@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,5 +12,12 @@ namespace SolveBank.Entities.Models
     {
         [Key]
         public Guid Id { get; set; }
+        public string Token { get; set; }
+        public DateTime DataExpiracao { get; set; }
+        [Required]
+        [ForeignKey("Usuario")]
+        public string UsuarioID { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public bool Utilizado { get; set; }
     }
 }

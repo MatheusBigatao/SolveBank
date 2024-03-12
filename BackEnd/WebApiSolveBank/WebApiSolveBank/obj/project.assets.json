@@ -1738,6 +1738,49 @@
             "rid": "win"
           }
         }
+      },
+      "SolveBank.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.2",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.2",
+          "Microsoft.EntityFrameworkCore": "8.0.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.2",
+          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "compile": {
+          "bin/placeholder/SolveBank.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SolveBank.Entities.dll": {}
+        }
+      },
+      "SolveBank.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.2",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.2",
+          "Microsoft.EntityFrameworkCore": "8.0.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.2",
+          "Newtonsoft.Json": "13.0.3",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "SolveBank.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SolveBank.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SolveBank.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -4685,6 +4728,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "SolveBank.Entities/1.0.0": {
+      "type": "project",
+      "path": "../SolveBank.Entities/SolveBank.Entities.csproj",
+      "msbuildProject": "../SolveBank.Entities/SolveBank.Entities.csproj"
+    },
+    "SolveBank.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../SolveBank.Infrastructure/SolveBank.Infrastructure.csproj",
+      "msbuildProject": "../SolveBank.Infrastructure/SolveBank.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4700,6 +4753,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.2",
       "Newtonsoft.Json >= 13.0.3",
       "Newtonsoft.Json.Bson >= 1.0.2",
+      "SolveBank.Entities >= 1.0.0",
+      "SolveBank.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -4737,7 +4792,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj": {
+              "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj"
+            },
+            "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

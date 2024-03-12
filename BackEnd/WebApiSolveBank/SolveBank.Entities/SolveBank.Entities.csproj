@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="DTOs\ContaBancaria\" />
     <Folder Include="DTOs\Cartao\" />
+    <Folder Include="DTOs\Transacao\" />
     <Folder Include="Profiles\" />
   </ItemGroup>
 

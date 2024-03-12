@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Entities.Enums
 {
-    internal class EnumTipoUsuario
+    public class EnumTipoUsuario
     {
     }
 }
