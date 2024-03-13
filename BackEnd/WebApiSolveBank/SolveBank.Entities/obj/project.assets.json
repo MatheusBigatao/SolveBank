@@ -4287,25 +4287,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MARCUS\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\maria\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj",
+      "projectUniqueName": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj",
       "projectName": "SolveBank.Entities",
-      "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj",
-      "packagesPath": "C:\\Users\\MARCUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\obj\\",
+      "projectPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj",
+      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\MARCUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4398,7 +4396,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

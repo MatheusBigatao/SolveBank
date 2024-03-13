@@ -1,0 +1,25 @@
+.codesolve-logo {
+  width: 1.875rem;
+}
+
+header {
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+#header-desktop-screen p {
+  font-size: 1.5rem;
+}
+
+.deposito {
+  color: white;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.linha {
+  border-top: 1px solid white;
+  margin: 10px 0;
+}

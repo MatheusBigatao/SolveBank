@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
 import { SplashscreenComponent } from './pages/splashscreen/splashscreen.component';
 import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { DepositComponent } from './externalPages/deposit/deposit.component';
 export const routes: Routes = [
   { path: '', component: SplashscreenComponent },
   { path: 'login', component: LoginComponent },
@@ -14,4 +15,5 @@ export const routes: Routes = [
   { path: 'recover-password', component: RecoverPasswordComponent },
   { path: 'welcome', component: LandingPageComponent },
   { path: 'transactions', component: TransactionsComponent },
+  { path: 'deposit', component: DepositComponent },
 ];

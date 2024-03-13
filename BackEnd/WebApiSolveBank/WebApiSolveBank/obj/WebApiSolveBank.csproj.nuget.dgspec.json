@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\WebApiSolveBank.csproj": {}
+    "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\WebApiSolveBank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj": {
+    "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj",
         "projectName": "SolveBank.Entities",
-        "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj",
-        "packagesPath": "C:\\Users\\MARCUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\obj\\",
+        "projectPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MARCUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -111,25 +110,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj": {
+    "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj",
         "projectName": "SolveBank.Infrastructure",
-        "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\MARCUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MARCUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -145,8 +143,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj": {
-                "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj"
+              "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj": {
+                "projectPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj"
               }
             }
           }
@@ -226,25 +224,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\WebApiSolveBank.csproj": {
+    "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\WebApiSolveBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\WebApiSolveBank.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\WebApiSolveBank.csproj",
         "projectName": "WebApiSolveBank",
-        "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\WebApiSolveBank.csproj",
-        "packagesPath": "C:\\Users\\MARCUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\obj\\",
+        "projectPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\WebApiSolveBank.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\WebApiSolveBank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MARCUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -260,11 +257,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj": {
-                "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj"
+              "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj": {
+                "projectPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Entities\\SolveBank.Entities.csproj"
               },
-              "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\MARCUS\\OneDrive\\Área de Trabalho\\SolveBank\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj"
+              "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\maria\\Desktop\\deposito\\SolveBank\\BackEnd\\WebApiSolveBank\\SolveBank.Infrastructure\\SolveBank.Infrastructure.csproj"
               }
             }
           }
@@ -351,7 +348,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
