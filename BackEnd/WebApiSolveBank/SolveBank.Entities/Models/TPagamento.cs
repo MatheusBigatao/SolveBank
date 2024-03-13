@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace SolveBank.Entities.Models
 {
     public class TPagamento : Transacao
     {
-        public string Beneficiario { get; set; }
-        public string NumeroBoleto { get; set; }
+        public string Beneficiario { get; set; } = null!;
+        public string NumeroBoleto { get; set; } = null!;
     }
 }

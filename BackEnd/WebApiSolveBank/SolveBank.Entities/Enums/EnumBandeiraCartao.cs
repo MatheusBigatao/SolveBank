@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Entities.Enums
 {
-    public class EnumBandeiraCartao
+    public enum EnumBandeiraCartao
     {
+        Visa = 10,
+        Mastercard = 20
     }
 }

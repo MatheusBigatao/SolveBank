@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(#171a4af6, #171a4af6, #171a4af6), url("../../../assets/Images/background-login-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+}
+
+.login-form {
+    /* background-color: white; */
+    padding: 1.25rem;
+    border-radius: 0.313rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 12.5rem;
+    height: auto;
+    margin: 0 auto; /* Add this line to center the image horizontally */
+    display: block; /* Add this line to remove any default inline behavior */
+}
+
+.form-group {
+    margin-bottom: 0.938rem;
+}
+
+.title-login {
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.313rem;
+    color: var(--secondary);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.625rem;
+    border: 1px solid var(--gray);
+    border-radius: 0.188rem;
+}
+
+.forgot-password {
+    color: var(--gray-dark);
+    text-decoration: none;
+}
+
+.campo-obrigatorio {
+    font-size: 0.75rem;
+    color: var(--danger);
+  }
+
+.btn {
+    padding: 0.625rem 1.25rem;
+    background-color: var(--blue);
+    color: var(--text);
+    border: none;
+    border-radius: 0.188rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary-hover-dark);
+}
+
+.btn-primary {
+    background-color: var(--secondary);
+    width: 12.5rem;
+    display: block;
+    margin: 0 auto;
+}
+
+#remember-me {
+    margin-right: 0.313rem;
+}
+
+.form-check{
+    display: flex;
+    justify-content: center;
+}

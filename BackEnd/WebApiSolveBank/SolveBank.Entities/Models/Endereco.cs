@@ -14,20 +14,20 @@ namespace SolveBank.Entities.Models
         public Guid Id { get; set; }
         [Required]
         [ForeignKey("Usuario")]
-        public string UsuarioID { get; set; }
-        public virtual Usuario Usuario {  get; set; }
+        public string UsuarioID { get; set; } = null!;
+        public virtual Usuario Usuario {  get; set; } = null!;
         [Required]
-        public string Logradouro { get; set; }
+        public string Logradouro { get; set; } = null!;
         [Required]
-        public string Cidade { get; set; }
+        public string Cidade { get; set; } = null!;
         [Required]
-        public string Numero  { get; set; }
+        public string Numero  { get; set; } = null!;
         [Required]
-        public string Bairro { get; set; }
+        public string Bairro { get; set; } = null!;
         [Required]
-        public string  CEP { get; set; }
+        public string  CEP { get; set; } = null!;
         [Required]
-        public string Estado { get; set; }       
-        public string Complemento { get; set; }
+        public string Estado { get; set; } = null!;
+        public string Complemento { get; set; } = null!;
     }
 }

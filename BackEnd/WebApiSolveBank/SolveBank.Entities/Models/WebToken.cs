@@ -12,10 +12,10 @@ namespace SolveBank.Entities.Models
     {
         [Key]
         public Guid Id { get; set; }
-        public string Token { get; set; }
+        public string Token { get; set; } = null!;
         [ForeignKey("Usuario")]
-        public string UsuarioID { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public string UsuarioID { get; set; } = null!;
+        public virtual Usuario Usuario { get; set; } = null!;
         public DateTime DataCriado { get; set; }
         public bool Utilizado { get; set; }
         public DateTime ExpiracaoToken { get; set; }

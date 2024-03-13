@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Entities.Enums
 {
-    public class EnumStatusTransacao
+    public enum EnumStatusTransacao
     {
+        Concluida = 5512,
+        EmAnalise = 5522,
+        NaoAprovada = 5532,
+        Cancelada = 5542
     }
 }

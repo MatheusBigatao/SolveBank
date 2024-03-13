@@ -1,19 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using SolveBank.Entities.Enums;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SolveBank.Entities.Models
 {
     public class Usuario : IdentityUser
     {
-        [Required]
-        [StringLength(30,ErrorMessage ="Nome deve conter no máximo {1} e no mínimo {2} caracteres",MinimumLength = 5)]
-        [RegularExpression("^[A-Za-z]+(?: [A-Za-z]+)+$")]
         private string NomeCompleto { get; set; }
         [Required]
         [StringLength(18, ErrorMessage = "Nome deve conter no máximo {1} e no mínimo {2} caracteres", MinimumLength = 11)]

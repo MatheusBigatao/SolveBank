@@ -15,10 +15,10 @@ namespace SolveBank.Entities.Models
         [Required]
         [ForeignKey("ContaBancaria")]
         public Guid ContaID { get; set; }
-        public virtual ContaBancaria ContaBancaria { get; set; }
+        public virtual ContaBancaria ContaBancaria { get; set; } = null!;
         [Required]
         [StringLength(3, ErrorMessage = "Código do banco precisa ter no mínimo {2} caracteres e no máximo {1}", MinimumLength = 3)]
-        public string CodigoDoBanco { get; set; }
+        public string CodigoDoBanco { get; set; } = null!;
         [Required]
         public decimal Valor { get; set; }
         public DateTime DataTransacao { get; set; }

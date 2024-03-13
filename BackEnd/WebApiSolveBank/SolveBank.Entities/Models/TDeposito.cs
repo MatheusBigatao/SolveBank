@@ -8,8 +8,8 @@ namespace SolveBank.Entities.Models
 {
     public class TDeposito : Transacao
     {
-        public string Agencia { get; set; }
-        public string NumeroDaConta{ get; set; }
-        public string CodigoDoEnvelope { get; set; }
+        public string Agencia { get; set; } = null!;
+        public string NumeroDaConta{ get; set; } = null!;
+        public string CodigoDoEnvelope { get; set; } = null!;
     }
 }

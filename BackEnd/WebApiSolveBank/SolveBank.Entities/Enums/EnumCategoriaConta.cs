@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Entities.Enums
 {
-    public class EnumCategoriaConta
+    public enum EnumCategoriaConta
     {
+        Miyasaki=5578,
+        Kurosawa=5589,
+        Yayoi=5597
     }
 }
