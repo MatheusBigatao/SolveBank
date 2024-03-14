@@ -1,25 +1,17 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using SolveBank.Entities.Enums;
-using System.ComponentModel.DataAnnotations;
-
 
 namespace SolveBank.Entities.Models
 {
     public class Usuario : IdentityUser
     {
         private string NomeCompleto { get; set; }
-        [Required]
-        [StringLength(18, ErrorMessage = "Nome deve conter no máximo {1} e no mínimo {2} caracteres", MinimumLength = 11)]
-        private string CPF_CNPJ { get; set; }
-        [Required]
-        private Endereco Endereco { get; set; }
-        [Required]
-        private EnumTipoUsuario  EnumTipoUsuario { get; set; }
-        [Required]
-        private ContaBancaria ContaBancaria { get; set; }
-        [Required]
-        private DateTime DataCadastro {get; set; }
-        [Required]
+       private string CPF_CNPJ { get; set; }
+       
+        private Endereco Endereco { get; set; }     
+        private EnumTipoUsuario  EnumTipoUsuario { get; set; }     
+        private ContaBancaria ContaBancaria { get; set; }      
+        private DateTime DataCadastro {get; set; }      
         private bool Removido { get; set; }
         public Usuario(
             string nomeCompleto,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Infrastructure.Repositories.Contracts
 {
-    public interface IWebTokenRepository
+    internal interface IAutenticacao2FatoresRepository
     {
     }
 }

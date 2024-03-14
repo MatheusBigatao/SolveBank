@@ -3,7 +3,7 @@
 
 namespace SolveBank.Entities.DTOs.Usuario
 {
-    public class RequestCriarUsuario()
+    public class RequestCriarUsuarioDTO
     {
         [Required]
         [StringLength(30, ErrorMessage = "Nome deve conter no máximo {1} e no mínimo {2} caracteres", MinimumLength = 5)]

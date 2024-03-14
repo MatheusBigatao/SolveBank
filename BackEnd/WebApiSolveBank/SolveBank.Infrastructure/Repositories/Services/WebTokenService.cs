@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SolveBank.Infrastructure.Repositories.Contracts
+namespace SolveBank.Infrastructure.Repositories.Services
 {
-    public interface IWebTokenRepository
+    public class WebTokenService
     {
     }
 }
