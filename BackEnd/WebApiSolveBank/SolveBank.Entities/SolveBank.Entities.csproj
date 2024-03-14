@@ -7,9 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\ContaBancaria\" />
-    <Folder Include="DTOs\Cartao\" />
-    <Folder Include="DTOs\Transacao\" />
+    <Folder Include="DTOs\Transacoes\Deposito\" />
+    <Folder Include="DTOs\Transacoes\Pagamento\" />
+    <Folder Include="DTOs\Transacoes\Transferencia\" />
+    <Folder Include="DTOs\Transacoes\Saque\" />
     <Folder Include="Profiles\" />
   </ItemGroup>
 

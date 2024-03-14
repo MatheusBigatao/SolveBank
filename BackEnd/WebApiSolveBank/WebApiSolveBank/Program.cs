@@ -1,11 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using SolveBank.Infrastructure.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+var configuration = builder.Configuration;
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<SolveBankDbConfig>(options =>
+{
+    options.UseSqlServer(configuration.GetConnectionString("DbConectionTest"));
+});
 
 var app = builder.Build();
 
