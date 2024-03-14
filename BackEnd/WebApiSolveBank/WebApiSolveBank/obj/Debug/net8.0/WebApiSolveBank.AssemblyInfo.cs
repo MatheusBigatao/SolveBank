@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiSolveBank")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd606823e785b286066a30de169c0c94104859cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73672f70f7ce3ee503d93e9d5b2f8f61ae24c6d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiSolveBank")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiSolveBank")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
