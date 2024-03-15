@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
 import { SplashscreenComponent } from './pages/splashscreen/splashscreen.component';
 import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { TransferComponent } from './externalPages/transfer/transfer.component';
 import { ExternalHomeComponent } from './externalPages/home/home.component';
 
 export const routes: Routes = [
@@ -16,5 +17,6 @@ export const routes: Routes = [
   { path: 'recover-password', component: RecoverPasswordComponent },
   { path: 'welcome', component: LandingPageComponent },
   { path: 'transactions', component: TransactionsComponent },
+  { path: 'transfer', component: TransferComponent },
   { path: 'external/home', component: ExternalHomeComponent },
 ];
