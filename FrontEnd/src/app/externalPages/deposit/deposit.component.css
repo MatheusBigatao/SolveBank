@@ -11,7 +11,7 @@ header {
   font-size: 1.5rem;
 }
 
-.deposito {
+.text-deposit-count {
   color: white;
   font-size: 25px;
   font-family: "Roboto", sans-serif;
@@ -19,7 +19,7 @@ header {
   margin-left: 50px;
   margin-top: 10px;
 }
-.linha {
+.line {
   border-top: 2px solid white;
   margin: 10px 0;
 }
@@ -35,14 +35,28 @@ header {
 .form-label {
   color: #ff9800;
   font-family: "Roboto", sans-serif;
+  font-size: 18px;
 }
 
-.ag {
-  margin: 0 auto;
-}
 .form-control {
   width: 300px;
   height: 50px;
+}
+
+.agency {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  right: 26px;
+}
+
+.txt-agency {
+  position: relative;
+  right: 70px;
+}
+.camp-value {
+  position: relative;
+  left: 56px;
 }
 
 .mensage {
@@ -64,18 +78,20 @@ header {
   height: 70px;
   transition: background-color 0.3s, color 0.3s;
   font-family: "Roboto", sans-serif;
+  padding-right: 50px;
 }
 .btn:hover {
   background-color: #b97001;
   color: #ffffff;
 }
 
-/*.back {
-}*/
 .deposit {
-  /* display: flex;*/
-  /*justify-content: space-between; */
-
   margin-top: 10px;
   margin-bottom: 30px;
+}
+
+.icon-left {
+  font-size: 33px;
+  display: inline-block;
+  vertical-align: middle;
 }

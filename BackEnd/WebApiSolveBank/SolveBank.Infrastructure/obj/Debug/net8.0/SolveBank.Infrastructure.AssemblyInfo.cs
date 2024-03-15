@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SolveBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73672f70f7ce3ee503d93e9d5b2f8f61ae24c6d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab8550663214bb5aea162de90ca674df6a213adc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SolveBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SolveBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

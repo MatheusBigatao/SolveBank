@@ -27,8 +27,8 @@
   </div>
 </header>
 <div>
-  <p class="deposito">Depósito em Conta - Dinheiro</p>
-  <hr class="linha" />
+  <p class="text-deposit-count">Depósito em Conta - Dinheiro</p>
+  <hr class="line" />
 </div>
 <p class="text-value">Valor limite por envelope : R$ 5.000,00.</p>
 
@@ -36,12 +36,12 @@
   <form class="formulario-deposito">
     <div class="row justify-content-center align-items-center mb-3">
       <div class="col-auto">
-        <label for="agencia" class="form-label">Agência:</label>
+        <label for="agencia" class="txt-agency form-label">Agência:</label>
       </div>
       <div class="col-auto">
         <input
           type="text"
-          class="form-control"
+          class="agency form-control"
           id="agencia"
           name="agencia"
           required
@@ -63,6 +63,7 @@
         />
       </div>
     </div>
+
     <div class="row justify-content-center align-items-center mb-3">
       <div class="col-auto">
         <label for="valor" class="form-label">Valor:*</label>
@@ -70,7 +71,7 @@
       <div class="col-auto">
         <input
           type="number"
-          class="form-control"
+          class="camp-value form-control"
           id="valor"
           name="valor"
           min="0"
@@ -86,19 +87,29 @@
 
 <div class="deposit row justify-content-around align-items-center">
   <div class="col-auto">
-    <button type="submit" class="btn">Depositar</button>
+    <button type="submit" class="btn">
+      <span class="icon-left"><i class="bi bi-bank me-3"></i></span>Depositar
+    </button>
   </div>
 
   <div class="col-auto mr-2">
-    <button type="submit" class="btn">Corrige</button>
+    <button type="submit" class="btn">
+      <span class="icon-left"><i class="bi bi-backspace me-3"></i></span>Corrige
+    </button>
   </div>
 </div>
 
-<div class="back row justify-content-around align-items-center">
+<div class="row justify-content-around align-items-center">
   <div class="col-auto">
-    <button type="submit" class="btn">Voltar</button>
+    <button type="submit" class="btn">
+      <span class="icon-left"><i class="bi bi-arrow-left-square me-3"></i></span
+      >Voltar
+    </button>
   </div>
   <div class="col-auto">
-    <button type="submit" class="btn">Cancela</button>
+    <button type="submit" class="btn">
+      <span class="icon-left"><i class="bi bi-x-square me-2"></i></span>
+      Cancelar
+    </button>
   </div>
 </div>
