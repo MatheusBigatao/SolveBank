@@ -30,3 +30,75 @@
   <p class="deposito">Depósito em Conta - Dinheiro</p>
   <hr class="linha" />
 </div>
+<p class="text-value">Valor limite por envelope : R$ 5.000,00.</p>
+
+<div class="">
+  <form class="formulario-deposito">
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="col-auto">
+        <label for="agencia" class="form-label">Agência:</label>
+      </div>
+      <div class="col-auto">
+        <input
+          type="text"
+          class="form-control"
+          id="agencia"
+          name="agencia"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="col-auto">
+        <label for="conta" class="form-label">Conta para Depósito:</label>
+      </div>
+      <div class="col-auto">
+        <input
+          type="text"
+          class="form-control"
+          id="conta"
+          name="conta"
+          required
+        />
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center mb-3">
+      <div class="col-auto">
+        <label for="valor" class="form-label">Valor:*</label>
+      </div>
+      <div class="col-auto">
+        <input
+          type="number"
+          class="form-control"
+          id="valor"
+          name="valor"
+          min="0"
+          step="0.01"
+          required
+        />
+      </div>
+    </div>
+  </form>
+</div>
+
+<p class="mensage">* VALOR SUJEITO A CONFERÊNCIA *</p>
+
+<div class="deposit row justify-content-around align-items-center">
+  <div class="col-auto">
+    <button type="submit" class="btn">Depositar</button>
+  </div>
+
+  <div class="col-auto mr-2">
+    <button type="submit" class="btn">Corrige</button>
+  </div>
+</div>
+
+<div class="back row justify-content-around align-items-center">
+  <div class="col-auto">
+    <button type="submit" class="btn">Voltar</button>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn">Cancela</button>
+  </div>
+</div>

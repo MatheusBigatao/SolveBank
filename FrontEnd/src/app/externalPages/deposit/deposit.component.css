@@ -16,10 +16,66 @@ header {
   font-size: 25px;
   font-family: "Roboto", sans-serif;
   margin-bottom: auto;
-  margin-left: 10px;
+  margin-left: 50px;
   margin-top: 10px;
 }
 .linha {
-  border-top: 1px solid white;
+  border-top: 2px solid white;
   margin: 10px 0;
+}
+
+.text-value {
+  color: #ff9800;
+  font-family: "Roboto", sans-serif;
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-label {
+  color: #ff9800;
+  font-family: "Roboto", sans-serif;
+}
+
+.ag {
+  margin: 0 auto;
+}
+.form-control {
+  width: 300px;
+  height: 50px;
+}
+
+.mensage {
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn {
+  color: white;
+  background-color: #ff9800;
+  border: solid;
+  border-style: groove;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 300px;
+  height: 70px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: "Roboto", sans-serif;
+}
+.btn:hover {
+  background-color: #b97001;
+  color: #ffffff;
+}
+
+/*.back {
+}*/
+.deposit {
+  /* display: flex;*/
+  /*justify-content: space-between; */
+
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
