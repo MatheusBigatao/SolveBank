@@ -7,17 +7,17 @@ body {
 
 .transfer-form {
   width: 50%;
-  margin: 50px auto;
+  margin: 3.125rem auto;
 }
 
 .transfer-title {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   color: var(--text);
 }
 
 .form-group {
   margin-bottom: 1.25rem;
-  height: 78px;
+  height: 4.875rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -26,15 +26,15 @@ body {
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.313rem;
   font-weight: bold;
 }
 
 input[type="text"] {
   width: 100%;
-  padding: 10px;
+  padding: 0.625rem;
   border: 1px solid var(--gray);
-  border-radius: 5px;
+  border-radius: 0.313rem;
 }
 
 .required-field {
@@ -42,13 +42,17 @@ input[type="text"] {
   font-size: 0.75rem;
 }
 
+.transfer-buttons {
+  flex-direction: column;
+  align-items: center;
+}
+
 .transfer-buttons button {
   font-size: 1.2rem;
   font-weight: bold;
   width: 100%;
-  padding: 20px 10px;
-  margin-top: 20px;
-  margin-right: 20px;
+  padding: 1.25rem 0.625rem;
+  margin-top: 2.25rem;
   background-color: var(--secondary);
   color: var(--text);
   transition: 0.5s all ease;
@@ -63,12 +67,23 @@ input[type="text"] {
     width: 70%;
   }
 
-  .form-group,
-  .transfer-buttons button {
+  .form-group {
     display: inline-block;
-    width: calc(48% - 10px);
-    margin-left: 15px;
+    width: calc(48% - 0.625rem);
+    margin-left: 0.938rem;
     vertical-align: top;
+  }
+
+  .transfer-buttons {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .transfer-buttons button {
+    width: calc(48% - 0.625rem);
+    width: 27%;
+    padding: 1.25rem 0.313rem;
+    margin-right: 0.625rem;
   }
 
   .form-group:last-child {
@@ -76,10 +91,14 @@ input[type="text"] {
   }
 
   .transfer-buttons button:nth-of-type(2n) {
-    margin-left: 10px;
+    margin-left: 1.625rem;
+    margin-right: 1.625rem;
   }
 
   .transfer-buttons button:last-child {
-    margin-left: 10px;
+    margin-left: 0.625rem;
+    margin-right: 0;
   }
+  
 }
+
