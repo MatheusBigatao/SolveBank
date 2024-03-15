@@ -1,1 +1,156 @@
-<p>transfer works!</p>
+<body>
+  <app-menu-home></app-menu-home>
+
+  <main>
+    <div class="transfer-form">
+      <h2 class="transfer-title text-center">Transferências</h2>
+      <form [formGroup]="transferForm">
+        <div class="form-group">
+          <label for="beneficiary">Beneficiário</label>
+          <input
+            type="text"
+            name="beneficiary"
+            id="beneficiary"
+            formControlName="beneficiary"
+            placeholder="Nome do Beneficiário"
+          />
+
+          <div
+            class="required-field"
+            *ngIf="
+              transferForm.get('beneficiary')?.invalid &&
+              transferForm.get('beneficiary')?.touched
+            "
+          >
+            <span *ngIf="transferForm.get('beneficiary')?.errors?.['required']">
+              Campo obrigatório
+            </span>
+            <span *ngIf="transferForm.get('beneficiary')?.errors?.['pattern']">
+              Beneficiário deve conter apenas letras
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sourceAccount">Conta Origem</label>
+          <input
+            type="text"
+            name="sourceAccount"
+            id="source-account"
+            formControlName="sourceAccount"
+            placeholder="12345678-9"
+          />
+
+          <div
+            class="required-field"
+            *ngIf="
+              transferForm.get('sourceAccount')?.invalid &&
+              transferForm.get('sourceAccount')?.touched
+            "
+          >
+            <span
+              *ngIf="transferForm.get('sourceAccount')?.errors?.['required']"
+            >
+              Campo obrigatório
+            </span>
+            <span
+              *ngIf="transferForm.get('sourceAccount')?.errors?.['pattern']"
+            >
+              Conta Origem deve estar no formato 00000000-0
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="destinationBranch">Agência Destino</label>
+          <input
+            type="text"
+            name="destinationBranch"
+            id="destination-branch"
+            formControlName="destinationBranch"
+            placeholder="0001"
+          />
+
+          <div
+            class="required-field"
+            *ngIf="
+              transferForm.get('destinationBranch')?.invalid &&
+              transferForm.get('destinationBranch')?.touched
+            "
+          >
+            <span
+              *ngIf="transferForm.get('destinationBranch')?.errors?.['required']"
+            >
+              Campo obrigatório
+            </span>
+            <span
+              *ngIf="transferForm.get('destinationBranch')?.errors?.['pattern']"
+            >
+              Agência Destino deve estar no formato 0000
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="destinationAccount">Conta Destino</label>
+          <input
+            type="text"
+            name="destinationAccount"
+            id="destination-account"
+            formControlName="destinationAccount"
+            placeholder="12345678-9"
+          />
+
+          <div
+            class="required-field"
+            *ngIf="
+              transferForm.get('destinationAccount')?.invalid &&
+              transferForm.get('destinationAccount')?.touched
+            "
+          >
+            <span
+              *ngIf="transferForm.get('destinationAccount')?.errors?.['required']"
+            >
+              Campo obrigatório
+            </span>
+            <span
+              *ngIf="transferForm.get('destinationAccount')?.errors?.['pattern']"
+            >
+              Conta Destino deve estar no formato 00000000-0
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="value">Valor</label>
+          <input
+            type="text"
+            name="value"
+            id="value"
+            formControlName="value"
+            placeholder="R$ 0,00"
+            (input)="valueFormatter($event)"
+          />
+
+          <div
+            class="required-field"
+            *ngIf="
+              transferForm.get('value')?.invalid &&
+              transferForm.get('value')?.touched
+            "
+          >
+            <span *ngIf="transferForm.get('value')?.errors?.['required']">
+              Campo obrigatório
+            </span>
+          </div>
+        </div>
+
+        <div class="transfer-buttons d-flex justify-content-center">
+          <button type="button" class="btn">Voltar</button>
+          <button type="reset" class="btn">Limpar</button>
+          <button type="submit" class="btn">Transferir</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>

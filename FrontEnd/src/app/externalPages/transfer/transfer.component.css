@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--secondary);
+}
+
+.transfer-form {
+  width: 50%;
+  margin: 50px auto;
+}
+
+.transfer-title {
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  height: 78px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+}
+
+.required-field {
+  color: var(--danger);
+  font-size: 0.75rem;
+}
+
+.transfer-buttons button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+  padding: 20px 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+  background-color: var(--secondary);
+  color: var(--text);
+  transition: 0.5s all ease;
+}
+
+.transfer-buttons button:hover {
+  background-color: var(--secondary-hover-dark);
+}
+
+@media (min-width: 768px) {
+  .transfer-form {
+    width: 70%;
+  }
+
+  .form-group,
+  .transfer-buttons button {
+    display: inline-block;
+    width: calc(48% - 10px);
+    margin-left: 15px;
+    vertical-align: top;
+  }
+
+  .form-group:last-child {
+    margin-left: 0;
+  }
+
+  .transfer-buttons button:nth-of-type(2n) {
+    margin-left: 10px;
+  }
+
+  .transfer-buttons button:last-child {
+    margin-left: 10px;
+  }
+}
