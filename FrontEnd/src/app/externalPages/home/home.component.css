@@ -1,20 +1,3 @@
-header {
-  background-color: var(--primary);
-  color: var(--text);
-}
-
-.header-bank-name span {
-  color: var(--secondary);
-}
-
-.codesolve-logo {
-  width: 1.875rem;
-}
-
-.greeting {
-  color: var(--text);
-}
-
 .btn-action {
   background-color: var(--secondary);
   color: var(--text);
@@ -37,7 +20,11 @@ header {
   }
 
   .btn-action p {
-    font-size: 0.75rem;
+    font-size: 1.375rem;
+  }
+
+  .btn-action i {
+    font-size: 1.375rem;
   }
 }
 
@@ -48,6 +35,10 @@ header {
   }
 
   .btn-action p {
-    font-size: 1rem;
+    font-size: 2rem;
+  }
+
+  .btn-action i {
+    font-size: 2rem;
   }
 }
