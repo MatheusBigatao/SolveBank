@@ -7,11 +7,9 @@ namespace SolveBank.Entities.Models
     {
         [Key]
         public Guid Id { get; set; }
-
         [Required]
         [ForeignKey("ContaBancaria")]
         public Guid ContaID { get; set; }
-
         [Required]
         [ForeignKey("Atendimento")]
         public Guid AtendimentoID { get; set; }

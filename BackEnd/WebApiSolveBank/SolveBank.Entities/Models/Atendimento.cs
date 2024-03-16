@@ -14,7 +14,6 @@ namespace SolveBank.Entities.Models
         [ForeignKey("ContaBancaria")]
         public Guid ContaID { get; set; }
         public virtual ContaBancaria ContaBancaria { get; set; } = null!;
-
         public DateTime DataSolicitacao { get; set; }
         public DateTime DataUltimaResposta { get; set; }
         public EnumStatusAtendimento StatusAtendimento { get; set; }
