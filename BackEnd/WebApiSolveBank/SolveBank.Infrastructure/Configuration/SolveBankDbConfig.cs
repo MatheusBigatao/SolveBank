@@ -29,6 +29,5 @@ namespace SolveBank.Infrastructure.Configuration
                 .HasForeignKey(conta => conta.ContaID)
                 .OnDelete(DeleteBehavior.Restrict);
         }
-
     }
 }
