@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SolveBank.Infrastructure.Repositories.Contracts
+namespace SolveBank.Infrastructure.Repositories.Services
 {
-    internal interface IAutenticacao2Fatores
+    public class Autenticacao2FatoresService
     {
     }
 }
