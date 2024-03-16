@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SolveBank.Entities.Models
 {
     public class TTransferencia : Transacao
     {
+        [Required]
+        [ForeignKey("Transacao")]
+        public Guid TransacaoID { get; set; }
+        public virtual Transacao Transacao {get; set;} = null!;
         public string Beneficiario { get; set; } = null!;
         [Required]
         [StringLength(20, ErrorMessage = " AgenciaDestino deve conter no máximo {1} e no mínimo {2} caracteres", MinimumLength = 4)]
