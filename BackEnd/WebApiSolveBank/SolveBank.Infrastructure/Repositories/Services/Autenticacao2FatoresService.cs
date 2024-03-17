@@ -11,24 +11,18 @@ namespace SolveBank.Infrastructure.Repositories.Services
     public class Autenticacao2FatoresService : IAutenticacao2FatoresRepository
     {
         private readonly SolveBankDbConfig _solveBankDbConfig;
-        private readonly IUsuarioRepository _usuarioRepository;
-        private readonly IWebTokenRepository _webTokenRepository;
         private readonly IEmailRepository _emailRepository;
         private readonly IMapper _mapper;
 
         public Autenticacao2FatoresService(
-            SolveBankDbConfig solveBankDbConfig,
-            IUsuarioRepository usuarioRepository,
-            IWebTokenRepository webTokenRepository,
-            IEmailRepository emailRepository,
-            IMapper mapper
+            SolveBankDbConfig solveBankDbConfig,            
+            IMapper mapper,
+            IEmailRepository email
             )
         {
-            _solveBankDbConfig = solveBankDbConfig;
-            _usuarioRepository = usuarioRepository;
-            _webTokenRepository = webTokenRepository;
-            _emailRepository = emailRepository;
+            _solveBankDbConfig = solveBankDbConfig;            
             _mapper = mapper;
+            _emailRepository = email;
         }
 
         public async Task<ResponseExibirUsuarioDTO?> AutenticarUsuario(string autenticacaoToken)
@@ -36,10 +30,9 @@ namespace SolveBank.Infrastructure.Repositories.Services
             var token2Fatores = await _solveBankDbConfig.Autenticacao2Fatores.FirstOrDefaultAsync(a => a.Token == autenticacaoToken);
             if (token2Fatores != null && token2Fatores.Utilizado != true)
             {
-                var usuarioLogin = await _usuarioRepository.BuscarUsuario(token2Fatores.UsuarioID);
+                var usuarioLogin = await _solveBankDbConfig.Usuarios.FindAsync(token2Fatores.UsuarioID);
                 var usuarioRetorno = new ResponseExibirUsuarioDTO();
-                _mapper.Map(usuarioLogin, usuarioRetorno);
-                usuarioRetorno.WebToken = await _webTokenRepository.CadastrarToken(usuarioLogin.Id);
+                _mapper.Map(usuarioLogin, usuarioRetorno);                
                 return usuarioRetorno;
             }
             else
@@ -49,7 +42,7 @@ namespace SolveBank.Infrastructure.Repositories.Services
         }   
         public async Task<bool> CriarAutenticacao(Autenticacao2Fatores autenticacao2Fatores)
         {
-            var usuario = await _usuarioRepository.BuscarUsuario(autenticacao2Fatores.UsuarioID);
+            var usuario = await _solveBankDbConfig.Usuarios.FindAsync(autenticacao2Fatores.UsuarioID);
             if(usuario == null) return false;
             _solveBankDbConfig.Autenticacao2Fatores.Add(autenticacao2Fatores);
             await _solveBankDbConfig.SaveChangesAsync();            

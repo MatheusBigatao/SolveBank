@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SolveBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cac27f08a46b023e14a136515b6194d04668be01")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3b30550e996bae37793fed2a557088c70841d32")]
 [assembly: System.Reflection.AssemblyProductAttribute("SolveBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SolveBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

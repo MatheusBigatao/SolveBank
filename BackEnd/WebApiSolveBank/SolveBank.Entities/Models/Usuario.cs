@@ -9,8 +9,7 @@ namespace SolveBank.Entities.Models
     public class Usuario : IdentityUser
     {
         public string NomeCompleto { get; set; }       
-        public string CPF_CNPJ { get; set; }       
-        public Endereco Endereco { get; set; }
+        public string CPF_CNPJ { get; set; } 
         public EnumTipoUsuario EnumTipoUsuario { get; set; }
         public List<ContaBancaria> ContasBancarias { get; set; }
         public DateTime DataCadastro { get; set; }
@@ -27,8 +26,7 @@ namespace SolveBank.Entities.Models
             )
         {
             this.NomeCompleto = nomeCompleto;
-            this.CPF_CNPJ = cpf_cnpj;
-            this.Endereco = endereco;
+            this.CPF_CNPJ = cpf_cnpj;            
             this.EnumTipoUsuario = tipoUsuario;
             this.ContasBancarias = contasBancarias;
             this.DataCadastro = dataCadastro;

@@ -12,8 +12,8 @@ using SolveBank.Infrastructure.Configuration;
 namespace SolveBank.Infrastructure.Migrations
 {
     [DbContext(typeof(SolveBankDbConfig))]
-    [Migration("20240317135402_testeV2")]
-    partial class testeV2
+    [Migration("20240317182706_testeV1")]
+    partial class testeV1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -282,10 +282,9 @@ namespace SolveBank.Infrastructure.Migrations
 
                     b.Property<int>("Numero")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(6)
-                        .IsUnicode(false)
-                        .HasColumnType("int")
-                        .HasComputedColumnSql("RIGHT('000000' + CAST(NumeroConta AS VARCHAR(6)), 6)");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Numero"));
 
                     b.Property<decimal>("Saldo")
                         .HasPrecision(18, 2)
@@ -336,20 +335,13 @@ namespace SolveBank.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UsuarioID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("UsuarioId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuarioID");
-
-                    b.HasIndex("UsuarioId")
-                        .IsUnique()
-                        .HasFilter("[UsuarioId] IS NOT NULL");
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Enderecos");
                 });
@@ -463,7 +455,7 @@ namespace SolveBank.Infrastructure.Migrations
 
                     b.Property<string>("CPF_CNPJ")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -526,6 +518,9 @@ namespace SolveBank.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CPF_CNPJ")
+                        .IsUnique();
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -746,13 +741,9 @@ namespace SolveBank.Infrastructure.Migrations
                 {
                     b.HasOne("SolveBank.Entities.Models.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioID")
+                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
-
-                    b.HasOne("SolveBank.Entities.Models.Usuario", null)
-                        .WithOne("Endereco")
-                        .HasForeignKey("SolveBank.Entities.Models.Endereco", "UsuarioId");
 
                     b.Navigation("Usuario");
                 });
@@ -843,9 +834,6 @@ namespace SolveBank.Infrastructure.Migrations
             modelBuilder.Entity("SolveBank.Entities.Models.Usuario", b =>
                 {
                     b.Navigation("ContasBancarias");
-
-                    b.Navigation("Endereco")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

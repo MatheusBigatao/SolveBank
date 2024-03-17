@@ -10,8 +10,8 @@ namespace SolveBank.Entities.Models
         public Guid Id { get; set; }
         [Required]
         [ForeignKey("Usuario")]
-        public string UsuarioID { get; set; } = null!;
-        public virtual Usuario Usuario {  get; set; } = null!;
+        public string? UsuarioId { get; set; } 
+        public virtual Usuario? Usuario {  get; set; } 
         [Required]
         public string Logradouro { get; set; } = null!;
         [Required]

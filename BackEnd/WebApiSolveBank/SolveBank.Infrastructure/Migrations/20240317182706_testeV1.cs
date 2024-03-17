@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SolveBank.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class dbtesteV1 : Migration
+    public partial class testeV1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,7 +64,7 @@ namespace SolveBank.Infrastructure.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     NomeCompleto = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CPF_CNPJ = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CPF_CNPJ = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     EnumTipoUsuario = table.Column<int>(type: "int", nullable: false),
                     DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Removido = table.Column<bool>(type: "bit", nullable: false),
@@ -228,24 +228,18 @@ namespace SolveBank.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UsuarioID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Logradouro = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cidade = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Numero = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Bairro = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CEP = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Complemento = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    Complemento = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Enderecos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Enderecos_AspNetUsers_UsuarioID",
-                        column: x => x.UsuarioID,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Enderecos_AspNetUsers_UsuarioId",
                         column: x => x.UsuarioId,
@@ -261,7 +255,6 @@ namespace SolveBank.Infrastructure.Migrations
                     Token = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UsuarioID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DataCriado = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Utilizado = table.Column<bool>(type: "bit", nullable: false),
                     ExpiracaoToken = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -435,6 +428,12 @@ namespace SolveBank.Infrastructure.Migrations
                 column: "NormalizedEmail");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_CPF_CNPJ",
+                table: "AspNetUsers",
+                column: "CPF_CNPJ",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AspNetUsers_SolveBankModelId",
                 table: "AspNetUsers",
                 column: "SolveBankModelId");
@@ -472,16 +471,9 @@ namespace SolveBank.Infrastructure.Migrations
                 column: "UsuarioID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Enderecos_UsuarioID",
-                table: "Enderecos",
-                column: "UsuarioID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Enderecos_UsuarioId",
                 table: "Enderecos",
-                column: "UsuarioId",
-                unique: true,
-                filter: "[UsuarioId] IS NOT NULL");
+                column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Mensagens_AtendimentoID",

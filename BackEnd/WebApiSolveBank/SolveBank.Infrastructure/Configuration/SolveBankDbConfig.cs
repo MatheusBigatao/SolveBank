@@ -89,13 +89,7 @@ namespace SolveBank.Infrastructure.Configuration
                 .HasPrecision(18, 2);
             builder.Entity<ContaBancaria>()
                 .Property(cb => cb.Limite)
-            .HasPrecision(18, 2);
-
-            builder.Entity<ContaBancaria>()
-            .Property(c => c.Numero)            
-            .HasMaxLength(6) 
-            .IsUnicode(false) 
-            .HasComputedColumnSql("RIGHT('000000' + CAST(NumeroConta AS VARCHAR(6)), 6)");
+            .HasPrecision(18, 2);            
 
              builder.Entity<ContaBancaria>()
                 .HasOne(cb => cb.Usuario)
@@ -116,7 +110,7 @@ namespace SolveBank.Infrastructure.Configuration
             builder.Entity<Endereco>()
                 .HasOne(e => e.Usuario)
                 .WithMany()
-                .HasForeignKey(u => u.UsuarioID)
+                .HasForeignKey(u => u.UsuarioId)
                 .OnDelete(DeleteBehavior.NoAction);
 
             #endregion
