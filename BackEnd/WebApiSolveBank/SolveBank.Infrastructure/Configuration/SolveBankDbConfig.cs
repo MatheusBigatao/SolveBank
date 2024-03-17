@@ -21,11 +21,12 @@ namespace SolveBank.Infrastructure.Configuration
         public DbSet<TDeposito> Depositos { get; set; }
         public DbSet<TPagamento> Pagamentos { get; set; }
         // public DbSet<TPix> Pixs { get; set; }  // --> TODO - IMPLEMENTAR PIX
-        public DbSet<Transacao> Transacoes { get; set; }        
+        public DbSet<Transacao> Transacoes { get; set; }
         public DbSet<TransacaoCartao> TransacoesCartoes { get; set; }
         public DbSet<TTransferencia> Transferencias { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<WebToken> WebTokens { get; set; }
+        public DbSet<TSaque> Saques { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -98,14 +99,14 @@ namespace SolveBank.Infrastructure.Configuration
 
             #region Depositos
             builder.Entity<TPagamento>()
-                .HasBaseType<Transacao>();          
+                .HasBaseType<Transacao>();
             #endregion
 
             #region Enderecos
 
             builder.Entity<Endereco>().HasKey(e => e.Id);
             builder.Entity<Endereco>().Property(e => e.Id).ValueGeneratedOnAdd();
-            builder.Entity<Endereco>() // 1 usuario para 1 endereco
+            builder.Entity<Endereco>()
                 .HasOne(e => e.Usuario)
                 .WithMany()
                 .HasForeignKey(u => u.UsuarioID)
@@ -133,7 +134,7 @@ namespace SolveBank.Infrastructure.Configuration
 
             #region Pagamentos
             builder.Entity<TPagamento>()
-               .HasBaseType<Transacao>(); 
+               .HasBaseType<Transacao>();
             #endregion
 
             #region Pix
@@ -175,8 +176,13 @@ namespace SolveBank.Infrastructure.Configuration
             #endregion
 
             #region Tranferencias
-            builder.Entity<TTransferencia>() // 1 transação para 1 transferencia
-                .HasBaseType<Transacao>();           
+            builder.Entity<TTransferencia>()
+                .HasBaseType<Transacao>();
+            #endregion
+
+            #region Saques
+            builder.Entity<TSaque>()
+                .HasBaseType<Transacao>();
             #endregion
 
             #region WebToken

@@ -8,29 +8,34 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Infrastructure.Repositories.Services
 {
-    public class CartaoService : ICartaoRepository
+    public class SaqueService : ITransacaoRepository<TSaque>
     {
-        public Task<bool> BloquearCartao(Guid cartaoID, decimal novoLimite)
+        public Task<TSaque> AgendarTransacao(TSaque transacao)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> BloquearDesbloquearCartao(string cartaoID)
+        public Task<List<TSaque>> ConsultarTransacaoAgendadas(TSaque transacao)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Cartao>> BuscarCartao(Guid contaID)
+        public Task<List<TSaque>> ConsultarTransacaoData(Guid contaID, DateTime dataSelecionada)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> CreditarTaxaCashBack(Cartao cartao, decimal valorCashBack)
+        public Task<List<TSaque>> ConsultarTransacaoPerirodo(Guid contaID, DateTime dataInicio, DateTime dataFim)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Cartao> CriarCartao(Cartao cartao)
+        public Task<List<TSaque>> ConsultarTrasacoes(TSaque transacao)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TSaque> RealizarTransacao(TSaque transacao)
         {
             throw new NotImplementedException();
         }

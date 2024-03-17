@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SolveBank.Entities.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace SolveBank.Infrastructure.Repositories.Contracts
 {
     public interface IWebTokenRepository
     {
+        Task<WebToken> CadastrarToken(string usuarioID);
+        Task<bool> ExcluirToken(string tokenID);
     }
 }

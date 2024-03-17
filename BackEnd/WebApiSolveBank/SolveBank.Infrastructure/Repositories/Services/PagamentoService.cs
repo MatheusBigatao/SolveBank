@@ -8,34 +8,34 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Infrastructure.Repositories.Services
 {
-    public class TransacaoService : ITransacaoRepository<Transacao>
+    public class PagamentoService : ITransacaoRepository<TPagamento>
     {
-        public Task<Transacao> AgendarTransacao(Transacao transacao)
+        public Task<TPagamento> AgendarTransacao(TPagamento transacao)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Transacao>> ConsultarTransacaoAgendadas(Transacao transacao)
+        public Task<List<TPagamento>> ConsultarTransacaoAgendadas(TPagamento transacao)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Transacao>> ConsultarTransacaoData(Guid contaID, DateTime dataSelecionada)
+        public Task<List<TPagamento>> ConsultarTransacaoData(Guid contaID, DateTime dataSelecionada)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Transacao>> ConsultarTransacaoPerirodo(Guid contaID, DateTime dataInicio, DateTime dataFim)
+        public Task<List<TPagamento>> ConsultarTransacaoPerirodo(Guid contaID, DateTime dataInicio, DateTime dataFim)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Transacao>> ConsultarTrasacoes(Transacao transacao)
+        public Task<List<TPagamento>> ConsultarTrasacoes(TPagamento transacao)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Transacao> RealizarTransacao(Transacao transacao)
+        public Task<TPagamento> RealizarTransacao(TPagamento transacao)
         {
             throw new NotImplementedException();
         }

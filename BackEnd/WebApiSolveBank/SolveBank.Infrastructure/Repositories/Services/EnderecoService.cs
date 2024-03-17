@@ -8,29 +8,24 @@ using System.Threading.Tasks;
 
 namespace SolveBank.Infrastructure.Repositories.Services
 {
-    public class CartaoService : ICartaoRepository
+    public class EnderecoService : IEnderecoRepository
     {
-        public Task<bool> BloquearCartao(Guid cartaoID, decimal novoLimite)
+        public Task<Endereco> AtualizarEndereco(Endereco endereco, string enderecoID)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> BloquearDesbloquearCartao(string cartaoID)
+        public Task<Endereco> CadastrarEndereco(Endereco endereco)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Cartao>> BuscarCartao(Guid contaID)
+        public Task<Endereco> GetEndereco(string enderecoID)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> CreditarTaxaCashBack(Cartao cartao, decimal valorCashBack)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Cartao> CriarCartao(Cartao cartao)
+        public Task<bool> RemoverEndereco(string enderecoID)
         {
             throw new NotImplementedException();
         }

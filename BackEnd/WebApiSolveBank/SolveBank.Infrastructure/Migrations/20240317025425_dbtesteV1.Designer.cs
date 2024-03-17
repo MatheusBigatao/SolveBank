@@ -12,8 +12,8 @@ using SolveBank.Infrastructure.Configuration;
 namespace SolveBank.Infrastructure.Migrations
 {
     [DbContext(typeof(SolveBankDbConfig))]
-    [Migration("20240316160152_testeV1")]
-    partial class testeV1
+    [Migration("20240317025425_dbtesteV1")]
+    partial class dbtesteV1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -607,6 +607,17 @@ namespace SolveBank.Infrastructure.Migrations
                         });
 
                     b.HasDiscriminator().HasValue("TPagamento");
+                });
+
+            modelBuilder.Entity("SolveBank.Entities.Models.TSaque", b =>
+                {
+                    b.HasBaseType("SolveBank.Entities.Models.Transacao");
+
+                    b.Property<string>("LocalDoSaque")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("TSaque");
                 });
 
             modelBuilder.Entity("SolveBank.Entities.Models.TTransferencia", b =>

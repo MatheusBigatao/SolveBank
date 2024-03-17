@@ -606,6 +606,17 @@ namespace SolveBank.Infrastructure.Migrations
                     b.HasDiscriminator().HasValue("TPagamento");
                 });
 
+            modelBuilder.Entity("SolveBank.Entities.Models.TSaque", b =>
+                {
+                    b.HasBaseType("SolveBank.Entities.Models.Transacao");
+
+                    b.Property<string>("LocalDoSaque")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("TSaque");
+                });
+
             modelBuilder.Entity("SolveBank.Entities.Models.TTransferencia", b =>
                 {
                     b.HasBaseType("SolveBank.Entities.Models.Transacao");

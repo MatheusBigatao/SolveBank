@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using SolveBank.Entities.Models;
+using SolveBank.Infrastructure;
 using SolveBank.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,9 +14,30 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Adicionando InfrastructureModule
+builder.Services.AddInfrastructure();
+
 builder.Services.AddDbContext<SolveBankDbConfig>(options =>
 {
     options.UseSqlServer(configuration.GetConnectionString("DbConectionTest"));
+});
+
+//Adicionando Congiguração de E-mail
+builder.Services.Configure<EmailConfiguracao>(builder.Configuration.GetSection("SmptConfig"));
+
+//Adidicionando Configuração de CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        string[] origins = { "http://localhost:4200", "" };
+        builder.
+         WithOrigins(origins)
+         .WithMethods("GET", "POST", "PUT", "PATCH", "DELETE")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials(); ;
+    });
 });
 
 var app = builder.Build();

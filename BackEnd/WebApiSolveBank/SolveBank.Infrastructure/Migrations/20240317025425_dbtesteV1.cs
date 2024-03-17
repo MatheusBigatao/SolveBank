@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SolveBank.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class testeV1 : Migration
+    public partial class dbtesteV1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -341,6 +341,7 @@ namespace SolveBank.Infrastructure.Migrations
                     CodigoDoEnvelope = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TPagamento_Beneficiario = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NumeroBoleto = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LocalDoSaque = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Beneficiario = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AgenciaDestino = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     NumeroContaDestino = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
