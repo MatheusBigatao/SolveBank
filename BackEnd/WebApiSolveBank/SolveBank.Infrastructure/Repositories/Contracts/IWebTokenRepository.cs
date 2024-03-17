@@ -9,7 +9,6 @@ namespace SolveBank.Infrastructure.Repositories.Contracts
 {
     public interface IWebTokenRepository
     {
-        Task<WebToken> CadastrarToken(string usuarioID);
-        Task<bool> ExcluirToken(string tokenID);
+        Task<WebToken> CadastrarToken(string usuarioID);        
     }
 }

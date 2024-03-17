@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using SolveBank.Entities.Enums;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace SolveBank.Entities.Models
 {
     public class Usuario : IdentityUser
     {
-        public string NomeCompleto { get; set; }
+        public string NomeCompleto { get; set; }       
         public string CPF_CNPJ { get; set; }       
         public Endereco Endereco { get; set; }
         public EnumTipoUsuario EnumTipoUsuario { get; set; }

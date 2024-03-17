@@ -17,7 +17,6 @@ namespace SolveBank.Entities.Models
         public string UsuarioID { get; set; } = null!;
         public virtual Usuario Usuario { get; set; } = null!;
         public DateTime DataCriado { get; set; }
-        public bool Utilizado { get; set; }
         public DateTime ExpiracaoToken { get; set; }
     }
 }

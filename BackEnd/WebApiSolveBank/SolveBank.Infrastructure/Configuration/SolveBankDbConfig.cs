@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SolveBank.Entities.Models;
+using System.Reflection.Emit;
 
 namespace SolveBank.Infrastructure.Configuration
 {
@@ -88,9 +89,15 @@ namespace SolveBank.Infrastructure.Configuration
                 .HasPrecision(18, 2);
             builder.Entity<ContaBancaria>()
                 .Property(cb => cb.Limite)
-                .HasPrecision(18, 2);
+            .HasPrecision(18, 2);
 
             builder.Entity<ContaBancaria>()
+            .Property(c => c.Numero)            
+            .HasMaxLength(6) 
+            .IsUnicode(false) 
+            .HasComputedColumnSql("RIGHT('000000' + CAST(NumeroConta AS VARCHAR(6)), 6)");
+
+             builder.Entity<ContaBancaria>()
                 .HasOne(cb => cb.Usuario)
                 .WithMany(usuario => usuario.ContasBancarias)
                 .HasForeignKey(cb => cb.UsuarioID)
@@ -183,6 +190,11 @@ namespace SolveBank.Infrastructure.Configuration
             #region Saques
             builder.Entity<TSaque>()
                 .HasBaseType<Transacao>();
+            #endregion
+
+            #region Usuario
+            builder.Entity<Usuario>()
+                .HasIndex(u=> u.CPF_CNPJ).IsUnique();
             #endregion
 
             #region WebToken

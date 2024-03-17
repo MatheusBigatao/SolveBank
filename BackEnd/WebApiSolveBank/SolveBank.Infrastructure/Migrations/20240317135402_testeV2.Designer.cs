@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SolveBank.Infrastructure.Configuration;
 
@@ -11,9 +12,11 @@ using SolveBank.Infrastructure.Configuration;
 namespace SolveBank.Infrastructure.Migrations
 {
     [DbContext(typeof(SolveBankDbConfig))]
-    partial class SolveBankDbConfigModelSnapshot : ModelSnapshot
+    [Migration("20240317135402_testeV2")]
+    partial class testeV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

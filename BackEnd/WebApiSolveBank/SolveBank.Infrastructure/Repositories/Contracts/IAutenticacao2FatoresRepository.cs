@@ -1,15 +1,11 @@
-﻿using SolveBank.Entities.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SolveBank.Entities.DTOs.UsuarioDTOs;
+using SolveBank.Entities.Models;
 
 namespace SolveBank.Infrastructure.Repositories.Contracts
 {
     public interface IAutenticacao2FatoresRepository
     {
-        Task<Autenticacao2Fatores> CriarAutenticacao(Autenticacao2Fatores autenticacao2Fatores);
-        Task<bool>AtualizarAutenticacao(Guid autenticacaoID, bool utilizado);
+        Task<bool> CriarAutenticacao(Autenticacao2Fatores autenticacao2Fatores);
+        Task<ResponseExibirUsuarioDTO?> AutenticarUsuario(string autenticacaoToken);
     }
 }

@@ -1,14 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using SolveBank.Entities.Models;
+using SolveBank.Entities.Profiles.UsuarioProfile;
 using SolveBank.Infrastructure.Configuration;
+using SolveBank.Infrastructure.ExternalServices.Contracts;
+using SolveBank.Infrastructure.ExternalServices.Services;
 using SolveBank.Infrastructure.Repositories.Contracts;
 using SolveBank.Infrastructure.Repositories.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SolveBank.Infrastructure
 {
@@ -16,7 +14,8 @@ namespace SolveBank.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
-            services.AddRepositories();
+            services.AddRepositories();            
+            services.AddServices();
             services.AutoMapper();
             return services;
         }
@@ -34,12 +33,23 @@ namespace SolveBank.Infrastructure
             services.AddScoped<ITransacaoRepository<TDeposito>, DepositoService>();
             services.AddScoped<ITransacaoRepository<TTransferencia>, TransferenciaService>();
             services.AddScoped<IWebTokenRepository, WebTokenService>();
+            
             return services;
         }
-
+        private static IServiceCollection AddServices(this IServiceCollection services)
+        {
+            services.AddScoped<IEmailRepository, EmailService>();            
+            return services;
+        }
         private static IServiceCollection AutoMapper(this IServiceCollection services)
         {
+            services.AddAutoMapper(options =>
+            {
+                options.AddProfile<UsuarioProfile>();
+            });
+
             return services;
         }
+                
     }
 }
