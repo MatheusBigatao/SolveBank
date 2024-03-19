@@ -32,17 +32,17 @@
   </section>
 
   <section class="d-flex align-items-center justify-content-between py-5 px-5">
-    <button class="btn btn-action">
+    <a class="btn btn-action" [routerLink]="['/external/withdraw']">
       <i class="bi bi-cash-coin"></i>
       <p class="mb-0">Saque</p>
-    </button>
-    <button class="btn btn-action">
+    </a>
+    <a class="btn btn-action" [routerLink]="['/external/deposit']">
       <i class="bi bi-bank"></i>
       <p class="mb-0">Depósito</p>
-    </button>
-    <button class="btn btn-action">
+    </a>
+    <a class="btn btn-action" [routerLink]="['/external/transfer']">
       <i class="bi bi-arrow-left-right"></i>
       <p class="mb-0">Transferência</p>
-    </button>
+    </a>
   </section>
 </main>

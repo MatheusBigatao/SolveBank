@@ -3,6 +3,10 @@
   color: var(--text);
   width: 5.625rem;
   height: 5.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-action:hover {
@@ -11,6 +15,8 @@
 
 .btn-action p {
   font-size: 0.625rem;
+  text-decoration: none;
+  color: var(--text);
 }
 
 @media (min-width: 768px) {
