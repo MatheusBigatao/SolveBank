@@ -16,4 +16,5 @@ export class ExternalHomeComponent {
   //     localStorage.removeItem('userLogged');
   //     this.route.navigateByUrl("/login");
   //   }
+  
 }
