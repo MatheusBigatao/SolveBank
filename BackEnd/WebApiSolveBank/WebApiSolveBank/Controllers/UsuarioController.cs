@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SolveBank.Entities.DTOs.Usuario;
 using SolveBank.Entities.DTOs.UsuarioDTOs;
+using SolveBank.Entities.Enums;
+using SolveBank.Entities.Models;
+using SolveBank.Infrastructure.Repositories.Contracts;
+using SolveBank.Infrastructure.Repositories.Services;
 
 namespace WebApiSolveBank.Controllers
 {
@@ -8,10 +12,43 @@ namespace WebApiSolveBank.Controllers
     [Route("api/[controller]")]
     public class UsuarioController : ControllerBase
     {
+        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IContaBancariaRepository _contaBancariaRepository;
+        public UsuarioController(IUsuarioRepository usuarioRepository, IContaBancariaRepository contaBancariaRepository)
+        {
+            _usuarioRepository = usuarioRepository;
+            _contaBancariaRepository = contaBancariaRepository;
+        }
+
+
         [HttpPost("cadastrar")]
         public async Task<IActionResult> CadastrarUsuario([FromBody] RequestCriarUsuarioDTO requestCriarUsuarioDTO)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var usuarioCadastro = new Usuario()
+            {
+                NomeCompleto = $"{requestCriarUsuarioDTO.Nome} {requestCriarUsuarioDTO.Sobrenome}",
+                Email = requestCriarUsuarioDTO.Email,
+                PhoneNumber = requestCriarUsuarioDTO.Telefone,
+                EnumTipoUsuario = EnumTipoUsuario.Cliente,
+                Removido = false,
+                DataCadastro = DateTime.Now,
+                CPF_CNPJ = requestCriarUsuarioDTO.CPF_CNPJ,
+                UserName = requestCriarUsuarioDTO.CPF_CNPJ
+            };
+            var usuarioResult = await _usuarioRepository.Cadastrar(usuarioCadastro, requestCriarUsuarioDTO.Senha);
+            var contaBancaria = new ContaBancaria()
+            {
+                Agencia = "0001",
+                Saldo = 0,
+                Limite= 150,
+                UsuarioID= usuarioResult,
+                Informacoes= "Conta nova, recem criada"
+            };
+            await _contaBancariaRepository.CriarConta(contaBancaria);
+            return Ok("Usuário cadastrado com sucesso");
         }
 
         [HttpPost("login")]

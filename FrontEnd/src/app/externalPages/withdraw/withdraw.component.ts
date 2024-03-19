@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './withdraw.component.html',
   styleUrl: './withdraw.component.css'
 })
-export class WithdrawComponent {
+export class ExternalWithdrawComponent {
 
 }

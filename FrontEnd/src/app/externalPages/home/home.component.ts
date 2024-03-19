@@ -9,5 +9,11 @@ import { MenuHomeComponent } from '../../components/menu-home/menu-home.componen
   styleUrl: './home.component.css'
 })
 export class ExternalHomeComponent {
-
+  
+  //Tratamento de erro 401
+  // error: err => {
+  //   if (err.status === 401) {
+  //     localStorage.removeItem('userLogged');
+  //     this.route.navigateByUrl("/login");
+  //   }
 }

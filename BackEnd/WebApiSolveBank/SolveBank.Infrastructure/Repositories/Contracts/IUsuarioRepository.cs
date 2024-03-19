@@ -5,7 +5,7 @@ namespace SolveBank.Infrastructure.Repositories.Contracts
 {
     public interface IUsuarioRepository
     {
-        Task<IdentityResult> Cadastrar(Usuario usuario, string senha);
+        Task<string> Cadastrar(Usuario usuario, string senha);
         Task<Usuario> AtualizarCadastro(Usuario usuario);
         Task<Usuario?> Logar(string cpf, string senha);        
         Task<bool> ExcluirCadastro(string usuarioID);

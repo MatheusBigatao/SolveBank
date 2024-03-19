@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './deposit.component.html',
   styleUrl: './deposit.component.css'
 })
-export class DepositComponent {
+export class ExternalDepositComponent {
 
 }

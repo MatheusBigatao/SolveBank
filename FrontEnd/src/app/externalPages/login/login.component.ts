@@ -5,13 +5,13 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-External-login',
   standalone: true,
   imports: [CommonModule, FooterRightsComponent, ReactiveFormsModule, NgxMaskPipe, NgxMaskDirective],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class ExternalLoginComponent {
   loginForm: FormGroup;
 
   constructor(){

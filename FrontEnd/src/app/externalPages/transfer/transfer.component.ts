@@ -15,7 +15,7 @@ import {
   styleUrl: './transfer.component.css',
   imports: [CommonModule, MenuHomeComponent, ReactiveFormsModule],
 })
-export class TransferComponent {
+export class ExternalTransferComponent {
   transferForm: FormGroup;
 
   constructor() {

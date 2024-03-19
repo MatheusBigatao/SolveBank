@@ -6,4 +6,5 @@ import { Injectable } from '@angular/core';
 export class TransacaoService {
 
   constructor() { }
+  private uriApi = "https://api-tscontrol.marcusvogado.com/tsc/api/applicationuser/commonuser"
 }

@@ -11,7 +11,7 @@ namespace SolveBank.Entities.Models
         public string NomeCompleto { get; set; }       
         public string CPF_CNPJ { get; set; } 
         public EnumTipoUsuario EnumTipoUsuario { get; set; }
-        public List<ContaBancaria> ContasBancarias { get; set; }
+        public List<ContaBancaria> ContasBancarias { get; set; }       
         public DateTime DataCadastro { get; set; }
         public bool Removido { get; set; }
         public Usuario() { }

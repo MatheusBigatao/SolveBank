@@ -7,7 +7,7 @@
     <div>
       <h1 class="title">Crie a sua conta!</h1>
     </div>
-    <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+    <form [formGroup]="signUpForm">
       <input
         type="hidden"
         id="id"
@@ -77,7 +77,7 @@
                   id="cpf"
                   name="cpf"
                   placeholder="Insira seu CPF"
-                  formControlName="cpf"
+                  formControlName="cpf_cnpj"
                 />
                 <div
                   class="campo-obrigatorio"
@@ -193,7 +193,7 @@
           type="submit"
           [disabled]="signUpForm.invalid"
           class="btn-criar-conta"
-          (click)="submitForm()"
+          (click)="createUser()"
         >
           Criar Conta
         </button>

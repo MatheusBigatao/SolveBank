@@ -15,7 +15,7 @@ namespace SolveBank.Infrastructure.Repositories.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<TDeposito>> ConsultarTransacaoAgendadas(TDeposito transacao)
+        public Task<List<TDeposito>> ConsultarTransacaoAgendadas(Guid contaID)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace SolveBank.Infrastructure.Repositories.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<TDeposito>> ConsultarTrasacoes(TDeposito transacao)
+        public Task<List<TDeposito>> ConsultarTrasacoes(Guid contaID)
         {
             throw new NotImplementedException();
         }

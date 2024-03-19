@@ -89,9 +89,19 @@ namespace SolveBank.Infrastructure.Configuration
                 .HasPrecision(18, 2);
             builder.Entity<ContaBancaria>()
                 .Property(cb => cb.Limite)
-            .HasPrecision(18, 2);            
+            .HasPrecision(18, 2);
+            builder.Entity<ContaBancaria>()
+              .HasIndex(cb => cb.Numero)
+              .IsUnique(true);
+            builder.Entity<ContaBancaria>()
+              .Property(c => c.Numero)
+              .HasMaxLength(8)
+              .IsFixedLength();
+            builder.Entity<ContaBancaria>()
+              .Property(c => c.Numero)
+              .ValueGeneratedOnAdd();
 
-             builder.Entity<ContaBancaria>()
+            builder.Entity<ContaBancaria>()
                 .HasOne(cb => cb.Usuario)
                 .WithMany(usuario => usuario.ContasBancarias)
                 .HasForeignKey(cb => cb.UsuarioID)
@@ -188,7 +198,7 @@ namespace SolveBank.Infrastructure.Configuration
 
             #region Usuario
             builder.Entity<Usuario>()
-                .HasIndex(u=> u.CPF_CNPJ).IsUnique();
+                .HasIndex(u => u.CPF_CNPJ).IsUnique();
             #endregion
 
             #region WebToken

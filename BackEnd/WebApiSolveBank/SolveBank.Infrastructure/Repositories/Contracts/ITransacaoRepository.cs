@@ -11,9 +11,9 @@ namespace SolveBank.Infrastructure.Repositories.Contracts
     {
         Task<T>RealizarTransacao(T transacao);
         Task<T> AgendarTransacao(T transacao);
-        Task<List<T>> ConsultarTrasacoes(T transacao);
-        Task<List<T>> ConsultarTransacaoAgendadas(T transacao);
+        Task<List<T>> ConsultarTrasacoes(Guid contaID);
+        Task<List<T>> ConsultarTransacaoAgendadas(Guid contaID );
         Task<List<T>> ConsultarTransacaoPerirodo(Guid contaID, DateTime dataInicio, DateTime dataFim);
-        Task<List<T>> ConsultarTransacaoData(Guid contaID,DateTime dataSelecionada);
+        Task<List<T>> ConsultarTransacaoData(Guid contaID, DateTime dataSelecionada);
     }
 }

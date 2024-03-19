@@ -14,6 +14,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { UsuarioService } from '../../services/usuario.service';
+import { Usuario } from '../../models/Usuario';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-signUp',
@@ -25,18 +28,17 @@ import { HttpClient } from '@angular/common/http';
 export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
-    console.log(this.signUpForm.value)
+    
   }
 
   signUpForm: FormGroup;
 
-  constructor(private _http: HttpClient, private _route: Router) {
-    this.signUpForm = new FormGroup({
-      id: new FormControl(uuidv4()),
+  constructor(private userServices:UsuarioService, private _route: Router) {
+    this.signUpForm = new FormGroup({     
       nome: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       sobrenome: new FormControl('', Validators.required),
-      cpf: new FormControl('', [
+      cpf_cnpj: new FormControl('', [
         Validators.required,
         Validators.pattern(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/),
       ]),
@@ -49,7 +51,6 @@ export class SignUpComponent implements OnInit {
       { validators: this.validatePasswords }
     );
   };
-
   validatePasswords(control: AbstractControl): { [key: string]: any }
     | null {
     const password = control.get('senha')?.value;
@@ -60,44 +61,17 @@ export class SignUpComponent implements OnInit {
     return null;
   };
 
-  async generateRandomNumber(min: number, max: number): Promise<number> {
-    let numeroDaConta = Math.floor(Math.random() * (max - min + 1)) + min;
-    const res = await this._http.get<any>('http://localhost:3000/contas').toPromise();
-    const conta = res.find((c: any) => c.conta === numeroDaConta);
-    if (conta) {
-      return this.generateRandomNumber(min, max);
-    }
-    return numeroDaConta;
-  }
-
-  submittingForm: boolean = false;
-
-  submitForm() {
-    if (this.submittingForm) {
-      return;
-    }
-
-    this.submittingForm = true;
-
-    const formData = { ...this.signUpForm.value };
-    delete formData.confirmarSenha;
-    this._http.post('http://localhost:3000/users', formData).subscribe(
-      (userData: any) => {
-        const usuarioId = userData.id; // Assume que o objeto retornado contém um campo id
-        alert('Usuário cadastrado com sucesso!');
-        this.generateRandomNumber(1, 1000000).then((numeroDaConta) => {
-          this._http.post('http://localhost:3000/contas', { id: uuidv4(), agencia: 1313, conta: numeroDaConta, saldo: 0, usuarioId })
-            .subscribe(() => {
-              this._route.navigate(['/login']);
-              console.log("Conta criada");
-              this.submittingForm = false;
-            });
-        });
-      },
-      (error) => {
-        console.log(error);
-        this.submittingForm = false;
-      }
-    );
+  //Metodos Usuário API
+  createUser(){
+      let usuario = this.signUpForm.value as Usuario      
+      this.userServices.cadastraUsuario(usuario).subscribe({
+        next: res=> {
+          console.log(res)
+          this._route.navigateByUrl("/login")
+        },
+        error: err=> {          
+          console.log(err)
+        }
+      })
   }
 }

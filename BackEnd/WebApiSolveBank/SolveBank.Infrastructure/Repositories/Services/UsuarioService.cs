@@ -36,17 +36,22 @@ namespace SolveBank.Infrastructure.Repositories.Services
             return usuario;
         }
 
-        public async Task<IdentityResult> Cadastrar(Usuario usuario, string senha)
-        {
-            var resultCreateUser = new IdentityResult();
+        public async Task<string> Cadastrar(Usuario usuario, string senha)
+        {            
             try
             {
-                resultCreateUser = _userManager.CreateAsync(usuario, senha).Result;
-                return resultCreateUser;
+               var resultCreateUser = await _userManager.CreateAsync(usuario, senha);
+                if (resultCreateUser.Succeeded)
+                {
+                    var newUser = await _userManager.FindByNameAsync(usuario.UserName);
+                    var userId = newUser.Id;
+                    return userId;
+                }
+                throw new Exception(resultCreateUser.Errors.ToString());
             }
-            catch
+            catch(Exception ex) 
             {
-                return resultCreateUser;
+                return ex.Message;
             }
         }
 

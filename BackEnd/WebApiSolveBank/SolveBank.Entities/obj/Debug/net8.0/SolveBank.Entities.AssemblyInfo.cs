@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SolveBank.Entities")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3b30550e996bae37793fed2a557088c70841d32")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7169641f1a71385c9a9d1f09d31e350cd7e6491")]
 [assembly: System.Reflection.AssemblyProductAttribute("SolveBank.Entities")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SolveBank.Entities")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
