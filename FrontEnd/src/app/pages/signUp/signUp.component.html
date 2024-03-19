@@ -185,6 +185,30 @@
                 </div>
               </div>
             </div>
+
+            <div class="coluna-celular justify-content-center col-md-6 mb-3">
+              <div class="form-group celular">
+                <label for="celular">Celular:</label>
+                <input
+                  type="text"
+                  id="celular"
+                  name="celular"
+                  placeholder="Insira o seu Número para Contato"
+                  formControlName="celular"
+                />
+                <div
+                  class="campo-obrigatorio"
+                  *ngIf="
+                    signUpForm.get('celular')?.invalid &&
+                    signUpForm.get('celular')?.touched
+                  "
+                >
+                  <span *ngIf="signUpForm.get('celular')?.errors?.['required']"
+                    >Campo obrigatório</span
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
