@@ -125,10 +125,19 @@ header {
   border-style: groove;
   border-color: #ff9800;
   font-family: "Roboto", sans-serif;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 30px;
 }
 
 .log-off:hover {
   background-color: #633d05;
   color: #ffffff;
+}
+
+.text-notice {
+  color: #ff9800;
+  font-family: "Roboto", sans-serif;
+  margin-top: 15px;
+  margin-left: 25px;
 }

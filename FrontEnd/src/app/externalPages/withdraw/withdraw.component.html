@@ -27,14 +27,13 @@
   </div>
 </header>
 
-<div>
-  <p class="txt-withdraw">Saque - Conta-Corrente</p>
+<div class="d-flex align-items-center">
+  <p class="txt-withdraw mb-0">Saque - Conta-Corrente</p>
   <button class="log-off">
-    Sair<i class="bi bi-box-arrow-in-right ml-2"></i>
+    Sair<i class="bi bi-box-arrow-in-right align-items-center"></i>
   </button>
-  <hr class="line" />
 </div>
-
+<hr class="line" />
 <p class="select-value">Selecione o Valor:</p>
 
 <div class="row">
@@ -66,9 +65,11 @@
           id="valor"
           name="valor"
           required
+          placeholder="R$ 0,00"
         />
       </div>
     </form>
+    <p class="text-notice">*Notas disponíveis (R$): 10, 20, 50 e 100.</p>
     <button class="sign justify-content-center align-items-center">
       <i class="bi bi-cash-coin me-2"></i>Confirmar
     </button>
