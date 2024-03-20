@@ -39,8 +39,8 @@ export class SignUpComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       sobrenome: new FormControl('', Validators.required),
       cpf_cnpj: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/),
+        Validators.required,        
+        Validators.maxLength(15)
       ]),
       senha: new FormControl('', [
         Validators.required,

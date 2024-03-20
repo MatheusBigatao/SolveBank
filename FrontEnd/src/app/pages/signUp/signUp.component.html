@@ -78,18 +78,19 @@
                   name="cpf"
                   placeholder="Insira seu CPF"
                   formControlName="cpf_cnpj"
+                  maxlength="15"
                 />
                 <div
                   class="campo-obrigatorio"
                   *ngIf="
-                    signUpForm.get('cpf')?.invalid &&
-                    signUpForm.get('cpf')?.touched
+                    signUpForm.get('cpf_cnpj')?.invalid &&
+                    signUpForm.get('cpf_cnpj')?.touched
                   "
                 >
-                  <span *ngIf="signUpForm.get('cpf')?.errors?.['required']"
+                  <span *ngIf="signUpForm.get('cpf_cnpj')?.errors?.['required']"
                     >Campo obrigatório</span
                   >
-                  <span *ngIf="signUpForm.get('cpf')?.errors?.['pattern']"
+                  <span *ngIf="signUpForm.get('cpf_cnpj')?.errors?.['pattern']"
                     >CPF deve estar no formato 000.000.000-00</span
                   >
                 </div>

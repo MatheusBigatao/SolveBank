@@ -54,13 +54,19 @@ namespace WebApiSolveBank.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> LoginUsuario([FromBody] RequestUsuarioLogin requestUsuarioLogin)
         {
-            return Ok();
+            if(!ModelState.IsValid) return BadRequest(ModelState);
+            var loginResponse =  await _usuarioRepository.Logar(requestUsuarioLogin.Cpf_Cnpj, requestUsuarioLogin.Senha);
+            if(loginResponse == null) return BadRequest(loginResponse);            
+            return Ok("Usuário encontrado Token Enviado");
         }
 
         [HttpGet("Autenticar")]
 
         public async Task<IActionResult> AutenticarUsuario([FromBody] string token2Fatores)
         {
+
+
+
             return Ok();
         }
 
