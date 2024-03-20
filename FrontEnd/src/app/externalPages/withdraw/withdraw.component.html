@@ -29,37 +29,54 @@
 
 <div>
   <p class="txt-withdraw">Saque - Conta-Corrente</p>
+  <button class="log-off">
+    Sair<i class="bi bi-box-arrow-in-right ml-2"></i>
+  </button>
   <hr class="line" />
 </div>
 
 <p class="select-value">Selecione o Valor:</p>
 
-<div class="value-set row">
+<div class="row">
   <div class="col-auto">
-    <button class="button mb-2 mx-2">R$ 10,00</button>
-    <button class="button">R$ 20,00</button>
-    <button class="button mx-2">R$ 50,00</button>
-    <button class="button mx-2">R$ 100,00</button>
-    <button class="button">R$ 500,00</button>
-    <button class="button mx-2">R$ 1.000,00</button>
+    <div class="value-set">
+      <div class="col-auto">
+        <button class="button mb-2 mx-2">R$ 10,00</button>
+        <button class="button mx-2">R$ 20,00</button>
+        <button class="button mt-2 mx-2">R$ 50,00</button>
+      </div>
+      <div class="col-auto">
+        <button class="button mt-2 mb-2 mx-2">R$ 100,00</button>
+        <button class="button mx-2">R$ 500,00</button>
+        <button class="button mt-2 mx-2">R$ 1.000,00</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-auto">
+    <form class="form-value justify-content-center align-items-center">
+      <div class="col-auto">
+        <label for="valor" class="txt-value form-label"
+          >Ou Digite o Valor Desejado:</label
+        >
+      </div>
+      <div class="input col-auto">
+        <input
+          type="text"
+          class="value form-control"
+          id="valor"
+          name="valor"
+          required
+        />
+      </div>
+    </form>
+    <button class="sign justify-content-center align-items-center">
+      <i class="bi bi-cash-coin me-2"></i>Confirmar
+    </button>
   </div>
 </div>
 
-<form class="form-value">
-  <div class="justify-content-center align-items-center mb-3">
-    <div class="">
-      <label for="valor" class="txt-value form-label"
-        >Ou Digite o Valor Desejado:</label
-      >
-    </div>
-    <div class="EXP">
-      <input
-        type="text"
-        class="value form-control"
-        id="valor"
-        name="valor"
-        required
-      />
-    </div>
-  </div>
-</form>
+<div>
+  <button class="back justify-content-center align-items-center">
+    <i class="bi bi-arrow-left-square me-2"></i>Voltar
+  </button>
+</div>
