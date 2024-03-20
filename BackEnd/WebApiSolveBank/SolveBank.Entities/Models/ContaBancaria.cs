@@ -23,5 +23,6 @@ namespace SolveBank.Entities.Models
         public List<Atendimento> Atendimentos { get; set; }
         public EnumCategoriaConta EnumCategoriaConta { get; set; }
         public string Informacoes { get; set; } = null!;
+        public bool Removido { get; set; }
     }
 }
