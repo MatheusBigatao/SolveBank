@@ -1,0 +1,46 @@
+.codesolve-logo {
+  width: 6.25rem;
+}
+
+.bank-name {
+  font-weight: bold;
+  color: var(--text);
+  font-size: 2rem;
+}
+
+.bank-name span {
+  color: var(--secondary);
+}
+
+p {
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+input {
+  width: 100%;
+}
+
+.btn-action {
+  background-color: var(--secondary);
+  color: var(--text);
+  width: 100%;
+}
+
+.btn-action:hover {
+  background-color: var(--secondary-hover-dark);
+}
+
+.btn-action:disabled {
+  background-color: var(--gray);
+}
+
+@media (min-width: 768px) {
+  .bank-name {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
