@@ -26,52 +26,50 @@ import { LoginComponent } from '../login/login.component';
   styleUrl: './signUp.component.css',
 })
 export class SignUpComponent implements OnInit {
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   signUpForm: FormGroup;
 
-  constructor(private userServices:UsuarioService, private _route: Router) {
-    this.signUpForm = new FormGroup({     
-      nome: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      sobrenome: new FormControl('', Validators.required),
-      cpf_cnpj: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/),
-      ]),
-      senha: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6)
-      ]),
-      confirmarSenha: new FormControl('', [Validators.required]),
-    },
+  constructor(private userServices: UsuarioService, private _route: Router) {
+    this.signUpForm = new FormGroup(
+      {
+        nome: new FormControl('', Validators.required),
+        email: new FormControl('', [Validators.required, Validators.email]),
+        sobrenome: new FormControl('', Validators.required),
+        cpf_cnpj: new FormControl('', [
+          Validators.required,
+          Validators.pattern(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/),
+        ]),
+        senha: new FormControl('', [
+          Validators.required,
+          Validators.minLength(6),
+        ]),
+        confirmarSenha: new FormControl('', [Validators.required]),
+        celular: new FormControl('', Validators.required),
+      },
       { validators: this.validatePasswords }
     );
-  };
-  validatePasswords(control: AbstractControl): { [key: string]: any }
-    | null {
+  }
+  validatePasswords(control: AbstractControl): { [key: string]: any } | null {
     const password = control.get('senha')?.value;
     const confirmPassword = control.get('confirmarSenha')?.value;
     if (password !== confirmPassword) {
       return { passwordsNotMatch: true };
     }
     return null;
-  };
+  }
 
   //Metodos Usuário API
-  createUser(){
-      let usuario = this.signUpForm.value as Usuario      
-      this.userServices.cadastraUsuario(usuario).subscribe({
-        next: res=> {
-          console.log(res)
-          this._route.navigateByUrl("/login")
-        },
-        error: err=> {          
-          console.log(err)
-        }
-      })
+  createUser() {
+    let usuario = this.signUpForm.value as Usuario;
+    this.userServices.cadastraUsuario(usuario).subscribe({
+      next: (res) => {
+        console.log(res);
+        this._route.navigateByUrl('/login');
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }
