@@ -31,7 +31,7 @@ namespace SolveBank.Infrastructure.Repositories.Services
             if (contaBancaria == null){
                 return null;
             }
-            return contaBancaria.Saldo;
+            return contaBancaria.Saldo + contaBancaria.Limite - contaBancaria.LimiteUtilizado;
         }
 
         public async Task<ContaBancaria> CriarConta(ContaBancaria contaBancaria)

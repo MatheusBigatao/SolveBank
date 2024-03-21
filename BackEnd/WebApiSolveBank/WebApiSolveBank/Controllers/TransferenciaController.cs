@@ -1,6 +1,12 @@
-﻿namespace WebApiSolveBank.Controllers
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace WebApiSolveBank.Controllers
 {
-    public class TransferenciaController
+    [Controller]
+    [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
+    public class TransferenciaController : ControllerBase
     {
     }
 }

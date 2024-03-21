@@ -1,4 +1,5 @@
 ﻿using SolveBank.Entities.Models;
+using SolveBank.Infrastructure.Configuration;
 using SolveBank.Infrastructure.Repositories.Contracts;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,11 @@ namespace SolveBank.Infrastructure.Repositories.Services
 {
     public class DepositoService : ITransacaoRepository<TDeposito>
     {
+        private readonly SolveBankDbConfig _solveBankDbConfig;
+        public DepositoService(SolveBankDbConfig solveBankDbConfig)
+        {
+            _solveBankDbConfig = solveBankDbConfig;
+        }
         public Task<TDeposito> AgendarTransacao(TDeposito transacao)
         {
             throw new NotImplementedException();
@@ -35,9 +41,11 @@ namespace SolveBank.Infrastructure.Repositories.Services
             throw new NotImplementedException();
         }
 
-        public Task<TDeposito> RealizarTransacao(TDeposito transacao)
+        public async Task<TDeposito> RealizarTransacao(TDeposito transacao)
         {
-            throw new NotImplementedException();
+            _solveBankDbConfig.Depositos.Add(transacao);
+            await _solveBankDbConfig.SaveChangesAsync();
+            return transacao;
         }
     }
 }
