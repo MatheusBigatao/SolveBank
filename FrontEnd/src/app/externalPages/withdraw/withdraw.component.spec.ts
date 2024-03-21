@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WithdrawComponent } from './withdraw.component';
+import { ExternalWithdrawComponent } from './withdraw.component';
 
 describe('WithdrawComponent', () => {
-  let component: WithdrawComponent;
-  let fixture: ComponentFixture<WithdrawComponent>;
+  let component: ExternalWithdrawComponent;
+  let fixture: ComponentFixture<ExternalWithdrawComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WithdrawComponent]
+      imports: [ExternalWithdrawComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(WithdrawComponent);
+    fixture = TestBed.createComponent(ExternalWithdrawComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
