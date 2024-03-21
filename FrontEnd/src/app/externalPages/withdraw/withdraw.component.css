@@ -1,0 +1,143 @@
+.codesolve-logo {
+  width: 1.875rem;
+}
+
+header {
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+#header-desktop-screen p {
+  font-size: 1.5rem;
+}
+
+.txt-withdraw {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: auto;
+}
+
+.line {
+  border-top: 2px solid white;
+  margin: 10px 0;
+}
+
+.select-value {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-bottom: auto;
+}
+
+.value-set {
+  margin-top: 25px;
+  margin-left: 250px;
+}
+@media (max-width: 1095px) {
+  .value-set {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
+.button {
+  color: white;
+  background-color: #ff9800;
+  width: 200px;
+  height: 200px;
+  border-style: groove;
+  border-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #b97001;
+  color: #ffffff;
+}
+
+.txt-value {
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.form-value {
+  color: white;
+}
+
+.input {
+  width: 300px;
+  height: auto;
+  margin-left: 30px;
+}
+
+.back {
+  color: white;
+  background-color: rgba(240, 40, 40, 0.144);
+  width: 125px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: groove;
+  border-color: rgb(240, 25, 25);
+  font-family: "Roboto", sans-serif;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.back:hover {
+  background-color: rgb(107, 20, 20);
+  color: #ffffff;
+}
+
+.sign {
+  color: white;
+  background-color: rgba(38, 253, 0, 0.144);
+  width: 125px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: groove;
+  border-color: rgb(38, 253, 10);
+  font-family: "Roboto", sans-serif;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.sign:hover {
+  background-color: rgb(20, 107, 8);
+  color: #ffffff;
+}
+
+.log-off {
+  color: white;
+  background-color: #ff990036;
+  width: 125px;
+  height: 40px;
+  border-radius: 18px;
+  border-style: groove;
+  border-color: #ff9800;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.log-off:hover {
+  background-color: #633d05;
+  color: #ffffff;
+}
+
+.text-notice {
+  color: #ff9800;
+  font-family: "Roboto", sans-serif;
+  margin-top: 15px;
+  margin-left: 25px;
+}

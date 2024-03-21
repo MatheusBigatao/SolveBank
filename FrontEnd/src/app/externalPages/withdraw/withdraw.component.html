@@ -1,1 +1,83 @@
-<p>withdraw works!</p>
+<header>
+  <div
+    id="header-desktop-screen"
+    class="px-5 py-4 d-flex justify-content-between align-items-center gap-4"
+  >
+    <div class="d-flex justify-content-around align-items-center gap-2">
+      <img
+        src="assets/Images/logo-codesolve.png"
+        alt="Logo Codesolve"
+        class="codesolve-logo"
+      />
+      <p class="mb-0">|</p>
+      <p class="mb-0">Kuniyoshi</p>
+    </div>
+
+    <div class="d-flex gap-2 align-items-center">
+      <div>
+        <p class="mb-0">Olá, Tanuki!</p>
+      </div>
+      <a href="#">
+        <img src="assets/Images/icon-bell-ring.svg" alt="Bell Ring Icon" />
+      </a>
+      <a href="#">
+        <img src="assets/Images/icon-question.svg" alt="Question Icon" />
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="d-flex align-items-center">
+  <p class="txt-withdraw mb-0">Saque - Conta-Corrente</p>
+  <button class="log-off">
+    Sair<i class="bi bi-box-arrow-in-right align-items-center"></i>
+  </button>
+</div>
+<hr class="line" />
+<p class="select-value">Selecione o Valor:</p>
+
+<div class="row">
+  <div class="col-auto">
+    <div class="value-set">
+      <div class="col-auto">
+        <button class="button mb-2 mx-2">R$ 10,00</button>
+        <button class="button mx-2">R$ 20,00</button>
+        <button class="button mt-2 mx-2">R$ 50,00</button>
+      </div>
+      <div class="col-auto">
+        <button class="button mt-2 mb-2 mx-2">R$ 100,00</button>
+        <button class="button mx-2">R$ 500,00</button>
+        <button class="button mt-2 mx-2">R$ 1.000,00</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-auto">
+    <form class="form-value justify-content-center align-items-center">
+      <div class="col-auto">
+        <label for="valor" class="txt-value form-label"
+          >Ou Digite o Valor Desejado:</label
+        >
+      </div>
+      <div class="input col-auto">
+        <input
+          type="text"
+          class="value form-control"
+          id="valor"
+          name="valor"
+          required
+          placeholder="R$ 0,00"
+        />
+      </div>
+    </form>
+    <p class="text-notice">*Notas disponíveis (R$): 10, 20, 50 e 100.</p>
+    <button class="sign justify-content-center align-items-center">
+      <i class="bi bi-cash-coin me-2"></i>Confirmar
+    </button>
+  </div>
+</div>
+
+<div>
+  <button class="back justify-content-center align-items-center">
+    <i class="bi bi-arrow-left-square me-2"></i>Voltar
+  </button>
+</div>
