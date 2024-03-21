@@ -1,0 +1,19 @@
+.alertmain-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.alertbody-content {
+    max-width: 80%;
+    border: 1px solid blue;
+    border-radius: 10px;
+    background: rgba(0, 0, 255, 0.5);
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
