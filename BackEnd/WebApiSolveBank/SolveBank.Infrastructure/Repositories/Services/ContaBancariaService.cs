@@ -1,6 +1,3 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using SolveBank.Entities.Enums;
 using SolveBank.Entities.Models;
 using SolveBank.Infrastructure.Configuration;
 using SolveBank.Infrastructure.Repositories.Contracts;

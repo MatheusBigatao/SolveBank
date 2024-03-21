@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SolveBank.Infrastructure.Configuration;
 
@@ -11,9 +12,11 @@ using SolveBank.Infrastructure.Configuration;
 namespace SolveBank.Infrastructure.Migrations
 {
     [DbContext(typeof(SolveBankDbConfig))]
-    partial class SolveBankDbConfigModelSnapshot : ModelSnapshot
+    [Migration("20240320214712_testeV4")]
+    partial class testeV4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -274,10 +277,6 @@ namespace SolveBank.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Limite")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("LimiteUtilizado")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 

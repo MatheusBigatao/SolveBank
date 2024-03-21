@@ -21,6 +21,6 @@ namespace SolveBank.Entities.Models
         public string CodigoDoBanco { get; set; } = null!;
         [Required]
         public decimal Valor { get; set; }
-        public DateTime DataTransacao { get; set; }
+        public DateTime DataTransacao { get; set; }        
     }
 }

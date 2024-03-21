@@ -15,7 +15,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioService } from '../../services/usuario.service';
-import { Usuario } from '../../models/Usuario';
+import { Usuario } from '../../models/Usuario/Usuario';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
