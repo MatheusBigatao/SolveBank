@@ -1,0 +1,17 @@
+<body>
+  <form [formGroup]="authForm" class="d-flex flex-column align-items-center mt-5 pt-5 mx-5 gap-5">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <img
+      src="assets/Images/logo-codesolve.png"
+      alt="Logo Codesolve"
+      class="codesolve-logo"
+      />
+      <p class="bank-name mb-0"><span>Solve</span>Bank</p>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <p class="mb-0">Informe abaixo o token de autenticação recebido no e-mail:</p>
+      <input type="text" id="token" name="token" formControlName="token" class="mt-2 form-control" placeholder="Digite aqui o seu token..."/>
+      <button type="submit" [disabled]="authForm.invalid" (click)="authUser()" class="btn btn-action mt-2">Acessar</button>
+    </div>
+  </form>
+</body>

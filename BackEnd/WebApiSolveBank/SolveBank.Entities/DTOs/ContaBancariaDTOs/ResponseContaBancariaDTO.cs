@@ -1,25 +1,25 @@
 ﻿using SolveBank.Entities.Enums;
-using System.ComponentModel.DataAnnotations;
+using SolveBank.Entities.Models;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace SolveBank.Entities.Models
+namespace SolveBank.Entities.DTOs.ContaBancariaDTOs
 {
-    public class ContaBancaria
-    {
-        [Key]
+    public class ResponseContaBancariaDTO
+    {       
         public Guid Id { get; set; }
-        public string Agencia { get; set; } = null!;
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]        
+        public string Agencia { get; set; } = null!;     
         public int Numero { get; set; }
         public decimal Saldo { get; set; }
-        public decimal Limite { get; set; }
+        public decimal Limite { get; set; }    
         public decimal LimiteUtilizado { get; set; }
         public virtual List<Transacao> Transacoes { get; set; }
-        [Required]
-        [ForeignKey("Usuario")]
-        public string UsuarioID { get; set; } = null!;
-        public virtual Usuario Usuario { get; set; } = null!;
+        public string UsuarioID { get; set; } = null!;        
         public List<Cartao> Cartoes { get; set; }
         public List<Atendimento> Atendimentos { get; set; }
         public EnumCategoriaConta EnumCategoriaConta { get; set; }

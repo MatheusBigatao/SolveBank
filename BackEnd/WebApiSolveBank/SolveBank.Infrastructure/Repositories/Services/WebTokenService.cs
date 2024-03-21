@@ -37,8 +37,8 @@ namespace SolveBank.Infrastructure.Repositories.Services
                     Encoding.UTF8.GetBytes(_configuration["Jwt:key"]));
                 var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-                var expirationGet = _configuration["TokenConfiguration:ExpireHours"];
-                var expiration = DateTime.UtcNow.AddMinutes(double.Parse(expirationGet));
+                var expirationGet = _configuration["TokenConfiguration:ExpireMinutes"];
+                var expiration = DateTime.Now.AddMinutes(double.Parse(expirationGet));
 
                 JwtSecurityToken token = new JwtSecurityToken(
                     issuer: _configuration["TokenConfiguration:Issuer"],

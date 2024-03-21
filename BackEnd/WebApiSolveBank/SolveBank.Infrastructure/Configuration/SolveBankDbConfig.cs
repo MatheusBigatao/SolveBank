@@ -91,6 +91,9 @@ namespace SolveBank.Infrastructure.Configuration
                 .Property(cb => cb.Limite)
             .HasPrecision(18, 2);
             builder.Entity<ContaBancaria>()
+               .Property(cb => cb.LimiteUtilizado)
+           .HasPrecision(18, 2);
+            builder.Entity<ContaBancaria>()
               .HasIndex(cb => cb.Numero)
               .IsUnique(true);
             builder.Entity<ContaBancaria>()

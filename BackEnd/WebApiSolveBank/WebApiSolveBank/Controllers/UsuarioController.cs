@@ -14,18 +14,27 @@ namespace WebApiSolveBank.Controllers
     {
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly IContaBancariaRepository _contaBancariaRepository;
-        public UsuarioController(IUsuarioRepository usuarioRepository, IContaBancariaRepository contaBancariaRepository)
+        private readonly IAutenticacao2FatoresRepository _autenticacao2Repository;
+        private readonly IWebTokenRepository _webTokenRepository;
+        public UsuarioController(
+            IUsuarioRepository usuarioRepository,
+            IContaBancariaRepository contaBancariaRepository,
+            IAutenticacao2FatoresRepository autenticacao2FatoresRepository,
+            IWebTokenRepository webTokenRepository
+            )
         {
             _usuarioRepository = usuarioRepository;
             _contaBancariaRepository = contaBancariaRepository;
+            _autenticacao2Repository = autenticacao2FatoresRepository;
+            _webTokenRepository = webTokenRepository;
         }
 
 
         [HttpPost("cadastrar")]
         public async Task<IActionResult> CadastrarUsuario([FromBody] RequestCriarUsuarioDTO requestCriarUsuarioDTO)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            if (!ModelState.IsValid || requestCriarUsuarioDTO.Senha != requestCriarUsuarioDTO.ConfirmarSenha)
+                return BadRequest(ModelState.ToString() + "Verifique a senha e confirmação de senha");
 
             var usuarioCadastro = new Usuario()
             {
@@ -43,9 +52,9 @@ namespace WebApiSolveBank.Controllers
             {
                 Agencia = "0001",
                 Saldo = 0,
-                Limite= 150,
-                UsuarioID= usuarioResult,
-                Informacoes= "Conta nova, recem criada"
+                Limite = 150,
+                UsuarioID = usuarioResult,
+                Informacoes = "Conta nova, recem criada"
             };
             await _contaBancariaRepository.CriarConta(contaBancaria);
             return Ok("Usuário cadastrado com sucesso");
@@ -54,33 +63,31 @@ namespace WebApiSolveBank.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> LoginUsuario([FromBody] RequestUsuarioLogin requestUsuarioLogin)
         {
-            if(!ModelState.IsValid) return BadRequest(ModelState);
-            var loginResponse =  await _usuarioRepository.Logar(requestUsuarioLogin.Cpf_Cnpj, requestUsuarioLogin.Senha);
-            if(loginResponse == null) return BadRequest(loginResponse);            
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var loginResponse = await _usuarioRepository.Logar(requestUsuarioLogin.Cpf_Cnpj, requestUsuarioLogin.Senha);
+            if (loginResponse == null) return BadRequest(loginResponse);
             return Ok("Usuário encontrado Token Enviado");
         }
 
-        [HttpGet("Autenticar")]
-
-        public async Task<IActionResult> AutenticarUsuario([FromBody] string token2Fatores)
+        [HttpGet("Autenticar/{token2Fatores}")]
+        public async Task<IActionResult> AutenticarUsuario(string token2Fatores)
         {
-
-
-
-            return Ok();
+            var usuarioAutenticado = await _autenticacao2Repository.AutenticarUsuario(token2Fatores);
+            if (usuarioAutenticado == null) return BadRequest("Token já utilizado, ou usuário não localizado");
+            usuarioAutenticado.WebToken = await _webTokenRepository.CadastrarToken(usuarioAutenticado.Id);
+            return Ok(usuarioAutenticado);
         }
 
-        [HttpPut("atualizar")]
-        public async Task<IActionResult> AtualizarUsuario([FromBody] RequestUsuarioLogin requestUsuarioLogin)
-        {
-            return Ok();
-        }
-        [HttpPut("desativar/{usuarioID}")]
-        public async Task<IActionResult> DesativarUsuario([FromBody] string usuarioID)
-        {
-            return Ok();
-        }
-
-
+        //TODO - IMPLEMENTAR METODOS PARA ATUALIZAR E DESATIVAR USUARIO
+        //[HttpPut("atualizar")]
+        //public async Task<IActionResult> AtualizarUsuario([FromBody] RequestUsuarioLogin requestUsuarioLogin)
+        //{
+        //    return Ok();
+        //}
+        //[HttpPut("desativar/{usuarioID}")]
+        //public async Task<IActionResult> DesativarUsuario([FromBody] string usuarioID)
+        //{
+        //    return Ok();
+        //}
     }
 }

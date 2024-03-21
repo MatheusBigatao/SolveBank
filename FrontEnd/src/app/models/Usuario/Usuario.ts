@@ -6,6 +6,6 @@ export class Usuario {
     telefone: string = ""
 
     constructor(nome: string, sobrenome: string) {
-
+            
     }
 }

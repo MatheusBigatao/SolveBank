@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using SolveBank.Entities.Models;
+using SolveBank.Entities.Profiles.ContaBancariaProfile;
 using SolveBank.Entities.Profiles.UsuarioProfile;
 using SolveBank.Infrastructure.Configuration;
 using SolveBank.Infrastructure.ExternalServices.Contracts;
@@ -46,6 +47,7 @@ namespace SolveBank.Infrastructure
             services.AddAutoMapper(options =>
             {
                 options.AddProfile<UsuarioProfile>();
+                options.AddProfile<ContaBancariaProfile>();
             });
 
             return services;

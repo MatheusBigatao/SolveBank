@@ -6,6 +6,7 @@ using SolveBank.Entities.Models;
 using SolveBank.Infrastructure;
 using SolveBank.Infrastructure.Configuration;
 using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,11 @@ builder.Services.AddSwaggerGen();
 
 //Adicionando InfrastructureModule
 builder.Services.AddInfrastructure();
+//JsonConfiguration IgnoreCycles
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
 
 //Conexao com o Banco de Dados
 builder.Services.AddDbContext<SolveBankDbConfig>(options =>

@@ -11,6 +11,7 @@ import { ExternalHomeComponent } from './externalPages/home/home.component';
 import { ExternalDepositComponent } from './externalPages/deposit/deposit.component';
 import { ExternalLoginComponent } from './externalPages/login/login.component';
 import { ExternalWithdrawComponent } from './externalPages/withdraw/withdraw.component';
+import { ExternalAuthenticationComponent } from './externalPages/authentication/authentication.component';
 
 export const routes: Routes = [
   { path: '', component: SplashscreenComponent },
@@ -25,4 +26,5 @@ export const routes: Routes = [
   { path: 'external/deposit', component:ExternalDepositComponent},
   { path: 'external/transfer', component:ExternalTransferComponent},
   { path: 'external/withdraw', component:ExternalWithdrawComponent},
+  { path: 'external/authentication', component:ExternalAuthenticationComponent},
 ];
