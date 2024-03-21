@@ -9,14 +9,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './deposit.component.css',
 })
 export class ExternalDepositComponent {
-  agencia: string = ''; // Variáveis para armazenar os valores dos campos
+  agencia: string = '';
   conta: string = '';
   valor: string = '';
 
   constructor() {}
 
   limparCampos(): void {
-    this.agencia = ''; // Atribui valores em branco para limpar os campos
+    this.agencia = '';
     this.conta = '';
     this.valor = '';
   }
