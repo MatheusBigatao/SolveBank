@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace SolveBank.Entities.Models
 {
     public class TDeposito : Transacao
