@@ -34,7 +34,10 @@ export class ExternalAuthenticationComponent {
         next: res => {
           localStorage.setItem("userLogged", JSON.stringify(res))
           let usuarioLogged = JSON.parse(localStorage.getItem("userLogged")||"") as responseExibirUsuarioDTO
-           this.usuarioLogado = usuarioLogged         
+               
+        },
+        error:err=>{
+          
         }
       }
     )
