@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(23, 26, 74, 0.85),
+      rgba(23, 26, 74, 0.85),
+      rgba(23, 26, 74, 0.85)
+    ),
+    url(../../../assets/Images/landing-page-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.bi-question-circle {
+  color: var(--secondary);
+  position: relative;
+  top: 1.875rem;
+  left: 1.375rem;
+  font-size: 1.25rem;
+}
+
+/* Carousel */
+
+.carousel-section {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  /* background: linear-gradient(#835004, #2f2c79, #2f2c79, #2f2c79, #2f2c79); */
+  background: linear-gradient(
+    rgba(131, 80, 4, 0.75),
+    rgba(47, 44, 121, 0.75),
+    rgba(47, 44, 121, 0.75),
+    rgba(47, 44, 121, 0.75),
+    rgba(47, 44, 121, 0.75)
+  );
+  width: 90%;
+  height: 72vh;
+  border-radius: 0.313rem;
+  margin-top: 4.063rem;
+}
+
+.carousel-indicators {
+  bottom: -3.438rem;
+}
+
+.carousel-indicators button {
+  background-color: var(--secondary-hover-dark);
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.carousel-indicators .active {
+  background-color: var(--secondary);
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  padding: 3.125rem 1.563rem;
+}
+
+.logo {
+  margin: 0 auto;
+}
+
+.logo-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.125rem;
+  margin-top: 1.625rem;
+}
+
+.logo-title-solve {
+  color: var(--secondary);
+}
+
+.logo-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.375rem;
+  margin: 1.75rem 0.563rem;
+}
+
+.card-img .img {
+  width: 13.75rem;
+  margin: 0 auto;
+  position: relative;
+  top: 1.875rem;
+}
+
+.title {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.438rem;
+}
+
+.text {
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.063rem;
+}
+
+.img-paragraph {
+  margin: 1.25rem 0;
+}
+
+.card-body .margin-title {
+  margin: 2.938rem 0;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  font-size: 4.375rem;
+  color: var(--secondary);
+  width: 100%;
+}
+
+.button-group {
+  margin-top: 3rem;
+  justify-content: space-evenly;
+}
+
+.btn {
+  background-color: var(--secondary);
+  color: var(--text);
+  width: 10.625rem;
+  padding: 0.625rem 0.5rem;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: var(--secondary-hover-dark);
+}
+
+/* Media queries */
+
+@media (min-width: 768px) {
+  body {
+    background: var(--background);
+  }
+
+  .bi-question-circle {
+    top: 2.188rem;
+    left: 2.438rem;
+    font-size: 1.875rem;
+  }
+
+  .carousel-indicators button {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .card {
+    padding: 4.375rem 1.563rem;
+  }
+
+  .logo-title {
+    font-size: 4.688rem;
+    margin-top: 2.5rem;
+  }
+
+  .logo-text {
+    font-size: 2.063rem;
+    margin: 5rem 5.313rem;
+  }
+
+  .card-img .img {
+    width: 23.125rem;
+    top: 3.125rem;
+  }
+
+  .title {
+    font-size: 2.188rem;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    padding: 0 0.625rem;
+  }
+
+  .img-paragraph {
+    margin: 1.875rem 1.938rem;
+  }
+
+  .card-body .margin-title {
+    margin: 5.813rem 2.313rem;
+  }
+
+  .icon {
+    font-size: 6.875rem;
+  }
+
+  .button-group {
+    margin-top: 3.75rem;
+  }
+
+  .btn {
+    width: 15.625rem;
+    padding: 1rem 0.375rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: linear-gradient(
+        rgba(23, 26, 74, 0.85),
+        rgba(23, 26, 74, 0.85),
+        rgba(23, 26, 74, 0.85)
+      ),
+      url(../../../assets/Images/landing-page-desktop-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+  }
+
+  .bi-question-circle {
+    left: 4.375rem;
+    font-size: 1.188rem;
+  }
+
+  .carousel {
+    height: 70vh;
+    margin-top: 3.438rem;
+  }
+
+  .card {
+    padding: 2.5rem 1.563rem;
+  }
+
+  .logo-title {
+    font-size: 3.313rem;
+    margin-top: 1.375rem;
+  }
+
+  .logo-text {
+    margin: 2.75rem 5.313rem;
+    font-size: 1.375rem;
+  }
+
+  .card-img .img {
+    width: 14.375rem;
+    top: 0.625rem;
+  }
+
+  .title {
+    font-size: 1.688rem;
+  }
+
+  .text {
+    font-size: 1.188rem;
+    padding: 0 1.875rem;
+  }
+
+  .card-body .margin-title {
+    margin: 4.063rem 2.313rem;
+  }
+
+  .button-group {
+    margin-top: 3.125rem;
+  }
+
+  .btn {
+    padding: 0.5rem;
+  }
+}

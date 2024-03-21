@@ -8,9 +8,9 @@ import { AlertErrorComponent } from './components/alert-error/alert-error.compon
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,AlertSuccessComponent,AlertInfoComponent,AlertErrorComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [CommonModule, RouterOutlet],
 })
 export class AppComponent {
   title = 'FrontEnd';

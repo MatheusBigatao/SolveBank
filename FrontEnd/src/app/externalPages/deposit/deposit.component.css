@@ -1,0 +1,97 @@
+.codesolve-logo {
+  width: 1.875rem;
+}
+
+header {
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+#header-desktop-screen p {
+  font-size: 1.5rem;
+}
+
+.text-deposit-count {
+  color: white;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: auto;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.line {
+  border-top: 2px solid white;
+  margin: 10px 0;
+}
+
+.text-value {
+  color: #ff9800;
+  font-family: "Roboto", sans-serif;
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-label {
+  color: #ff9800;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+.form-control {
+  width: 300px;
+  height: 50px;
+}
+
+.agency {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  right: 26px;
+}
+
+.txt-agency {
+  position: relative;
+  right: 70px;
+}
+.camp-value {
+  position: relative;
+  left: 56px;
+}
+
+.mensage {
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn {
+  color: white;
+  background-color: #ff9800;
+  border: solid;
+  border-style: groove;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 300px;
+  height: 70px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: "Roboto", sans-serif;
+  padding-right: 50px;
+}
+.btn:hover {
+  background-color: #b97001;
+  color: #ffffff;
+}
+
+.deposit {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.icon-left {
+  font-size: 33px;
+  display: inline-block;
+  vertical-align: middle;
+}

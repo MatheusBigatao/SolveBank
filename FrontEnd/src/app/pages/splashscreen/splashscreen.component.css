@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background);
+    flex-direction: column;
+    font-family: "Roboto";
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+img{
+    width: 31.25rem;
+    height: 23.25rem;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    margin-top: -3.75rem;
+    opacity: 0.5;
+}
+
+span{
+    color: var(--text);
+}
+
+h2{
+   color: var(--text); 
+   font-size: 1.375rem;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text);
+    white-space: nowrap;
+
+}
+
+

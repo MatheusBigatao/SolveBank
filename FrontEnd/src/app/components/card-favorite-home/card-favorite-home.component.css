@@ -1,0 +1,37 @@
+button {
+    background-color: var(--secondary);
+    color: var(--text);
+    padding: 0.225rem;
+    width: 10rem !important;
+    height: 10rem !important;
+}
+
+button:hover {
+  background-color: var(--secondary-hover-dark);
+}
+
+button img {
+  /* width: 1.875rem; */
+  width: 50%;
+}
+
+button p {
+  font-size: 0.625rem;
+  font-size: 1.225rem;
+}
+
+@media screen and  (max-width: 1120px) {
+  button {
+    width: 4.875rem !important;
+    height: 3.875rem !important;
+    padding: 0.125rem !important;
+  }
+  
+  button img {
+    width: 1.875rem;
+  }
+
+  button p {
+    font-size: 0.675rem;
+  }
+}

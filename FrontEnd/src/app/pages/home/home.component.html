@@ -1,1 +1,258 @@
-<h1>Home works!</h1>
+<app-menu-home></app-menu-home>
+
+<body class="p-0 m-0">
+  <main
+    *ngIf="isSmallScreen"
+    class="d-flex flex-column align-items-center justify-content-center"
+  >
+    <section class="card-client px-5 py-3 container-fluid">
+      <p class="mb-0">Olá, Tanuki!</p>
+      <p>Ag 0001 Cc 1235213215-9</p>
+
+      <div class="d-flex justify-content-center">
+        <div
+          class="card-home position-absolute p-3 d-flex flex-column rounded-2 gap-1"
+        >
+          <div class="d-flex gap-3">
+            <img
+              src="assets/Images/icon-money-circle-home.svg"
+              alt="Money Icon"
+            />
+            <div>
+              <p class="mb-0">Suas Atividades</p>
+              <p class="mb-0">Aproveite tudo que a sua conta oferece</p>
+            </div>
+          </div>
+          <button class="btn">Acompanhar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="accordion mx-3 my-4 p-2" id="accordionBalance">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="d-flex gap-3 align-items-center accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            <img
+              src="assets/Images/icon-exchange-outline.svg"
+              alt="Exchange Icon"
+            />
+            <p class="mb-0">Saldo disponível</p>
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionBalance"
+        >
+          <div class="accordion-body d-flex gap-4">
+            <strong>R$ 21.535,91</strong> 
+            <a class="text-dark" [routerLink]="['/transactions']">Extrato</a>   
+          </div>
+
+        </div>
+      </div>
+    </section>   
+    <section class="options mb-3 d-flex align-items-center justify-content-center"> 
+      <div class="d-flex justify-content-center content-cards">
+        <p-carousel [value]="cards" class="w-100" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+          <ng-template let-card pTemplate="item">
+              <div class="border-1 surface-border border-round m-1 gap-1 text-start w-100">
+                  <div class="mb-3 ">
+                    <app-card-favorite-home
+                    title="{{card.title}}"
+                    image="{{card.image}}"
+                    altImage="{{card.altImage}}"
+                ></app-card-favorite-home>
+                  </div>                           
+              </div>
+          </ng-template>
+      </p-carousel>   
+        
+      </div>
+    </section>
+
+    <section id="my-cards" class="mx-3 mb-4 d-flex flex-column align-items-center gap-4">
+      <h4 class="mb-0 align-self-start">Meus Cartões</h4>
+      <img
+        src="assets/Images/credit-card-orange.png"
+        alt="Orange Credit Card"
+      />
+      <img src="assets/Images/credit-card-black.png" alt="Black Credit Card" />
+    </section>
+    <app-navbar></app-navbar>
+  </main>
+
+<main *ngIf="!isSmallScreen" class="main-container">
+    <section class="section-content">
+        <div class="left-section">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-money-menu.svg" alt="Money Icon" class="menu-icon">
+                            <p class="mb-0">Saldo e Extrato</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-transfer.svg" alt="Transfer Icon" class="menu-icon">
+                            <p class="mb-0">Transações</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-pix-menu.svg" alt="Pix Icon" class="menu-icon">
+                            <p class="mb-0">Pix</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-credit-card.svg" alt="Credit Card Icon" class="menu-icon">
+                            <p class="mb-0">Meus Cartões</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex justify-content-between">
+                        <div class="d-flex gap-3">
+                            <img src="assets/Images/icon-external-link.svg" alt="External Link Icon" class="menu-icon">
+                            <p class="mb-0">Meus Limites</p> 
+                        </div>
+                        <img src="assets/Images/icon-arrow-right.svg" alt="Arrow Right Icon">
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <a href="#" class="nav-link d-flex align-items-center gap-3">
+                        <img src="assets/Images/icon-account-logout.svg" alt="Account Logout Icon" class="menu-icon">
+                        <p class="mb-0">Sair do App</p> 
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="right-section">
+
+            <section class="d-flex justify-content-center gap-5 pt-5">
+                <div class="accordion accordion-desktop p-2 " id="accordionBalance">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="d-flex gap-3 align-items-center accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="false"
+                                aria-controls="collapseOne"
+                            >
+                                <img
+                                    src="assets/Images/icon-exchange-outline.svg"
+                                    alt="Exchange Icon"
+                                />
+                                <p class="mb-0">Saldo disponível</p>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionBalance"
+                        >
+                            <div class="accordion-body">
+                                <strong>R$ 21.535,91</strong>
+                                <p class="mt-4 mb-1">Limite +</p>
+                                <div class="d-flex justify-content-between">
+                                    <p>R$ 200,00</p>
+                                    <div>
+                                      <a class="text-dark" [routerLink]="['/transactions']">Extrato</a>
+                                      <i class="bi bi-currency-dollar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="accordion p-2 accordion-desktop" id="accordionFutureRelease">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="d-flex gap-3 align-items-center accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="collapseTwo"
+                            >
+                                <img
+                                    src="assets/Images/icon-graph-up-arrow.svg"
+                                    alt="Graph Up Arrow Icon"
+                                    class="p-1"
+                                />
+                                <p class="mb-0">Lançamentos Futuros</p>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionFutureRelease"
+                        >
+                            <div class="accordion-body d-flex flex-column">
+                                <strong class="mb-4">Sem Lançamentos</strong>
+                                <p class="mt-4 mb-1"></p>
+                                <div class="d-flex justify-content-between">
+                                    <p>Não existe lançamentos</p>
+                                    <i class="bi bi-upc-scan scan"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>          
+            <section class="pb-2 mt-3 d-flex flex-column align-items-center gap-4 pt-2">
+                <h4 class="mb-0 ms-5 align-self-center">Acesso Rápido</h4>
+                <div class="d-flex justify-content-between gap-2">
+                  <p-carousel [value]="cards" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+                    <ng-template let-card pTemplate="item">
+                        <div class="border-1 surface-border border-round m-2 text-center py-2">
+                            <div class="mb-2">
+                              <app-card-favorite-home
+                              title="{{card.title}}"
+                              image="{{card.image}}"
+                              altImage="{{card.altImage}}"
+                          ></app-card-favorite-home>
+                            </div>                           
+                        </div>
+                    </ng-template>
+                </p-carousel>                   
+                </div>                 
+            </section>
+            <hr class="text-light">
+            <section class="pb-3 d-flex flex-column align-items-center gap-4">
+                <h4 class="mb-0 ms-5 align-self-center">Meus Cartões</h4>
+                <div class="d-flex gap-5">
+                    <img
+                        src="assets/Images/credit-card-orange-desktop.png"
+                        alt="Orange Credit Card"
+                    />
+                    <img src="assets/Images/credit-card-black-desktop.png" alt="Black Credit Card" />
+                </div>                
+            </section>
+        </div>
+    </section>
+  </main>
+</body>

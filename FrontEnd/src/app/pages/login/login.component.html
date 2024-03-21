@@ -11,8 +11,18 @@
           name="cpf"
           placeholder="123.456.789-01"
           formControlName="cpf"
-          mask="000.000.000-00"
         />
+        <div
+          class="campo-obrigatorio"
+          *ngIf="loginForm.get('cpf')?.invalid && loginForm.get('cpf')?.touched"
+        >
+          <span *ngIf="loginForm.get('cpf')?.errors?.['required']"
+            >Campo obrigatório</span
+          >
+          <span *ngIf="loginForm.get('cpf')?.errors?.['pattern']"
+            >CPF deve estar no formato 000.000.000-00</span
+          >
+        </div>
       </div>
       <div class="form-group">
         <label for="password">Senha</label>
@@ -25,10 +35,10 @@
         />
       </div>
       <div class="form-group">
-        <a href="#" class="forgot-password">Esqueci minha senha</a>
+        <a routerLink="/recover-password" class="forgot-password">Esqueci minha senha</a>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Enter</button>
+        <button type="submit" class="btn btn-primary">Entrar</button>
       </div>
       <div class="form-group">
         <div class="form-check">

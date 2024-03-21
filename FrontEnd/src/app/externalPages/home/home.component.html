@@ -1,0 +1,48 @@
+<app-menu-home></app-menu-home>
+
+<main>
+  <section class="accordion my-5 px-5" id="accordionBalance">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="d-flex gap-3 align-items-center accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+          aria-expanded="false"
+          aria-controls="collapseOne"
+        >
+          <img
+            src="assets/Images/icon-exchange-outline.svg"
+            alt="Exchange Icon"
+          />
+          <p class="mb-0">Saldo disponível</p>
+        </button>
+      </h2>
+      <div
+        id="collapseOne"
+        class="accordion-collapse collapse"
+        data-bs-parent="#accordionBalance"
+      >
+        <div class="accordion-body d-flex gap-4">
+          <strong>R$ 21.535,91</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-flex align-items-center justify-content-between py-5 px-5">
+    <a class="btn btn-action" [routerLink]="['/external/withdraw']">
+      <i class="bi bi-cash-coin"></i>
+      <p class="mb-0">Saque</p>
+    </a>
+    <a class="btn btn-action" [routerLink]="['/external/deposit']">
+      <i class="bi bi-bank"></i>
+      <p class="mb-0">Depósito</p>
+    </a>
+    <a class="btn btn-action" [routerLink]="['/external/transfer']">
+      <i class="bi bi-arrow-left-right"></i>
+      <p class="mb-0">Transferência</p>
+    </a>
+  </section>
+</main>

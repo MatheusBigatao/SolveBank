@@ -1,0 +1,129 @@
+<body>
+  <i class="bi bi-question-circle"></i>
+
+  <!-- Carousel -->
+  <section class="carousel-section">
+    <div
+      id="carouselIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="4000"
+    >
+      <!-- Carousel-Page Indicators -->
+      <div class="carousel-indicators">
+        <button
+          *ngFor="let slide of [0, 1, 2, 3, 4]"
+          type="button"
+          [attr.data-bs-target]="'#carouselIndicators'"
+          [attr.data-bs-slide-to]="slide"
+          [class.active]="slide === 0"
+          aria-current="true"
+          [attr.aria-label]="'Slide ' + (slide + 1)"
+        ></button>
+      </div>
+
+      <!-- Carousel Content -->
+      <div class="carousel-inner">
+        <div
+          *ngFor="let item of carouselItems; let i = index"
+          class="carousel-item"
+          [class.active]="i === 0"
+        >
+          <!-- Cards -->
+          <div class="card">
+            <div class="card-body card-img">
+              <!-- Logo -->
+              <ng-container *ngIf="item.contentType === 'image'">
+                <img
+                  *ngIf="item.content"
+                  class="d-block logo"
+                  [src]="item.content"
+                  [alt]="item.alt"
+                />
+              </ng-container>
+
+              <!-- Icon -->
+              <ng-container *ngIf="item.contentType === 'icon'">
+                <i class="{{ item.content }} icon"></i>
+              </ng-container>
+
+              <!-- Text Title -->
+              <h5
+                class="card-title logo-title"
+                *ngIf="item.styledTitle && item.normalTitle"
+              >
+                <span class="logo-title-solve">{{ item.styledTitle }}</span>
+                <span>{{ item.normalTitle }}</span>
+              </h5>
+              <h5
+                class="card-title title"
+                *ngIf="
+                  !item.styledTitle &&
+                  !item.normalTitle &&
+                  i === 1 &&
+                  item.contentType !== 'icon'
+                "
+              >
+                {{ item.title }}
+              </h5>
+              <h5
+                class="card-title title margin-title"
+                *ngIf="!item.styledTitle && !item.normalTitle && i !== 1"
+              >
+                {{ item.title }}
+              </h5>
+
+              <!-- Text Description -->
+              <p class="card-text logo-text" *ngIf="item.descriptionLogo">
+                {{ item.descriptionLogo }}
+              </p>
+              <p
+                class="card-text text img-paragraph"
+                *ngIf="item.descriptionImage"
+              >
+                {{ item.descriptionImage }}
+              </p>
+              <p class="card-text text" *ngIf="item.description">
+                {{ item.description }}
+              </p>
+
+              <!-- Bottom Image -->
+              <ng-container *ngIf="item.contentType === 'image2'">
+                <img
+                  *ngIf="item.content"
+                  class="d-block img"
+                  [src]="item.content"
+                  [alt]="item.alt"
+                />
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="button-group d-flex">
+    <button type="button" class="btn" (click)="signUp()">Quero ser SolveBank</button>
+    <button type="button" class="btn" (click)="login()">Já sou SolveBank</button>
+  </div>
+</body>

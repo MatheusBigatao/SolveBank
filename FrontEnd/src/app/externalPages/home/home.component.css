@@ -1,0 +1,50 @@
+.btn-action {
+  background-color: var(--secondary);
+  color: var(--text);
+  width: 5.625rem;
+  height: 5.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-action:hover {
+  background-color: var(--secondary-hover-dark);
+}
+
+.btn-action p {
+  font-size: 0.625rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+  .btn-action {
+    width: 11.25rem;
+    height: 11.25rem;
+  }
+
+  .btn-action p {
+    font-size: 1.375rem;
+  }
+
+  .btn-action i {
+    font-size: 1.375rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-action {
+    width: 18.75rem;
+    height: 18.75rem;
+  }
+
+  .btn-action p {
+    font-size: 2rem;
+  }
+
+  .btn-action i {
+    font-size: 2rem;
+  }
+}
