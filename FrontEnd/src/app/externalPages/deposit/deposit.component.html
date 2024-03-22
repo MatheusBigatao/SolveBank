@@ -33,7 +33,7 @@
 <p class="text-value">Valor limite por envelope : R$ 5.000,00.</p>
 
 <div class="">
-  <form class="formulario-deposito">
+  <form class="formulario-deposito" #formulario="ngForm">
     <div class="row justify-content-center align-items-center mb-3">
       <div class="col-auto">
         <label for="agencia" class="txt-agency form-label">Agência:</label>
@@ -99,6 +99,7 @@
     class="btn"
     data-bs-toggle="modal"
     data-bs-target="#staticBackdrop"
+    [disabled]="!formulario.valid"
   >
     <i class="bi bi-bank me-2"></i>Depositar
   </button>
@@ -128,7 +129,12 @@
         Para finalizar o Depósito insira o envelope na entrada abaixo.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="limparCampos()"
+        >
           Cancelar
         </button>
         <button

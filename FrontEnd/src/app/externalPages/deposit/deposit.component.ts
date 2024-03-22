@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-deposit',
   standalone: true,
-  imports: [RouterModule, FormsModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './deposit.component.html',
   styleUrl: './deposit.component.css',
 })

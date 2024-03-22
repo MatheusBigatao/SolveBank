@@ -141,3 +141,8 @@ header {
   background-color: #ff9800;
   border-color: gray;
 }
+
+.required-field {
+  color: var(--danger);
+  font-size: 0.75rem;
+}
