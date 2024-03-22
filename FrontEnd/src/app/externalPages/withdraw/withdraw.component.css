@@ -80,64 +80,78 @@ header {
   margin-left: 30px;
 }
 
-.back {
-  color: white;
-  background-color: rgba(240, 40, 40, 0.144);
-  width: 125px;
-  height: 40px;
-  border-radius: 5px;
-  border-style: groove;
-  border-color: rgb(240, 25, 25);
-  font-family: "Roboto", sans-serif;
-  margin-top: 30px;
-  margin-left: 30px;
-}
-
-.back:hover {
-  background-color: rgb(107, 20, 20);
-  color: #ffffff;
-}
-
-.sign {
-  color: white;
-  background-color: rgba(38, 253, 0, 0.144);
-  width: 125px;
-  height: 40px;
-  border-radius: 5px;
-  border-style: groove;
-  border-color: rgb(38, 253, 10);
-  font-family: "Roboto", sans-serif;
-  margin-top: 30px;
-  margin-left: 30px;
-}
-
-.sign:hover {
-  background-color: rgb(20, 107, 8);
-  color: #ffffff;
-}
-
-.log-off {
-  color: white;
-  background-color: #ff990036;
-  width: 125px;
-  height: 40px;
-  border-radius: 18px;
-  border-style: groove;
-  border-color: #ff9800;
-  font-family: "Roboto", sans-serif;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: 30px;
-}
-
-.log-off:hover {
-  background-color: #633d05;
-  color: #ffffff;
-}
-
 .text-notice {
   color: #ff9800;
   font-family: "Roboto", sans-serif;
   margin-top: 15px;
   margin-left: 25px;
+}
+
+.transfer-buttons {
+  flex-direction: column;
+  align-items: center;
+}
+
+.transfer-buttons button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+  padding: 1.25rem 0.625rem;
+  margin-top: 2.25rem;
+  background-color: var(--secondary);
+  color: var(--text);
+  transition: 0.5s all ease;
+}
+
+.transfer-buttons button:hover {
+  background-color: var(--secondary-hover-dark);
+}
+@media (min-width: 768px) {
+  .transfer-buttons {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .transfer-buttons button {
+    width: calc(48% - 0.625rem);
+    width: 20%;
+    padding: 1.25rem 0.313rem;
+    margin-right: 0.625rem;
+  }
+
+  .transfer-buttons button:nth-of-type(2n) {
+    margin-left: 1.625rem;
+    margin-right: 1.625rem;
+  }
+
+  .transfer-buttons button:last-child {
+    margin-left: 0.625rem;
+    margin-right: 0;
+  }
+}
+
+.modal-header {
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+.modal-content {
+  border-color: gray;
+}
+.modal-body {
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+.btn-secondary {
+  background-color: rgb(248, 132, 132);
+  border-color: gray;
+}
+
+.btn-primary {
+  background-color: #ff9800;
+  border-color: gray;
+}
+
+.required-field {
+  color: var(--danger);
+  font-size: 0.75rem;
 }
