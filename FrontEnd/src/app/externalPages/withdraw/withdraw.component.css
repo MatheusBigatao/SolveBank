@@ -29,14 +29,13 @@ header {
   color: white;
   font-family: "Roboto", sans-serif;
   font-size: 25px;
-  margin-left: 50px;
+  margin-left: 115px;
   margin-top: 15px;
   margin-bottom: auto;
 }
 
 .value-set {
   margin-top: 25px;
-  margin-left: 250px;
 }
 @media (max-width: 1095px) {
   .value-set {
