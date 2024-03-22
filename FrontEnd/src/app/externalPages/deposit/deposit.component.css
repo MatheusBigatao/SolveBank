@@ -105,7 +105,7 @@ header {
 
   .transfer-buttons button {
     width: calc(48% - 0.625rem);
-    width: 27%;
+    width: 20%;
     padding: 1.25rem 0.313rem;
     margin-right: 0.625rem;
   }
@@ -119,4 +119,25 @@ header {
     margin-left: 0.625rem;
     margin-right: 0;
   }
+}
+
+.modal-header {
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+.modal-content {
+  border-color: gray;
+}
+.modal-body {
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+.btn-secondary {
+  background-color: rgb(248, 132, 132);
+  border-color: gray;
+}
+
+.btn-primary {
+  background-color: #ff9800;
+  border-color: gray;
 }

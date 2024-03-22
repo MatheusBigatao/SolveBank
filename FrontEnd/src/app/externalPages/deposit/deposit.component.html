@@ -94,10 +94,52 @@
   <button type="button" class="btn" [routerLink]="['/external/home']">
     <i class="bi bi-arrow-left-square me-2"></i>Voltar
   </button>
-  <button type="submit" class="btn">
+  <button
+    type="submit"
+    class="btn"
+    data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop"
+  >
     <i class="bi bi-bank me-2"></i>Depositar
   </button>
   <button type="reset" class="btn" (click)="limparCampos()">
     <i class="bi bi-x-square me-2"></i>Limpar
   </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          Realizar Depósito
+        </h1>
+      </div>
+      <div class="modal-body">
+        Para finalizar o Depósito insira o envelope na entrada abaixo.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          [routerLink]="['/external/home']"
+        >
+          Inserir e Depositar
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
