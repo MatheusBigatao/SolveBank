@@ -7,13 +7,14 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-transfer',
   standalone: true,
   templateUrl: './transfer.component.html',
   styleUrl: './transfer.component.css',
-  imports: [CommonModule, MenuHomeComponent, ReactiveFormsModule],
+  imports: [CommonModule, MenuHomeComponent, ReactiveFormsModule, RouterModule],
 })
 export class ExternalTransferComponent {
   transferForm: FormGroup;
@@ -21,9 +22,6 @@ export class ExternalTransferComponent {
   constructor() {
     this.transferForm = new FormGroup({
       beneficiary: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6),
-        Validators.pattern(/^[a-zA-Z\s]*$/),
       ]),
       sourceAccount: new FormControl('', [
         Validators.required,
