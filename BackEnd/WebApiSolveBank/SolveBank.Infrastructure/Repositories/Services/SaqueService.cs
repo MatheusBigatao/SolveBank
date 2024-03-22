@@ -1,11 +1,7 @@
-﻿using SolveBank.Entities.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SolveBank.Entities.Models;
 using SolveBank.Infrastructure.Configuration;
 using SolveBank.Infrastructure.Repositories.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SolveBank.Infrastructure.Repositories.Services
 {
@@ -36,9 +32,9 @@ namespace SolveBank.Infrastructure.Repositories.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<TSaque>> ConsultarTrasacoes(Guid contaID)
+        public async Task<List<TSaque>> ConsultarTrasacoes(Guid contaID)
         {
-            throw new NotImplementedException();
+            return await _solveBankDbConfig.Saques.Where(s => s.ContaID ==  contaID).ToListAsync();
         }
 
         public async Task<TSaque> RealizarTransacao(TSaque transacao)

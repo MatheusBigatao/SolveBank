@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\TransacoesDTOs\Deposito\" />
     <Folder Include="DTOs\TransacoesDTOs\Pagamento\" />
     <Folder Include="DTOs\TransacoesDTOs\Transferencia\" />
     <Folder Include="DTOs\TransacoesDTOs\Saque\" />

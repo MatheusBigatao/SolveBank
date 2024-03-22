@@ -5,6 +5,19 @@ body {
   color: var(--secondary);
 }
 
+.text-transfer-count {
+  color: var(--text);
+  font-size: 1.563rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: auto;
+  margin-left: 3.125rem;
+  margin-top: 0.625rem;
+}
+.line {
+  border-top: 0.125rem solid white;
+  margin: 0.625rem 0;
+}
+
 .transfer-form {
   width: 50%;
   margin: 3.125rem auto;

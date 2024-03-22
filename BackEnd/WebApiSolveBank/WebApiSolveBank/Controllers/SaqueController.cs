@@ -63,7 +63,6 @@ namespace WebApiSolveBank.Controllers
                 saldo = contaBancaria
             };
             return new ObjectResult(okResult);
-
         }
     }
 }

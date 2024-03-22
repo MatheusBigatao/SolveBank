@@ -19,6 +19,10 @@
   color: var(--text);
 }
 
+.btn-exit {
+  font-size: 0.625rem;
+}
+
 @media (min-width: 768px) {
   .btn-action {
     width: 11.25rem;
@@ -30,6 +34,10 @@
   }
 
   .btn-action i {
+    font-size: 1.375rem;
+  }
+
+  .btn-exit {
     font-size: 1.375rem;
   }
 }
@@ -45,6 +53,10 @@
   }
 
   .btn-action i {
+    font-size: 2rem;
+  }
+
+  .btn-exit {
     font-size: 2rem;
   }
 }
