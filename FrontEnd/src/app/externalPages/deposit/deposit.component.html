@@ -89,31 +89,15 @@
   </form>
 </div>
 <p class="mensage">* VALOR SUJEITO A CONFERÊNCIA *</p>
-<div class="deposit row justify-content-around align-items-center">
-  <div class="col-auto">
-    <button type="submit" class="btn">
-      <span class="icon-left"><i class="bi bi-bank me-3"></i></span>Depositar
-    </button>
-  </div>
 
-  <div class="col-auto mr-2">
-    <button type="button" class="btn" (click)="limparCampos()">
-      <span class="icon-left"><i class="bi bi-backspace me-3"></i></span>Corrige
-    </button>
-  </div>
-</div>
-
-<div class="row justify-content-around align-items-center">
-  <div class="col-auto">
-    <button type="button" class="btn" [routerLink]="'/external/home'">
-      <span class="icon-left"><i class="bi bi-arrow-left-square me-3"></i></span
-      >Voltar
-    </button>
-  </div>
-  <div class="col-auto">
-    <button type="button" class="btn" [routerLink]="'/external/login'">
-      <span class="icon-left"><i class="bi bi-x-square me-2"></i></span>
-      Cancelar
-    </button>
-  </div>
+<div class="transfer-buttons d-flex justify-content-center">
+  <button type="button" class="btn" [routerLink]="['/external/home']">
+    <i class="bi bi-arrow-left-square me-2"></i>Voltar
+  </button>
+  <button type="submit" class="btn">
+    <i class="bi bi-bank me-2"></i>Depositar
+  </button>
+  <button type="reset" class="btn" (click)="limparCampos()">
+    <i class="bi bi-x-square me-2"></i>Limpar
+  </button>
 </div>
