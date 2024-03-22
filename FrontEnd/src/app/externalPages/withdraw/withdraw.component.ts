@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class ExternalWithdrawComponent {
   value: string = '';
   formulario: any;
+  constructor() {}
   limparCampos(): void {
     this.value = '';
   }

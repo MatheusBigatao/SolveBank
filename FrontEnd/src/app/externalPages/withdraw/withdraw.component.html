@@ -93,10 +93,10 @@
       </div>
       <div class="input col-auto">
         <input
-          type="text"
+          type="number"
           class="value form-control"
-          id="valor"
-          name="valor"
+          id="value"
+          name="value"
           [(ngModel)]="value"
           required
           placeholder="R$ 0,00"
@@ -154,7 +154,12 @@
         >
           Cancelar
         </button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="limparCampos()"
+        >
           Confirmar
         </button>
       </div>
