@@ -1,62 +1,39 @@
 <body>
   <app-menu-home></app-menu-home>
+  <div>
+    <p class="text-transfer-count">Transferências</p>
+    <hr class="line" />
+  </div>
 
   <main>
     <div class="transfer-form">
-      <h2 class="transfer-title text-center">Transferências</h2>
       <form [formGroup]="transferForm">
         <div class="form-group">
-          <label for="beneficiary">Beneficiário</label>
+          <label for="destinationAccount">Conta Destino</label>
           <input
             type="text"
-            name="beneficiary"
-            id="beneficiary"
-            formControlName="beneficiary"
-            placeholder="Nome do Beneficiário"
-          />
-
-          <div
-            class="required-field"
-            *ngIf="
-              transferForm.get('beneficiary')?.invalid &&
-              transferForm.get('beneficiary')?.touched
-            "
-          >
-            <span *ngIf="transferForm.get('beneficiary')?.errors?.['required']">
-              Campo obrigatório
-            </span>
-            <span *ngIf="transferForm.get('beneficiary')?.errors?.['pattern']">
-              Beneficiário deve conter apenas letras
-            </span>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="sourceAccount">Conta Origem</label>
-          <input
-            type="text"
-            name="sourceAccount"
-            id="source-account"
-            formControlName="sourceAccount"
+            name="destinationAccount"
+            id="destination-account"
+            formControlName="destinationAccount"
             placeholder="12345678-9"
           />
 
           <div
             class="required-field"
             *ngIf="
-              transferForm.get('sourceAccount')?.invalid &&
-              transferForm.get('sourceAccount')?.touched
+              transferForm.get('destinationAccount')?.invalid &&
+              transferForm.get('destinationAccount')?.touched
             "
           >
             <span
-              *ngIf="transferForm.get('sourceAccount')?.errors?.['required']"
+              *ngIf="transferForm.get('destinationAccount')?.errors?.['required']"
             >
               Campo obrigatório
             </span>
             <span
-              *ngIf="transferForm.get('sourceAccount')?.errors?.['pattern']"
+              *ngIf="transferForm.get('destinationAccount')?.errors?.['pattern']"
             >
-              Conta Origem deve estar no formato 00000000-0
+              Conta Destino deve estar no formato 00000000-0
             </span>
           </div>
         </div>
@@ -92,34 +69,33 @@
         </div>
 
         <div class="form-group">
-          <label for="destinationAccount">Conta Destino</label>
+          <label for="beneficiary">Beneficiário</label>
           <input
-            type="text"
-            name="destinationAccount"
-            id="destination-account"
-            formControlName="destinationAccount"
-            placeholder="12345678-9"
+          class="form-control"
+          type="text"
+          name="beneficiary"
+          id="beneficiary"
+          placeholder="Nome do Beneficiário"
+          aria-label="Disabled input example"
+          disabled  
+          readonly
           />
 
           <div
             class="required-field"
             *ngIf="
-              transferForm.get('destinationAccount')?.invalid &&
-              transferForm.get('destinationAccount')?.touched
+              transferForm.get('beneficiary')?.invalid &&
+              transferForm.get('beneficiary')?.touched
             "
           >
-            <span
-              *ngIf="transferForm.get('destinationAccount')?.errors?.['required']"
-            >
+            <span *ngIf="transferForm.get('beneficiary')?.errors?.['required']">
               Campo obrigatório
             </span>
-            <span
-              *ngIf="transferForm.get('destinationAccount')?.errors?.['pattern']"
-            >
-              Conta Destino deve estar no formato 00000000-0
+            <span *ngIf="transferForm.get('beneficiary')?.errors?.['pattern']">
+              Beneficiário deve conter apenas letras
             </span>
           </div>
-        </div>
+        </div>        
 
         <div class="form-group">
           <label for="value">Valor</label>
@@ -146,9 +122,9 @@
         </div>
 
         <div class="transfer-buttons d-flex justify-content-center">
-          <button type="button" class="btn">Voltar</button>
-          <button type="reset" class="btn">Limpar</button>
-          <button type="submit" class="btn">Transferir</button>
+          <button type="button" class="btn" [routerLink]="['/external/home']"><i class="bi bi-arrow-left-square me-2"></i>Voltar</button>
+          <button type="submit" class="btn"><i class="bi bi-arrow-left-right me-2"></i>Transferir</button>
+          <button type="reset" class="btn"><i class="bi bi-x-square me-2"></i>Limpar</button>
         </div>
       </form>
     </div>
