@@ -27,5 +27,12 @@ namespace WebApiSolveBank.Controllers
             };
             return new ObjectResult(okResult);
         }
+
+        [HttpGet("beneficiario/{numeroContaDestino}")]
+        public async Task<IActionResult> BuscarBeneficiaro(int numeroContaDestino)
+        {
+            var nomeBeneficiario = _contaBancariaRepository.BuscarBeneficiario(numeroContaDestino);
+            return Ok(nomeBeneficiario);
+        }
     }
 }

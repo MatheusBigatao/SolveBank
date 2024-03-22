@@ -21,7 +21,7 @@ namespace WebApiSolveBank.Controllers
             _transacaoRepository = transacaoRepository;
         }
 
-        [HttpPut("sacar/{contaId}")] 
+        [HttpPut("sacar/{contaId}")]
         public async Task<IActionResult> RealizarSaque(Guid contaId, [FromBody] decimal valorSaque)
         {
             var contaBancaria = await _contaBancariaRepository.ExibirDadosConta(contaId);
@@ -35,7 +35,7 @@ namespace WebApiSolveBank.Controllers
                 var restante = valorSaque - contaBancaria.Saldo;
                 contaBancaria.Saldo = 0;
                 if (saldoDisponivel >= valorSaque)
-                {                    
+                {
                     contaBancaria.LimiteUtilizado += restante;
                 }
                 else
@@ -53,7 +53,7 @@ namespace WebApiSolveBank.Controllers
                 LocalDoSaque = "Caixa Eletronico - 6458+FP Asa Norte, Brasília - DF "
             };
 
-            await  _transacaoRepository.RealizarTransacao(tSaqueRegister);
+            await _transacaoRepository.RealizarTransacao(tSaqueRegister);
             await _contaBancariaRepository.AtualizarConta(contaBancaria);
 
             var okResult = new

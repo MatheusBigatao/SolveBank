@@ -12,14 +12,12 @@ namespace SolveBank.Infrastructure.Repositories.Services
 {
     public class WebTokenService : IWebTokenRepository
     {
-        private readonly IConfiguration _configuration;
-        private readonly SolveBankDbConfig _solveBankDbConfig;
+        private readonly IConfiguration _configuration;        
         private readonly IUsuarioRepository _usuarioRepository;
 
-        public WebTokenService(IConfiguration configuration, SolveBankDbConfig solveBankDbConfig, IUsuarioRepository usuarioRepository)
+        public WebTokenService(IConfiguration configuration, IUsuarioRepository usuarioRepository)
         {
-            _configuration = configuration;
-            _solveBankDbConfig = solveBankDbConfig;
+            _configuration = configuration;            
             _usuarioRepository = usuarioRepository;
         }
 

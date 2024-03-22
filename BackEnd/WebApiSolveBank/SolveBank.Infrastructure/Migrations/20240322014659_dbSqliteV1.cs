@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SolveBank.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class testeV1 : Migration
+    public partial class dbSqliteV1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,10 +15,10 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -29,8 +29,8 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "SolveBank",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CodigoDoBanco = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    CodigoDoBanco = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,11 +41,11 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    RoleId = table.Column<string>(type: "TEXT", nullable: false),
+                    ClaimType = table.Column<string>(type: "TEXT", nullable: true),
+                    ClaimValue = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -62,27 +62,27 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "AspNetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    NomeCompleto = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CPF_CNPJ = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    EnumTipoUsuario = table.Column<int>(type: "int", nullable: false),
-                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Removido = table.Column<bool>(type: "bit", nullable: false),
-                    SolveBankModelId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    NomeCompleto = table.Column<string>(type: "TEXT", nullable: false),
+                    CPF_CNPJ = table.Column<string>(type: "TEXT", nullable: false),
+                    EnumTipoUsuario = table.Column<int>(type: "INTEGER", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Removido = table.Column<bool>(type: "INTEGER", nullable: false),
+                    SolveBankModelId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "INTEGER", nullable: false),
+                    PasswordHash = table.Column<string>(type: "TEXT", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "TEXT", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "TEXT", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "INTEGER", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "INTEGER", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "TEXT", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "INTEGER", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -98,11 +98,11 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    ClaimType = table.Column<string>(type: "TEXT", nullable: true),
+                    ClaimValue = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -119,10 +119,10 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    LoginProvider = table.Column<string>(type: "TEXT", nullable: false),
+                    ProviderKey = table.Column<string>(type: "TEXT", nullable: false),
+                    ProviderDisplayName = table.Column<string>(type: "TEXT", nullable: true),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -139,8 +139,8 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    RoleId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -163,10 +163,10 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    LoginProvider = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    Value = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -183,11 +183,11 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "Autenticacao2Fatores",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Token = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataExpiracao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UsuarioID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Utilizado = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Token = table.Column<string>(type: "TEXT", nullable: false),
+                    DataExpiracao = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    UsuarioID = table.Column<string>(type: "TEXT", nullable: false),
+                    Utilizado = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -203,15 +203,16 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "ContasBancarias",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Agencia = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Numero = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Saldo = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    Limite = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    UsuarioID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    EnumCategoriaConta = table.Column<int>(type: "int", nullable: false),
-                    Informacoes = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Agencia = table.Column<string>(type: "TEXT", nullable: false),
+                    Numero = table.Column<int>(type: "INTEGER", fixedLength: true, maxLength: 8, nullable: false),
+                    Saldo = table.Column<decimal>(type: "TEXT", precision: 18, scale: 2, nullable: false),
+                    Limite = table.Column<decimal>(type: "TEXT", precision: 18, scale: 2, nullable: false),
+                    LimiteUtilizado = table.Column<decimal>(type: "TEXT", precision: 18, scale: 2, nullable: false),
+                    UsuarioID = table.Column<string>(type: "TEXT", nullable: false),
+                    EnumCategoriaConta = table.Column<int>(type: "INTEGER", nullable: false),
+                    Informacoes = table.Column<string>(type: "TEXT", nullable: false),
+                    Removido = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -227,15 +228,15 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "Enderecos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UsuarioId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Logradouro = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cidade = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Numero = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Bairro = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CEP = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Complemento = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UsuarioId = table.Column<string>(type: "TEXT", nullable: false),
+                    Logradouro = table.Column<string>(type: "TEXT", nullable: false),
+                    Cidade = table.Column<string>(type: "TEXT", nullable: false),
+                    Numero = table.Column<string>(type: "TEXT", nullable: false),
+                    Bairro = table.Column<string>(type: "TEXT", nullable: false),
+                    CEP = table.Column<string>(type: "TEXT", nullable: false),
+                    Estado = table.Column<string>(type: "TEXT", nullable: false),
+                    Complemento = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -251,11 +252,11 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "WebTokens",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Token = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UsuarioID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DataCriado = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ExpiracaoToken = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Token = table.Column<string>(type: "TEXT", nullable: false),
+                    UsuarioID = table.Column<string>(type: "TEXT", nullable: false),
+                    DataCriado = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ExpiracaoToken = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -272,11 +273,11 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "Atendimentos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ContaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DataSolicitacao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataUltimaResposta = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StatusAtendimento = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ContaID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    DataSolicitacao = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DataUltimaResposta = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    StatusAtendimento = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -292,17 +293,17 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "Cartoes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Numero = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Validade = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CVV = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ContaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Limite = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    LimiteUtilizado = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    EnumTipoCartao = table.Column<int>(type: "int", nullable: false),
-                    EnumBandeiraCartao = table.Column<int>(type: "int", nullable: false),
-                    EnumCategoriaCartao = table.Column<int>(type: "int", nullable: false),
-                    ContaBancariaId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Numero = table.Column<string>(type: "TEXT", nullable: false),
+                    Validade = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    CVV = table.Column<string>(type: "TEXT", nullable: false),
+                    ContaID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Limite = table.Column<decimal>(type: "TEXT", precision: 18, scale: 2, nullable: false),
+                    LimiteUtilizado = table.Column<decimal>(type: "TEXT", precision: 18, scale: 2, nullable: false),
+                    EnumTipoCartao = table.Column<int>(type: "INTEGER", nullable: false),
+                    EnumBandeiraCartao = table.Column<int>(type: "INTEGER", nullable: false),
+                    EnumCategoriaCartao = table.Column<int>(type: "INTEGER", nullable: false),
+                    ContaBancariaId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -323,22 +324,22 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "Transacoes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ContaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CodigoDoBanco = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
-                    Valor = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    DataTransacao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(21)", maxLength: 21, nullable: false),
-                    Agencia = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NumeroDaConta = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CodigoDoEnvelope = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TPagamento_Beneficiario = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NumeroBoleto = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LocalDoSaque = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Beneficiario = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AgenciaDestino = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    NumeroContaDestino = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    ContaOrigem = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ContaID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    CodigoDoBanco = table.Column<string>(type: "TEXT", maxLength: 3, nullable: false),
+                    Valor = table.Column<decimal>(type: "TEXT", precision: 18, scale: 2, nullable: false),
+                    DataTransacao = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Discriminator = table.Column<string>(type: "TEXT", maxLength: 21, nullable: false),
+                    Agencia = table.Column<string>(type: "TEXT", nullable: true),
+                    NumeroDaConta = table.Column<int>(type: "INTEGER", nullable: true),
+                    CodigoDoEnvelope = table.Column<string>(type: "TEXT", nullable: true),
+                    TPagamento_Beneficiario = table.Column<string>(type: "TEXT", nullable: true),
+                    NumeroBoleto = table.Column<string>(type: "TEXT", nullable: true),
+                    LocalDoSaque = table.Column<string>(type: "TEXT", nullable: true),
+                    Beneficiario = table.Column<string>(type: "TEXT", nullable: true),
+                    AgenciaDestino = table.Column<string>(type: "TEXT", maxLength: 20, nullable: true),
+                    NumeroContaDestino = table.Column<int>(type: "INTEGER", maxLength: 20, nullable: true),
+                    ContaOrigem = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -354,11 +355,11 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "Mensagens",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ContaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AtendimentoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Data = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Conteudo = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ContaID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    AtendimentoID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Data = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Conteudo = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -375,9 +376,9 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "TransacoesCartoes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TransacaoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CartaoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    TransacaoID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    CartaoID = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -404,8 +405,7 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
                 column: "NormalizedName",
-                unique: true,
-                filter: "[NormalizedName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
@@ -442,8 +442,7 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
-                unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Atendimentos_ContaID",
@@ -464,6 +463,12 @@ namespace SolveBank.Infrastructure.Migrations
                 name: "IX_Cartoes_ContaID",
                 table: "Cartoes",
                 column: "ContaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ContasBancarias_Numero",
+                table: "ContasBancarias",
+                column: "Numero",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ContasBancarias_UsuarioID",

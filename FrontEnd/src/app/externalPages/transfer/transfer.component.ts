@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TransferenciaService } from '../../services/transferencia.service';
 
 @Component({
   selector: 'app-transfer',
@@ -19,7 +20,7 @@ import { RouterModule } from '@angular/router';
 export class ExternalTransferComponent {
   transferForm: FormGroup;
 
-  constructor() {
+  constructor(private transferenciaService: TransferenciaService) {
     this.transferForm = new FormGroup({
       beneficiary: new FormControl('', [
       ]),
@@ -52,4 +53,9 @@ export class ExternalTransferComponent {
       this.transferForm.controls['value'].setValue('R$ 0,00');
     }
   }
+
+  transferir(){
+    this.transferenciaService.transferir().subscribe()
+  }
+
 }

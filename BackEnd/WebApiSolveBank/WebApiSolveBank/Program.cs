@@ -30,7 +30,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 //Conexao com o Banco de Dados
 builder.Services.AddDbContext<SolveBankDbConfig>(options =>
 {
-    options.UseSqlServer(configuration.GetConnectionString("DbConectionTest"));
+    options.UseSqlite(configuration.GetConnectionString("DbConectionDefault"));
 });
 
 //Adicionando Autorização e Autenticação
