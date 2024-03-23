@@ -13,7 +13,7 @@ namespace SolveBank.Entities.DTOs.ContaBancariaDTOs
     public class ResponseContaBancariaDTO
     {       
         public Guid Id { get; set; }
-        public string Agencia { get; set; } = null!;     
+        public string Agencia { get; set; } = null!;
         public int Numero { get; set; }
         public decimal Saldo { get; set; }
         public decimal Limite { get; set; }    

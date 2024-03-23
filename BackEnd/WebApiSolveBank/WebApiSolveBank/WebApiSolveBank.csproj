@@ -33,8 +33,4 @@
     <ProjectReference Include="..\SolveBank.Infrastructure\SolveBank.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DataBase\" />
-  </ItemGroup>
-
 </Project>

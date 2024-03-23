@@ -11,7 +11,7 @@
 
 .alertbody-content {
     max-width: 80%;
-    border: 1px solid red;
+    border: 1px solid rgb(114, 2, 2);
     border-radius: 10px;
     background: rgba(236, 7, 37, 0.5);
     padding: 10px;
