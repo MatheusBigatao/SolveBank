@@ -14,11 +14,17 @@ namespace SolveBank.Infrastructure.Repositories.Services
     {
         private readonly IConfiguration _configuration;        
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly SolveBankDbConfig _solveBankDbConfig; 
 
-        public WebTokenService(IConfiguration configuration, IUsuarioRepository usuarioRepository)
+        public WebTokenService(
+            IConfiguration configuration,
+            IUsuarioRepository usuarioRepository,
+            SolveBankDbConfig solveBankDbConfig
+            )
         {
             _configuration = configuration;            
             _usuarioRepository = usuarioRepository;
+            _solveBankDbConfig = solveBankDbConfig;
         }
 
         public async Task<WebToken> CadastrarToken(string usuarioID)
@@ -54,6 +60,8 @@ namespace SolveBank.Infrastructure.Repositories.Services
                     Token = new JwtSecurityTokenHandler().WriteToken(token),
 
                 };
+                _solveBankDbConfig.WebTokens.Add(tokenCreated);
+                await _solveBankDbConfig.SaveChangesAsync();
                 return tokenCreated;
             }
             throw new Exception("Usuário não localziado");

@@ -48,6 +48,8 @@ namespace WebApiSolveBank.Controllers
                 UserName = requestCriarUsuarioDTO.CPF_CNPJ
             };
             var usuarioResult = await _usuarioRepository.Cadastrar(usuarioCadastro, requestCriarUsuarioDTO.Senha);
+                      
+            
             var contaBancaria = new ContaBancaria()
             {
                 Agencia = "0001",
@@ -65,7 +67,7 @@ namespace WebApiSolveBank.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var loginResponse = await _usuarioRepository.Logar(requestUsuarioLogin.Cpf_Cnpj, requestUsuarioLogin.Senha);
-            if (loginResponse == null) return BadRequest(loginResponse);
+            if (loginResponse == null) return BadRequest("Usuário não encontrado");
             return Ok("Usuário encontrado Token Enviado");
         }
 

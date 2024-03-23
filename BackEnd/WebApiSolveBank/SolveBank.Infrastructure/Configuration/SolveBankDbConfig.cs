@@ -14,9 +14,8 @@ namespace SolveBank.Infrastructure.Configuration
 
         public SolveBankDbConfig(DbContextOptions<SolveBankDbConfig> options) : base(options)
         {
-            Database.Migrate();
+            
         }
-
 
         //Criaçao das Tabelas
         public DbSet<Atendimento> Atendimentos { get; set; }
