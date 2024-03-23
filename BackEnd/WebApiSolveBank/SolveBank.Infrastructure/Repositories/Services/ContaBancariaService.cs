@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SolveBank.Entities.Models;
 using SolveBank.Infrastructure.Configuration;
 using SolveBank.Infrastructure.Repositories.Contracts;
@@ -56,6 +57,15 @@ namespace SolveBank.Infrastructure.Repositories.Services
         {
             var contaBancaria = await _solveBankDbConfig.ContasBancarias.FindAsync(contaBancariaID);
             return contaBancaria;
+        }
+        public async Task<ContaBancaria> RetornaContaNumero(int numeroConta)
+        {
+            return await _solveBankDbConfig.ContasBancarias.FirstOrDefaultAsync(c => c.Numero == numeroConta);
+        }
+        public async Task<string> BuscarBeneficiario(int numeroConta)
+        {
+            var contaBancaria =  await _solveBankDbConfig.ContasBancarias.FirstOrDefaultAsync(c => c.Numero == numeroConta);
+            return contaBancaria.Usuario.NomeCompleto;
         }
     }
 }

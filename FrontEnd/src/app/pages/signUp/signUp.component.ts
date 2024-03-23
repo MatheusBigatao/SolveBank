@@ -10,27 +10,38 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { v4 as uuidv4 } from 'uuid';
 
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from '../../models/Usuario/Usuario';
-import { LoginComponent } from '../login/login.component';
+import { AlertCustom } from '../../models/Alert/AlertCustom';
+import { AlertErrorComponent } from '../../components/alert-error/alert-error.component';
+import { AlertSuccessComponent } from '../../components/alert-success/alert-success.component';
 
 @Component({
   selector: 'app-signUp',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgxMaskPipe, NgxMaskDirective],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    NgxMaskPipe,
+    NgxMaskDirective,
+    AlertErrorComponent,
+    AlertSuccessComponent
+  ],
   templateUrl: './signUp.component.html',
   styleUrl: './signUp.component.css',
 })
 export class SignUpComponent implements OnInit {
-  ngOnInit(): void {}
-
   signUpForm: FormGroup;
+  alerFailOpen: boolean = false;
+  alertSuccesOpen: boolean = false;
+  alertCustom: AlertCustom | null = null
 
-  constructor(private userServices: UsuarioService, private _route: Router) {
+  ngOnInit(): void {
+
+  }
+  constructor(private _userServices: UsuarioService, private _route: Router) {
     this.signUpForm = new FormGroup(
       {
         nome: new FormControl('', Validators.required),
@@ -38,14 +49,14 @@ export class SignUpComponent implements OnInit {
         sobrenome: new FormControl('', Validators.required),
         cpf_cnpj: new FormControl('', [
           Validators.required,
-          Validators.pattern(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/),
+          Validators.minLength(11)
         ]),
         senha: new FormControl('', [
           Validators.required,
           Validators.minLength(6),
         ]),
         confirmarSenha: new FormControl('', [Validators.required]),
-        celular: new FormControl('', Validators.required),
+        telefone: new FormControl('', Validators.required),
       },
       { validators: this.validatePasswords }
     );
@@ -62,13 +73,22 @@ export class SignUpComponent implements OnInit {
   //Metodos Usuário API
   createUser() {
     let usuario = this.signUpForm.value as Usuario;
-    this.userServices.cadastraUsuario(usuario).subscribe({
-      next: (res) => {
-        console.log(res);
+    this._userServices.cadastraUsuario(usuario).subscribe({
+      next: res => {
+        this.alertCustom = new AlertCustom("Sucesso ao criar Usuário", "Parabéns seu cadastro foi realizado com sucesso, você sera redirecionado para página de login")
+        this.alertSuccesOpen = true;
+        setTimeout(() => {
+          this.alertSuccesOpen = false;
+        }, 3000)
         this._route.navigateByUrl('/login');
       },
-      error: (err) => {
-        console.log(err);
+      error: err => {               
+        this.alertCustom = new AlertCustom("Erro ao criar conta","Verifique os dados informados, se você já possuí uma conta, tente recuperar senha")
+        this.alerFailOpen = true;
+        setTimeout(() => {
+          this.alerFailOpen = false;
+        }, 3000)
+        console.log(err) 
       },
     });
   }

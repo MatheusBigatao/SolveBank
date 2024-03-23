@@ -1,15 +1,18 @@
 ﻿using SolveBank.Entities.Models;
+using SolveBank.Infrastructure.Configuration;
 using SolveBank.Infrastructure.Repositories.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SolveBank.Infrastructure.Repositories.Services
 {
     public class TransferenciaService : ITransacaoRepository<TTransferencia>
     {
+        private readonly SolveBankDbConfig _solveBankDbConfig;
+        public TransferenciaService(SolveBankDbConfig solveBankDbConfig)
+        {
+            _solveBankDbConfig = solveBankDbConfig;
+        }
+
         public Task<TTransferencia> AgendarTransacao(TTransferencia transacao)
         {
             throw new NotImplementedException();
@@ -35,9 +38,11 @@ namespace SolveBank.Infrastructure.Repositories.Services
             throw new NotImplementedException();
         }
 
-        public Task<TTransferencia> RealizarTransacao(TTransferencia transacao)
+        public async Task<TTransferencia> RealizarTransacao(TTransferencia transacao)
         {
-            throw new NotImplementedException();
+            _solveBankDbConfig.Transferencias.Add(transacao);
+            await _solveBankDbConfig.SaveChangesAsync();
+            return transacao;
         }
     }
 }

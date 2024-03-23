@@ -25,39 +25,46 @@ namespace WebApiSolveBank.Controllers
         [HttpPut("depositar/{contaId}")]
         public async Task<IActionResult> RealizarDeposito(Guid contaId, [FromBody] DepositoDTO depositoDTO)
         {
-            var contaBancaria = await _contaBancariaRepository.ExibirDadosConta(contaId);
-            if (contaBancaria == null) return BadRequest("Conta Bancária não encontrada");
+            var contaBancariaDeposito = await _contaBancariaRepository.ExibirDadosConta(contaId);
+            if (contaBancariaDeposito == null) return BadRequest("Conta Bancária não encontrada");
 
-            if (contaBancaria.LimiteUtilizado > 0)
+            if (contaBancariaDeposito.LimiteUtilizado > 0)
             {
-                if (contaBancaria.LimiteUtilizado >= depositoDTO.ValorDeposito)
+                if (contaBancariaDeposito.LimiteUtilizado >= depositoDTO.ValorDeposito)
                 {
-                    contaBancaria.LimiteUtilizado -= depositoDTO.ValorDeposito;
+                    contaBancariaDeposito.LimiteUtilizado -= depositoDTO.ValorDeposito;
                 }
-                else if(contaBancaria.LimiteUtilizado < depositoDTO.ValorDeposito)
+                else if (contaBancariaDeposito.LimiteUtilizado < depositoDTO.ValorDeposito)
                 {
-                    var valorRestante =  depositoDTO.ValorDeposito - contaBancaria.LimiteUtilizado;
-                    contaBancaria.LimiteUtilizado = 0;
-                    contaBancaria.Saldo += valorRestante;                    
+                    var valorRestante = depositoDTO.ValorDeposito - contaBancariaDeposito.LimiteUtilizado;
+                    contaBancariaDeposito.LimiteUtilizado = 0;
+                    contaBancariaDeposito.Saldo += valorRestante;
                 }
             }
             else
             {
-                contaBancaria.Saldo += depositoDTO.ValorDeposito;
+                contaBancariaDeposito.Saldo += depositoDTO.ValorDeposito;
             }
             var transacaoDeposito = new TDeposito()
             {
-                ContaID = contaBancaria.Id,
+                ContaID = contaBancariaDeposito.Id,
                 DataTransacao = DateTime.Now,
                 CodigoDoBanco = "302",
                 Valor = depositoDTO.ValorDeposito,
                 CodigoDoEnvelope = depositoDTO.CodigoEnvelope,
-                Agencia = contaBancaria.Agencia,
-                NumeroDaConta = contaBancaria.Numero,
+                Agencia = contaBancariaDeposito.Agencia,
+                NumeroDaConta = contaBancariaDeposito.Numero,
             };
             await _transacaoRepository.RealizarTransacao(transacaoDeposito);
-            await _contaBancariaRepository.AtualizarConta(contaBancaria);
-            return Ok(contaBancaria);
+            await _contaBancariaRepository.AtualizarConta(contaBancariaDeposito);
+
+            var respostaDeposito = new
+            {
+                contentType = "application/json",
+                statusCode = 200,
+                contaBancaria = contaBancariaDeposito
+            };
+            return new ObjectResult(respostaDeposito);
         }
     }
 }

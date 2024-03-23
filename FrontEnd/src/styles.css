@@ -40,6 +40,10 @@
       min-height: 100dvh;
       background-color: var(--background);
     }
+    .text-primary-color{
+      color:var(--text)
+    }
+
 }
 
 .font-default{
