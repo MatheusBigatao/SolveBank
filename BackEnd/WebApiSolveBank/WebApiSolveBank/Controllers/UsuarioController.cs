@@ -48,8 +48,6 @@ namespace WebApiSolveBank.Controllers
                 UserName = requestCriarUsuarioDTO.CPF_CNPJ
             };
             var usuarioResult = await _usuarioRepository.Cadastrar(usuarioCadastro, requestCriarUsuarioDTO.Senha);
-                      
-            
             var contaBancaria = new ContaBancaria()
             {
                 Agencia = "0001",
@@ -59,7 +57,14 @@ namespace WebApiSolveBank.Controllers
                 Informacoes = "Conta nova, recem criada"
             };
             await _contaBancariaRepository.CriarConta(contaBancaria);
-            return Ok("Usuário cadastrado com sucesso");
+                        
+            var respostaUsuario = new
+            {
+                contentType = "application/json",
+                statusCode = 201,
+                message = "Usuário cadastrado com sucesso",                
+            };
+            return new ObjectResult(respostaUsuario);            
         }
 
         [HttpPost("login")]
@@ -68,7 +73,14 @@ namespace WebApiSolveBank.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var loginResponse = await _usuarioRepository.Logar(requestUsuarioLogin.Cpf_Cnpj, requestUsuarioLogin.Senha);
             if (loginResponse == null) return BadRequest("Usuário não encontrado");
-            return Ok("Usuário encontrado Token Enviado");
+
+            var respostaUsuario = new
+            {
+                contentType = "application/json",
+                statusCode = 200,
+                message = "Usuário encontrado Token Enviado",
+            };
+            return new ObjectResult(respostaUsuario);
         }
 
         [HttpGet("Autenticar/{token2Fatores}")]
@@ -77,7 +89,15 @@ namespace WebApiSolveBank.Controllers
             var usuarioAutenticado = await _autenticacao2Repository.AutenticarUsuario(token2Fatores);
             if (usuarioAutenticado == null) return BadRequest("Token já utilizado, ou usuário não localizado");
             usuarioAutenticado.WebToken = await _webTokenRepository.CadastrarToken(usuarioAutenticado.Id);
-            return Ok(usuarioAutenticado);
+
+            var respostaUsuario = new
+            {
+                contentType = "application/json",
+                statusCode = 200,
+                message = "Usuário encontrado Token Enviado",
+                usuario = usuarioAutenticado
+            };
+            return new ObjectResult(respostaUsuario);            
         }
 
         //TODO - IMPLEMENTAR METODOS PARA ATUALIZAR E DESATIVAR USUARIO

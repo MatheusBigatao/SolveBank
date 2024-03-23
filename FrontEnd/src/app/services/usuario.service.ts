@@ -12,8 +12,8 @@ export class UsuarioService {
   constructor(private httpRequest: HttpClient) { }
   
 
-  cadastraUsuario(usuarioCadastro: Usuario): Observable<any> {
-    return this.httpRequest.post<any>(`${uri}usuario/cadastrar/`, usuarioCadastro).pipe(
+  cadastraUsuario(usuarioCadastro: Usuario): Observable<string> {
+    return this.httpRequest.post<string>(`${uri}usuario/cadastrar/`, usuarioCadastro).pipe(
       res => res,
       error => error
     )

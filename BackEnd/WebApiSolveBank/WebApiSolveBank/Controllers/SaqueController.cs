@@ -24,19 +24,19 @@ namespace WebApiSolveBank.Controllers
         [HttpPut("sacar/{contaId}")]
         public async Task<IActionResult> RealizarSaque(Guid contaId, [FromBody] decimal valorSaque)
         {
-            var contaBancaria = await _contaBancariaRepository.ExibirDadosConta(contaId);
-            var saldoDisponivel = contaBancaria.Saldo + contaBancaria.Limite - contaBancaria.LimiteUtilizado;
-            if (contaBancaria.Saldo >= valorSaque)
+            var contaBancariaSaque = await _contaBancariaRepository.ExibirDadosConta(contaId);
+            var saldoDisponivel = contaBancariaSaque.Saldo + contaBancariaSaque.Limite - contaBancariaSaque.LimiteUtilizado;
+            if (contaBancariaSaque.Saldo >= valorSaque)
             {
-                contaBancaria.Saldo -= valorSaque;
+                contaBancariaSaque.Saldo -= valorSaque;
             }
             else
             {
-                var restante = valorSaque - contaBancaria.Saldo;
-                contaBancaria.Saldo = 0;
+                var restante = valorSaque - contaBancariaSaque.Saldo;
+                contaBancariaSaque.Saldo = 0;
                 if (saldoDisponivel >= valorSaque)
                 {
-                    contaBancaria.LimiteUtilizado += restante;
+                    contaBancariaSaque.LimiteUtilizado += restante;
                 }
                 else
                 {
@@ -47,22 +47,22 @@ namespace WebApiSolveBank.Controllers
             var tSaqueRegister = new TSaque()
             {
                 CodigoDoBanco = "302",
-                ContaID = contaBancaria.Id,
+                ContaID = contaBancariaSaque.Id,
                 DataTransacao = DateTime.Now,
                 Valor = valorSaque,
                 LocalDoSaque = "Caixa Eletronico - 6458+FP Asa Norte, Brasília - DF "
             };
 
             await _transacaoRepository.RealizarTransacao(tSaqueRegister);
-            await _contaBancariaRepository.AtualizarConta(contaBancaria);
+            await _contaBancariaRepository.AtualizarConta(contaBancariaSaque);
 
-            var okResult = new
+            var respostaSaque = new
             {
                 contentType = "application/json",
                 statusCode = 200,
-                saldo = contaBancaria
+                contaBancaria = contaBancariaSaque
             };
-            return new ObjectResult(okResult);
+            return new ObjectResult(respostaSaque);
         }
     }
 }

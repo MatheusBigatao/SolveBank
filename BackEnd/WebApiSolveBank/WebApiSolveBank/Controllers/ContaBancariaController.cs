@@ -19,20 +19,27 @@ namespace WebApiSolveBank.Controllers
         public async Task<IActionResult> ConsultarSaldo(Guid contaId)
         {
             var saldoAtual = await _contaBancariaRepository.ConsultarSaldo(contaId);
-            var okResult = new
+            var respostaSaldo = new
             {
                 contentType = "application/json",
                 statusCode = 200,
                 saldo = saldoAtual
             };
-            return new ObjectResult(okResult);
+            return new ObjectResult(respostaSaldo);
         }
 
         [HttpGet("beneficiario/{numeroContaDestino}")]
         public async Task<IActionResult> BuscarBeneficiaro(int numeroContaDestino)
         {
-            var nomeBeneficiario = _contaBancariaRepository.BuscarBeneficiario(numeroContaDestino);
-            return Ok(nomeBeneficiario);
+            var nomeBeneficiario =  await _contaBancariaRepository.BuscarBeneficiario(numeroContaDestino);
+            if (nomeBeneficiario == "") return BadRequest("Nome não encontrado");
+            var respostaNomeBeneficiaro = new
+            {
+                contentType = "application/json",
+                statusCode = 200,
+                beneficiario= nomeBeneficiario
+            };
+            return new ObjectResult(respostaNomeBeneficiaro);            
         }
     }
 }

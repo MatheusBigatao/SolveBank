@@ -79,7 +79,14 @@ namespace WebApiSolveBank.Controllers
             await _trasacaoRepository.RealizarTransacao(transferencia);
             await _contaBancariaRepository.AtualizarConta(contaDestino);
             await _contaBancariaRepository.AtualizarConta(contaOrigem);
-            return Ok(contaOrigem);
+            var respostaTransferencia = new
+            {
+                contentType = "application/json",
+                statusCode = 200,
+                message = "Usuário encontrado Token Enviado",
+                contaBancaria = contaOrigem
+            };
+            return new ObjectResult(respostaTransferencia);
         }
     }
 }

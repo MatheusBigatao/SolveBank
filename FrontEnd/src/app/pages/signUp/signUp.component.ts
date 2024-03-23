@@ -74,7 +74,7 @@ export class SignUpComponent implements OnInit {
   createUser() {
     let usuario = this.signUpForm.value as Usuario;
     this._userServices.cadastraUsuario(usuario).subscribe({
-      next: (res) => {
+      next: res => {
         this.alertCustom = new AlertCustom("Sucesso ao criar Usuário", "Parabéns seu cadastro foi realizado com sucesso, você sera redirecionado para página de login")
         this.alertSuccesOpen = true;
         setTimeout(() => {
@@ -82,9 +82,13 @@ export class SignUpComponent implements OnInit {
         }, 3000)
         this._route.navigateByUrl('/login');
       },
-      error: (err) => {
-        console.log(err)
-        this.alertCustom = new AlertCustom("Erro ao criar conta","Verifique os dados informados")
+      error: err => {               
+        this.alertCustom = new AlertCustom("Erro ao criar conta","Verifique os dados informados, se você já possuí uma conta, tente recuperar senha")
+        this.alerFailOpen = true;
+        setTimeout(() => {
+          this.alerFailOpen = false;
+        }, 3000)
+        console.log(err) 
       },
     });
   }
