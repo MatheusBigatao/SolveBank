@@ -12,7 +12,7 @@ namespace SolveBank.Entities.DTOs.UsuarioDTOs
         public Endereco Endereco { get; set; }
         public string CPF_CNPJ { get; set; }
         public EnumTipoUsuario EnumTipoUsuario { get; set; }
-        public List<ResponseContaBancariaDTO> ContaBancarias { get; set; }
+        public List<ResponseContaBancariaDTO> ContasBancarias { get; set; }
         public DateTime DataCadastro { get; set; }
         public bool Removido { get; set; }
         public WebToken WebToken { get; set; }

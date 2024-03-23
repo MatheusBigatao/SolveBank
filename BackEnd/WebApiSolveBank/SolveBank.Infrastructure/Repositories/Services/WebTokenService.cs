@@ -12,9 +12,9 @@ namespace SolveBank.Infrastructure.Repositories.Services
 {
     public class WebTokenService : IWebTokenRepository
     {
-        private readonly IConfiguration _configuration;        
+        private readonly IConfiguration _configuration;
         private readonly IUsuarioRepository _usuarioRepository;
-        private readonly SolveBankDbConfig _solveBankDbConfig; 
+        private readonly SolveBankDbConfig _solveBankDbConfig;
 
         public WebTokenService(
             IConfiguration configuration,
@@ -22,7 +22,7 @@ namespace SolveBank.Infrastructure.Repositories.Services
             SolveBankDbConfig solveBankDbConfig
             )
         {
-            _configuration = configuration;            
+            _configuration = configuration;
             _usuarioRepository = usuarioRepository;
             _solveBankDbConfig = solveBankDbConfig;
         }
@@ -62,6 +62,7 @@ namespace SolveBank.Infrastructure.Repositories.Services
                 };
                 _solveBankDbConfig.WebTokens.Add(tokenCreated);
                 await _solveBankDbConfig.SaveChangesAsync();
+                tokenCreated.Usuario = null;
                 return tokenCreated;
             }
             throw new Exception("Usuário não localziado");

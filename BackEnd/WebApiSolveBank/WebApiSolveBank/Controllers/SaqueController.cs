@@ -25,6 +25,7 @@ namespace WebApiSolveBank.Controllers
         public async Task<IActionResult> RealizarSaque(Guid contaId, [FromBody] decimal valorSaque)
         {
             var contaBancariaSaque = await _contaBancariaRepository.ExibirDadosConta(contaId);
+            if (contaBancariaSaque == null) return BadRequest("Conta bancária Não Localizada");
             var saldoDisponivel = contaBancariaSaque.Saldo + contaBancariaSaque.Limite - contaBancariaSaque.LimiteUtilizado;
             if (contaBancariaSaque.Saldo >= valorSaque)
             {

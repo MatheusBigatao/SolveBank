@@ -24,8 +24,8 @@ export class UsuarioService {
       error => error
     )
   }
-  autenticarUsuario(token2Fatores: string):Observable<responseExibirUsuarioDTO> {
-    return this.httpRequest.get<responseExibirUsuarioDTO>(`${uri}usuario/autenticar/${token2Fatores}`).pipe(
+  autenticarUsuario(token2Fatores: string):Observable<any> {
+    return this.httpRequest.get<any>(`${uri}usuario/autenticar/${token2Fatores}`).pipe(
       res => res,
       error => error
     )
