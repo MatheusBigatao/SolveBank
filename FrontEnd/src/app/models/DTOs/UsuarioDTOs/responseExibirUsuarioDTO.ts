@@ -7,8 +7,8 @@ export class responseExibirUsuarioDTO {
     email: string = "";
     cpf_cnpj: string = "";
     enumTipoUsuario: number = 0;
-    contaBancarias: ContaBancaria[] = [];
+    contasBancarias: ContaBancaria[] = [];
     dataCadastro: Date = new Date();
     removido:boolean = false;
-    WebToken:WebToken = new WebToken();
+    webToken:WebToken = new WebToken();
 }
