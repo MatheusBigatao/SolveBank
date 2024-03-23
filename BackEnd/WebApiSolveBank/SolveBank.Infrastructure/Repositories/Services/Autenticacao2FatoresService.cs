@@ -43,7 +43,7 @@ namespace SolveBank.Infrastructure.Repositories.Services
                     _mapper.Map(contaBancaria, contaBancariaDTO);
                     listContaBancaria.Add(contaBancariaDTO);
                 }
-                usuarioRetorno.ContaBancarias = listContaBancaria;
+                usuarioRetorno.ContasBancarias = listContaBancaria;
                 token2Fatores.Utilizado = true;
                 _solveBankDbConfig.Autenticacao2Fatores.Update(token2Fatores);
                 await _solveBankDbConfig.SaveChangesAsync();

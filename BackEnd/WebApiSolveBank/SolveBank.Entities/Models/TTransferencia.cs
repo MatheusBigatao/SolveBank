@@ -12,9 +12,9 @@ namespace SolveBank.Entities.Models
         public string AgenciaDestino { get; set; } = null!;
         [Required]
         [StringLength(20, ErrorMessage = "NumeroContaDestino deve conter no máximo {1} e no mínimo {2} caracteres", MinimumLength = 4)]
-        public int NumeroContaDestino { get; set; }
+        public long NumeroContaDestino { get; set; }
         [Required]
         [MinLength(4,ErrorMessage = "ContaOrigem precisa ter no mínimo 4 caracteres")]
-        public int ContaOrigem { get; set; } 
+        public long ContaOrigem { get; set; } 
     }
 }

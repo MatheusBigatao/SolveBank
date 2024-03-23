@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SolveBank.Entities.Models;
 using System.Reflection.Emit;
@@ -6,15 +7,10 @@ using System.Reflection.Emit;
 namespace SolveBank.Infrastructure.Configuration
 {
     public class SolveBankDbConfig : IdentityDbContext<Usuario>
-    {
-        public SolveBankDbConfig()
-        {
-
-        }
-
+    {       
         public SolveBankDbConfig(DbContextOptions<SolveBankDbConfig> options) : base(options)
         {
-            
+           Database.Migrate();
         }
 
         //Criaçao das Tabelas

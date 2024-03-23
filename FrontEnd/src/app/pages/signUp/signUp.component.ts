@@ -34,7 +34,7 @@ import { AlertSuccessComponent } from '../../components/alert-success/alert-succ
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
-  alerFailOpen: boolean = false;
+  alertFailOpen: boolean = false;
   alertSuccesOpen: boolean = false;
   alertCustom: AlertCustom | null = null
 
@@ -79,15 +79,15 @@ export class SignUpComponent implements OnInit {
         this.alertSuccesOpen = true;
         setTimeout(() => {
           this.alertSuccesOpen = false;
-        }, 3000)
-        this._route.navigateByUrl('/login');
+          this._route.navigateByUrl('/login');
+        }, 5000)        
       },
       error: err => {               
         this.alertCustom = new AlertCustom("Erro ao criar conta","Verifique os dados informados, se você já possuí uma conta, tente recuperar senha")
-        this.alerFailOpen = true;
+        this.alertFailOpen = true;
         setTimeout(() => {
-          this.alerFailOpen = false;
-        }, 3000)
+          this.alertFailOpen = false;
+        }, 5000)
         console.log(err) 
       },
     });
