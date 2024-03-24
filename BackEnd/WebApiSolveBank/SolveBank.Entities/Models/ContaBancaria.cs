@@ -10,7 +10,7 @@ namespace SolveBank.Entities.Models
         [Key]
         public Guid Id { get; set; }
         public string Agencia { get; set; } = null!;
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]        
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Numero { get; set; }
         public decimal Saldo { get; set; }
         public decimal Limite { get; set; }
