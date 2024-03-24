@@ -1,3 +1,7 @@
+<app-alert-error [alertOpen]="alertFailOpen" [alertDetails]="alertCustom" />
+<app-alert-success [alertOpen]="alertSuccesOpen" [alertDetails]="alertCustom" />
+<app-loading-spinner [isActive]="loadingSpinner" />
+
 <header>
   <div
     id="header-desktop-screen"
@@ -33,81 +37,104 @@
 <p class="text-value">Valor limite por envelope : R$ 5.000,00.</p>
 
 <div class="">
-  <form class="formulario-deposito">
+  <form class="formulario-deposito" [formGroup]="depositForm">
     <div class="row justify-content-center align-items-center mb-3">
       <div class="col-auto">
-        <label for="agencia" class="txt-agency form-label">Agência:</label>
-      </div>
-      <div class="col-auto">
-        <input
-          type="text"
-          class="agency form-control"
-          id="agencia"
-          name="agencia"
-          required
-        />
-      </div>
-    </div>
-
-    <div class="row justify-content-center align-items-center mb-3">
-      <div class="col-auto">
-        <label for="conta" class="form-label">Conta para Depósito:</label>
+        <label for="codigoEnvelope" class="form-label"
+          >Número do envelope:</label
+        >
       </div>
       <div class="col-auto">
         <input
           type="text"
           class="form-control"
-          id="conta"
-          name="conta"
+          id="codigoEnvelope"
+          name="codigoEnvelope"
           required
+          placeholder="Inserir numero"
+          formControlName="codigoEnvelope"
         />
       </div>
     </div>
 
     <div class="row justify-content-center align-items-center mb-3">
       <div class="col-auto">
-        <label for="valor" class="form-label">Valor:*</label>
+        <label for="valorDeposito" class="form-label">Valor:*</label>
       </div>
       <div class="col-auto">
         <input
-          type="number"
+          type="text"
           class="camp-value form-control"
-          id="valor"
-          name="valor"
+          id="valorDeposito"
+          name="valorDeposito"
           min="0"
           step="0.01"
           required
+          placeholder="R$ 0,00"
+          (input)="valueFormatter($event)"
+          formControlName="valorDeposito"
         />
       </div>
     </div>
   </form>
 </div>
 <p class="mensage">* VALOR SUJEITO A CONFERÊNCIA *</p>
-<div class="deposit row justify-content-around align-items-center">
-  <div class="col-auto">
-    <button type="submit" class="btn">
-      <span class="icon-left"><i class="bi bi-bank me-3"></i></span>Depositar
-    </button>
-  </div>
 
-  <div class="col-auto mr-2">
-    <button type="submit" class="btn">
-      <span class="icon-left"><i class="bi bi-backspace me-3"></i></span>Corrige
-    </button>
-  </div>
+<div class="transfer-buttons d-flex justify-content-center">
+  <button type="button" class="btn" [routerLink]="['/external/home']">
+    <i class="bi bi-arrow-left-square me-2"></i>Voltar
+  </button>
+  <button
+    class="btn"
+    [disabled]="!depositForm.valid"
+    data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop"
+  >
+    <i class="bi bi-bank me-2"></i>Depositar
+  </button>
+  <button type="reset" class="btn" (click)="limparCampos()">
+    <i class="bi bi-x-square me-2"></i>Limpar
+  </button>
 </div>
 
-<div class="row justify-content-around align-items-center">
-  <div class="col-auto">
-    <button type="submit" class="btn">
-      <span class="icon-left"><i class="bi bi-arrow-left-square me-3"></i></span
-      >Voltar
-    </button>
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn">
-      <span class="icon-left"><i class="bi bi-x-square me-2"></i></span>
-      Cancelar
-    </button>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          Realizar Depósito
+        </h1>
+      </div>
+      <div class="modal-body">
+        Para finalizar o Depósito insira o envelope na entrada abaixo.
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="limparCampos()"
+        >
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="realizarDeposito()"
+        >
+          Inserir e Depositar
+        </button>
+      </div>
+    </div>
   </div>
 </div>
