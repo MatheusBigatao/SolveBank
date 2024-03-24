@@ -7,36 +7,49 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { TransferenciaService } from '../../services/transferencia.service';
+import { TransferenciaDTO } from '../../models/DTOs/TransferenciaDTOs/TransferenciaDTO';
+import { AlertCustom } from '../../models/Alert/AlertCustom';
+import { AlertErrorComponent } from '../../components/alert-error/alert-error.component';
+import { AlertSuccessComponent } from '../../components/alert-success/alert-success.component';
+import { LoadingSpinnerComponent } from '../../components/loading-spinner/loading-spinner.component';
+import { responseExibirUsuarioDTO } from '../../models/DTOs/UsuarioDTOs/responseExibirUsuarioDTO';
 
 @Component({
   selector: 'app-transfer',
   standalone: true,
   templateUrl: './transfer.component.html',
   styleUrl: './transfer.component.css',
-  imports: [CommonModule, MenuHomeComponent, ReactiveFormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    MenuHomeComponent,
+    ReactiveFormsModule,
+    RouterModule,
+    AlertErrorComponent,
+    AlertSuccessComponent,
+    LoadingSpinnerComponent
+  ]
 })
 export class ExternalTransferComponent {
   transferForm: FormGroup;
-
-  constructor(private transferenciaService: TransferenciaService) {
+  alertCustom: AlertCustom | null = null
+  alertSuccesOpen: boolean = false
+  alertFailOpen: boolean = false
+  loadingSpinner: boolean = false
+  constructor(private transferenciaService: TransferenciaService, private _router: Router) {
     this.transferForm = new FormGroup({
-      beneficiary: new FormControl('', [
+        beneficiario: new FormControl('', [
       ]),
-      sourceAccount: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^\d{8}\-\d{1}$/),
-      ]),
-      destinationBranch: new FormControl('', [
+      agenciaDestino: new FormControl('', [
         Validators.required,
         Validators.pattern(/^\d{4}$/),
       ]),
-      destinationAccount: new FormControl('', [
+      numeroContaDestino: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^\d{8}\-\d{1}$/),
       ]),
-      value: new FormControl('', Validators.required),
+      valor: new FormControl('', Validators.required),
     });
   }
 
