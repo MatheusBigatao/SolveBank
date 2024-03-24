@@ -57,7 +57,7 @@ export class ExternalLoginComponent {
           }, 4000)
         },
         error: err => {
-          this.alertCustom = new AlertCustom("Erro: ", "Usuário Não encontrado")
+          this.alertCustom = new AlertCustom("Erro: ", "Usuário e/ou senha incorreta, Verifique usuário e senha")
           this.loadingSpinner = false
           this.alertFailOpen = true;
           setTimeout(() => {

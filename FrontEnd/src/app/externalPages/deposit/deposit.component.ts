@@ -78,7 +78,7 @@ export class ExternalDepositComponent {
   realizarDeposito() {
     let deposit = this.depositForm.value as DepositoDTO;
     deposit.valorDeposito = this.parseFloatCustom(
-      deposit.valorDeposito.toString()
+    deposit.valorDeposito.toString()
     );
     this.depositoServicos
       .realizarDeposito(this.usuarioLogged.contasBancarias[0].id, deposit)

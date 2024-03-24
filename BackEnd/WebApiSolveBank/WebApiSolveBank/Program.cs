@@ -93,7 +93,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        string[] origins = { "http://localhost:4200"};
+        string[] origins = {"http://localhost:4200", "https://solvebank.codesolvebrasil.com" };
         builder.
          WithOrigins(origins)
          .WithMethods("GET", "POST", "PUT", "PATCH", "DELETE")
