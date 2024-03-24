@@ -26,10 +26,47 @@ import { LoadingSpinnerComponent } from '../../components/loading-spinner/loadin
   styleUrl: './withdraw.component.css',
 })
 export class ExternalWithdrawComponent {
-  value: string = '';
-  formulario: any;
-  constructor() {}
+  valorSaque: number = NaN;
+  saqueForm: FormGroup;
+  alertCustom: AlertCustom | null = null
+  alertSuccesOpen: boolean = false
+  alertFailOpen: boolean = false
+  loadingSpinner: boolean = false
+
+  constructor(private saqueServicos:SaqueService, private _router: Router) {
+    this.saqueForm = new FormGroup({
+        valorSaque: new FormControl('', [Validators.required, this.minimoValorValidator()]),
+      });
+  }
   limparCampos(): void {
-    this.value = '';
+    this.valorSaque = NaN;
+  }
+  valueFormatter(event: any) {
+    let value = event.target.value;
+    value = value.replace(/\D/g, '');
+    value = parseInt(value, 10) / 100;
+
+    if (!isNaN(value)) {
+      const formattedValue =
+        'R$ ' + value.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+      this.saqueForm.controls['valorSaque'].setValue(formattedValue);
+    } else {
+      this.saqueForm.controls['valorSaque'].setValue('R$ 0,00');
+    }
+  }
+  validarCampos(): boolean {
+    let valorSaque = parseInt(this.saqueForm.value.valorSaque);
+    if (valorSaque >= 10) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  setInputValue(idInput: string, value: string) {
+    const input = document.getElementById(idInput) as HTMLInputElement
+    input.value = value
+    this.saqueForm.controls['valorSaque'].setValue(value);
+  }
   }
 }
