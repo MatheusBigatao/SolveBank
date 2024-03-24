@@ -67,8 +67,52 @@ export class ExternalTransferComponent {
     }
   }
 
+  validarCampos(): boolean {
+      return true;
+  }
   transferir(){
-    this.transferenciaService.transferir().subscribe()
+    let usuarioLogged = JSON.parse(localStorage.getItem("userLogged") || "") as responseExibirUsuarioDTO
+    var agenciaOrigem = usuarioLogged.contasBancarias[0].agencia;
+    var numeroOrigem = usuarioLogged.contasBancarias[0].numero;
+
+    let dadosTransferir = this.transferForm.value;
+    dadosTransferir["agenciaOrigem"] = agenciaOrigem;
+    dadosTransferir["numeroOrigem"] = numeroOrigem;
+    dadosTransferir = dadosTransferir as TransferenciaDTO;
+    console.log(dadosTransferir);
+    // this.transferenciaService.transferir().subscribe()
+
+    if (!this.validarCampos()) {
+        this.alertCustom = new AlertCustom("Erro: ", "Campos inseridos inválidos")
+            this.loadingSpinner = false
+            this.alertFailOpen = true;
+            setTimeout(() => {
+              this.alertFailOpen = false
+            }, 3000)
+      return
+    }
+    this.loadingSpinner = true
+    this.transferenciaService.transferir(dadosTransferir).subscribe(
+        {
+          next: res => {
+            this.alertCustom = new AlertCustom("Sucesso: ", "Transferência efetuado com sucesso")
+            this.loadingSpinner = false
+            this.alertSuccesOpen = true;
+            setTimeout(() => {
+              this.alertSuccesOpen = false
+              this._router.navigateByUrl("/external/home")
+            }, 4000)
+          },
+          error: err => {
+            this.alertCustom = new AlertCustom("Erro: ", "Erro ao efetuar transferência")
+            this.loadingSpinner = false
+            this.alertFailOpen = true;
+            setTimeout(() => {
+              this.alertFailOpen = false
+            }, 4000)
+          }
+        }
+    )
   }
 
 }
