@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SolveBank.Entities.Models;
 using SolveBank.Infrastructure;
 using SolveBank.Infrastructure.Configuration;
@@ -17,8 +18,32 @@ var configuration = builder.Configuration;
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Por favor informe um token válido",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
 //Adicionando InfrastructureModule
 builder.Services.AddInfrastructure();
 //JsonConfiguration IgnoreCycles
@@ -68,14 +93,22 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        string[] origins = { "http://localhost:4200", "" };
+        string[] origins = { "http://localhost:4200"};
         builder.
          WithOrigins(origins)
          .WithMethods("GET", "POST", "PUT", "PATCH", "DELETE")
         .AllowAnyHeader()
         .AllowAnyMethod()
-        .AllowCredentials(); ;
+        .AllowCredentials();
     });
+});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = 401;
+        return Task.CompletedTask;
+    };
 });
 
 var app = builder.Build();
@@ -89,11 +122,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
+
 app.UseAuthorization();
 
 app.UseAuthentication();
-
-app.UseCors();
 
 app.MapControllers();
 

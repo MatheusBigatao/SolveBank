@@ -3,11 +3,12 @@ import { MenuHomeComponent } from '../../components/menu-home/menu-home.componen
 import { Router, RouterModule } from '@angular/router';
 import { ContaBancariaService } from '../../services/conta-bancaria.service';
 import { responseExibirUsuarioDTO } from '../../models/DTOs/UsuarioDTOs/responseExibirUsuarioDTO';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-external-home',
   standalone: true,
-  imports: [MenuHomeComponent, RouterModule],
+  imports: [CommonModule, MenuHomeComponent, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -17,34 +18,36 @@ export class ExternalHomeComponent {
   ) as responseExibirUsuarioDTO;
 
   saldoDaConta: number = 0
+  loadginSaldo: boolean = true
 
   constructor(
     private contaBancariaServicos: ContaBancariaService,
     private route: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.exibirSaldo()
   }
 
   exibirSaldo() {
+    this.loadginSaldo = true
     this.contaBancariaServicos
       .consultarSaldo(this.usuarioLogged.contasBancarias[0].id)
       .subscribe({
-        next: res => {
-          this.saldoDaConta = res.saldo
+        next: res => {          
+          setTimeout(()=>{
+            this.saldoDaConta = res.saldo
+            this.loadginSaldo = false
+          },1000)         
         },
         error: err => {
-          console.log(err)
-          if (err.status === 401) {
-            localStorage.removeItem('userLogged');
-            this.route.navigateByUrl('/external/login');
-          }
+          console.log(err)          
+          localStorage.removeItem('userLogged');
+          this.route.navigateByUrl('/external/login');         
         },
       });
   }
 
-  logoutUser(){
+  logoutUser() {
     localStorage.removeItem('userLogged');
     this.route.navigateByUrl('/external/login');
   }

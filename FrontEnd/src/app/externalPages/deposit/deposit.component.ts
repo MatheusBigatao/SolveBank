@@ -40,9 +40,7 @@ export class ExternalDepositComponent {
   alertSuccesOpen: boolean = false;
   alertFailOpen: boolean = false;
   loadingSpinner: boolean = false;
-  agencia: string = '';
-  conta: string = '';
-  valor: number = NaN;
+  valorDeposito: boolean = false;
   depositForm: FormGroup;
   constructor(
     private depositoServicos: DepositService,
@@ -50,8 +48,7 @@ export class ExternalDepositComponent {
   ) {
     this.depositForm = new FormGroup({
       valorDeposito: new FormControl('', [
-        Validators.required,
-        this.minimoValorValidator(),
+        Validators.required
       ]),
       codigoEnvelope: new FormControl('', [
         Validators.required,
@@ -66,8 +63,8 @@ export class ExternalDepositComponent {
   valueFormatter(event: any) {
     let value = event.target.value;
     value = value.replace(/\D/g, '');
-    value = parseInt(value, 10) / 100;
-
+    value = parseInt(value, 10) / 100;  
+    this.valorDeposito = parseFloat(value) >= 10 && parseFloat(value) <= 5000 ? true : false 
     if (!isNaN(value)) {
       const formattedValue = value.toLocaleString('pt-BR', {
         minimumFractionDigits: 2,
@@ -83,7 +80,6 @@ export class ExternalDepositComponent {
     deposit.valorDeposito = this.parseFloatCustom(
       deposit.valorDeposito.toString()
     );
-    console.log(deposit);
     this.depositoServicos
       .realizarDeposito(this.usuarioLogged.contasBancarias[0].id, deposit)
       .subscribe({
@@ -114,16 +110,9 @@ export class ExternalDepositComponent {
   }
   parseFloatCustom(value: string) {
     value = value.replace(/\./g, '');
-
     value = value.replace(',', '.');
-
     let floatValue = parseFloat(value);
     return floatValue;
   }
-  minimoValorValidator() {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const valor = parseFloat(control.value);
-      return valor >= 10.0 ? null : { minimo: { requiredMinimo: 10.0 } };
-    };
-  }
+
 }

@@ -12,6 +12,7 @@ import { ExternalDepositComponent } from './externalPages/deposit/deposit.compon
 import { ExternalLoginComponent } from './externalPages/login/login.component';
 import { ExternalWithdrawComponent } from './externalPages/withdraw/withdraw.component';
 import { ExternalAuthenticationComponent } from './externalPages/authentication/authentication.component';
+import { externalAuthenticationGuard } from './security/external-authentication.guard';
 
 export const routes: Routes = [
   { path: '', component: SplashscreenComponent },
@@ -21,10 +22,10 @@ export const routes: Routes = [
   { path: 'recover-password', component: RecoverPasswordComponent },
   { path: 'welcome', component: LandingPageComponent },
   { path: 'transactions', component: TransactionsComponent },
-  { path: 'external/home', component: ExternalHomeComponent },
+  { path: 'external/home', component: ExternalHomeComponent,canActivate:[externalAuthenticationGuard] },
   { path: 'external/login', component:ExternalLoginComponent},
-  { path: 'external/deposit', component:ExternalDepositComponent},
-  { path: 'external/transfer', component:ExternalTransferComponent},
-  { path: 'external/withdraw', component:ExternalWithdrawComponent},
+  { path: 'external/deposit', component:ExternalDepositComponent,canActivate:[externalAuthenticationGuard]},
+  { path: 'external/transfer', component:ExternalTransferComponent,canActivate:[externalAuthenticationGuard]},
+  { path: 'external/withdraw', component:ExternalWithdrawComponent,canActivate:[externalAuthenticationGuard]},
   { path: 'external/authentication', component:ExternalAuthenticationComponent},
 ];
