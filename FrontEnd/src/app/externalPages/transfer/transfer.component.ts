@@ -29,26 +29,27 @@ import { responseExibirUsuarioDTO } from '../../models/DTOs/UsuarioDTOs/response
     RouterModule,
     AlertErrorComponent,
     AlertSuccessComponent,
-    LoadingSpinnerComponent
-  ]
+    LoadingSpinnerComponent,
+  ],
 })
 export class ExternalTransferComponent {
   transferForm: FormGroup;
-  alertCustom: AlertCustom | null = null
-  alertSuccesOpen: boolean = false
-  alertFailOpen: boolean = false
-  loadingSpinner: boolean = false
-  constructor(private transferenciaService: TransferenciaService, private _router: Router) {
+  alertCustom: AlertCustom | null = null;
+  alertSuccesOpen: boolean = false;
+  alertFailOpen: boolean = false;
+  loadingSpinner: boolean = false;
+  nomeBeneficiario: string = '';
+  constructor(
+    private transferenciaService: TransferenciaService,
+    private _router: Router
+  ) {
     this.transferForm = new FormGroup({
-        beneficiario: new FormControl('', [
-      ]),
+      beneficiario: new FormControl('', []),
       agenciaDestino: new FormControl('', [
         Validators.required,
         Validators.pattern(/^\d{4}$/),
       ]),
-      numeroContaDestino: new FormControl('', [
-        Validators.required,
-      ]),
+      numeroContaDestino: new FormControl('', [Validators.required]),
       valor: new FormControl('', Validators.required),
     });
   }
@@ -59,60 +60,95 @@ export class ExternalTransferComponent {
     value = parseInt(value, 10) / 100;
 
     if (!isNaN(value)) {
-      const formattedValue =
-        'R$ ' + value.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-      this.transferForm.controls['value'].setValue(formattedValue);
+      const formattedValue = value.toLocaleString('pt-BR', {
+        minimumFractionDigits: 2,
+      });
+      this.transferForm.controls['valor'].setValue(formattedValue);
     } else {
-      this.transferForm.controls['value'].setValue('R$ 0,00');
+      this.transferForm.controls['valor'].setValue('R$ 0,00');
     }
   }
 
-  validarCampos(): boolean {
-      return true;
+  buscarBeneficiario(event: any) {
+    const numeroContaDestino =
+      this.transferForm.get('numeroContaDestino')?.value;
+    if (!numeroContaDestino) {
+      return;
+    }
+    this.transferenciaService.buscarBeneficiario(numeroContaDestino).subscribe({
+      next: (res) => {
+        this.nomeBeneficiario = res.beneficiario;
+        console.log(res.beneficiario);
+      },
+      error: (err) => {
+        this.nomeBeneficiario = '';
+        console.log(err);
+      },
+    });
   }
-  transferir(){
-    let usuarioLogged = JSON.parse(localStorage.getItem("userLogged") || "") as responseExibirUsuarioDTO
+
+  transferir() {
+    let usuarioLogged = JSON.parse(
+      localStorage.getItem('userLogged') || ''
+    ) as responseExibirUsuarioDTO;
     var agenciaOrigem = usuarioLogged.contasBancarias[0].agencia;
     var numeroOrigem = usuarioLogged.contasBancarias[0].numero;
 
-    let dadosTransferir = this.transferForm.value;
-    dadosTransferir["agenciaOrigem"] = agenciaOrigem;
-    dadosTransferir["numeroOrigem"] = numeroOrigem;
-    dadosTransferir = dadosTransferir as TransferenciaDTO;
+    let dadosTransferir = this.transferForm.value as TransferenciaDTO;
+    dadosTransferir.agenciaDestino = agenciaOrigem;
+    dadosTransferir.contaOrigem = numeroOrigem;
+    dadosTransferir.numeroContaDestino = Number(
+      dadosTransferir.numeroContaDestino
+    );
+    dadosTransferir.beneficiario = this.nomeBeneficiario;
     console.log(dadosTransferir);
-    // this.transferenciaService.transferir().subscribe()
 
-    if (!this.validarCampos()) {
-        this.alertCustom = new AlertCustom("Erro: ", "Campos inseridos inválidos")
-            this.loadingSpinner = false
-            this.alertFailOpen = true;
-            setTimeout(() => {
-              this.alertFailOpen = false
-            }, 3000)
-      return
+    if (this.transferForm.invalid) {
+      this.alertCustom = new AlertCustom(
+        'Erro: ',
+        'Campos inseridos inválidos'
+      );
+      this.loadingSpinner = false;
+      this.alertFailOpen = true;
+      setTimeout(() => {
+        this.alertFailOpen = false;
+      }, 3000);
+      return;
     }
-    this.loadingSpinner = true
-    this.transferenciaService.transferir(dadosTransferir).subscribe(
-        {
-          next: res => {
-            this.alertCustom = new AlertCustom("Sucesso: ", "Transferência efetuado com sucesso")
-            this.loadingSpinner = false
-            this.alertSuccesOpen = true;
-            setTimeout(() => {
-              this.alertSuccesOpen = false
-              this._router.navigateByUrl("/external/home")
-            }, 4000)
-          },
-          error: err => {
-            this.alertCustom = new AlertCustom("Erro: ", "Erro ao efetuar transferência")
-            this.loadingSpinner = false
-            this.alertFailOpen = true;
-            setTimeout(() => {
-              this.alertFailOpen = false
-            }, 4000)
-          }
-        }
-    )
+    this.loadingSpinner = true;
+
+    dadosTransferir.valor = this.parseFloatCustom(
+      dadosTransferir.valor.toString()
+    );
+
+    this.transferenciaService.transferir(dadosTransferir).subscribe({
+      next: (res) => {
+        this.alertCustom = new AlertCustom(
+          'Sucesso: ',
+          'Transferência efetuada com sucesso'
+        );
+        this.loadingSpinner = false;
+        this.alertSuccesOpen = true;
+        setTimeout(() => {
+          this.alertSuccesOpen = false;
+          this._router.navigateByUrl('/external/home');
+        }, 4000);
+      },
+      error: (err) => {
+        this.alertCustom = new AlertCustom('Erro: ', 'Saldo insuficiente');
+        this.loadingSpinner = false;
+        this.alertFailOpen = true;
+        setTimeout(() => {
+          this.alertFailOpen = false;
+        }, 4000);
+      },
+    });
   }
 
+  parseFloatCustom(value: string) {
+    value = value.replace(/\./g, '');
+    value = value.replace(',', '.');
+    let floatValue = parseFloat(value);
+    return floatValue;
+  }
 }
