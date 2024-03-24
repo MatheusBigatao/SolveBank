@@ -18,14 +18,11 @@
         <label for="password">Senha</label>
         <input type="password" id="password" name="password" placeholder="Insira sua senha" formControlName="senha" />
       </div>
-
       <div class="form-group">
         <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary"
           (click)="usuarioLogin()">Entrar</button>
       </div>
-
     </form>
   </div>
-
   <app-footer-rights></app-footer-rights>
 </body>

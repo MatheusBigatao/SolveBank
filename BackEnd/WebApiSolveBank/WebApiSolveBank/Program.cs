@@ -68,14 +68,22 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        string[] origins = { "http://localhost:4200", "" };
+        string[] origins = { "http://localhost:4200/*", "" };
         builder.
          WithOrigins(origins)
          .WithMethods("GET", "POST", "PUT", "PATCH", "DELETE")
         .AllowAnyHeader()
         .AllowAnyMethod()
-        .AllowCredentials(); ;
+        .AllowCredentials();
     });
+});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = 401;
+        return Task.CompletedTask;
+    };
 });
 
 var app = builder.Build();
@@ -89,11 +97,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
+
 app.UseAuthorization();
 
 app.UseAuthentication();
-
-app.UseCors();
 
 app.MapControllers();
 
