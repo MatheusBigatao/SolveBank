@@ -65,7 +65,8 @@ namespace SolveBank.Infrastructure.Repositories.Services
         public async Task<string> BuscarBeneficiario(int numeroConta)
         {
             var contaBancaria =  await _solveBankDbConfig.ContasBancarias.FirstOrDefaultAsync(c => c.Numero == numeroConta);
-            return contaBancaria.Usuario.NomeCompleto;
+            var nomeUsuario = await _solveBankDbConfig.Usuarios.FindAsync(contaBancaria.UsuarioID);
+            return nomeUsuario.NomeCompleto;
         }
     }
 }

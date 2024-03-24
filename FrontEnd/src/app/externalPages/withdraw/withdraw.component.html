@@ -36,59 +36,46 @@
 <hr class="line" />
 <p class="select-value">Selecione o Valor:</p>
 <form [formGroup]="saqueForm">
-
 <div class="row justify-content-center">
   <div class="col-auto">
     <div class="value-set">
       <div class="col-auto">
         <button
           class="button mb-2 mx-2"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          (click)="setInputValue('valorSaque', '10')"
+          
+          (click)="setInputValue('valorSaque', '10,00')"
         >
           R$ 10,00
         </button>
         <button
-          class="button mx-2"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          (click)="setInputValue('valorSaque', '20')"
+          class="button mx-2"         
+          (click)="setInputValue('valorSaque', '20,00')"
         >
           R$ 20,00
         </button>
         <button
-          class="button mt-2 mx-2"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          (click)="setInputValue('valorSaque', '50')"
+          class="button mt-2 mx-2"          
+          (click)="setInputValue('valorSaque', '50,00')"
         >
           R$ 50,00
         </button>
       </div>
       <div class="col-auto">
         <button
-          class="button mt-2 mb-2 mx-2"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          (click)="setInputValue('valorSaque', '100')"
+          class="button mt-2 mb-2 mx-2"          
+          (click)="setInputValue('valorSaque', '100,00')"
         >
           R$ 100,00
         </button>
         <button
-          class="button mx-2"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          (click)="setInputValue('valorSaque', '500')"
+          class="button mx-2"          
+          (click)="setInputValue('valorSaque', '500,00')"
         >
           R$ 500,00
         </button>
         <button
-          class="button mt-2 mx-2"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          (click)="setInputValue('valorSaque', '1000')"
-        >
+          class="button mt-2 mx-2"          
+          (click)="setInputValue('valorSaque', '1.000,00')">
           R$ 1.000,00
         </button>
       </div>
@@ -103,18 +90,20 @@
       </div>
       <div class="input col-auto">
         <input
-          type="number"
+          type="text"
           class="value form-control"
           id="valorSaque"
           step="10"
           name="valorSaque"
           placeholder="R$ 0,00"
           formControlName="valorSaque"
+          (input)="valueFormatter($event)"
           required
         />
       </div>
     </section>
     <p class="text-notice">*Notas disponíveis (R$): 10, 20, 50 e 100.</p>
+    <p class="text-notice pt-0 mt-0"> *Valor máximo para saque R$ 1.500,00</p>
   </div>
 </div>
 </form>
@@ -127,6 +116,7 @@
     class="btn"
     data-bs-toggle="modal"
     data-bs-target="#staticBackdrop"
+    [disabled]="!saqueValidacao"
   >
     <i class="bi bi-cash-coin me-2"></i>Sacar
   </button>
