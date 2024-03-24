@@ -33,6 +33,7 @@ namespace WebApiSolveBank.Controllers
         [HttpPost("cadastrar")]
         public async Task<IActionResult> CadastrarUsuario([FromBody] RequestCriarUsuarioDTO requestCriarUsuarioDTO)
         {
+            
             if (!ModelState.IsValid || requestCriarUsuarioDTO.Senha != requestCriarUsuarioDTO.ConfirmarSenha)
                 return BadRequest(ModelState.ToString() + "Verifique a senha e confirmação de senha");
 

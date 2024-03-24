@@ -10,7 +10,7 @@ namespace SolveBank.Infrastructure.Configuration
     {       
         public SolveBankDbConfig(DbContextOptions<SolveBankDbConfig> options) : base(options)
         {
-           Database.Migrate();
+        
         }
 
         //Criaçao das Tabelas
@@ -94,17 +94,16 @@ namespace SolveBank.Infrastructure.Configuration
             .HasPrecision(18, 2);
             builder.Entity<ContaBancaria>()
                .Property(cb => cb.LimiteUtilizado)
-           .HasPrecision(18, 2);
-            builder.Entity<ContaBancaria>()
-              .HasIndex(cb => cb.Numero)
-              .IsUnique(true);
+           .HasPrecision(18, 2);            
             builder.Entity<ContaBancaria>()
               .Property(c => c.Numero)
               .HasMaxLength(8)
               .IsFixedLength();
+            builder.Entity<ContaBancaria>().
+                Property(c => c.Numero)
+                .ValueGeneratedOnAdd();
             builder.Entity<ContaBancaria>()
-              .Property(c => c.Numero)
-              .ValueGeneratedOnAdd();
+                .HasAlternateKey(c => c.Numero);
 
             builder.Entity<ContaBancaria>()
                 .HasOne(cb => cb.Usuario)
