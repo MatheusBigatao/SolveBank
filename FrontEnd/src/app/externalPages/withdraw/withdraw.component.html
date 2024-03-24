@@ -1,3 +1,6 @@
+<app-alert-error [alertOpen]="alertFailOpen" [alertDetails]="alertCustom" />
+<app-alert-success [alertOpen]="alertSuccesOpen" [alertDetails]="alertCustom" />
+<app-loading-spinner [isActive]="loadingSpinner" />
 <header>
   <div
     id="header-desktop-screen"
@@ -29,30 +32,70 @@
 
 <div class="d-flex align-items-center">
   <p class="txt-withdraw mb-0">Saque - Conta-Corrente</p>
-  <button class="log-off">
-    Sair<i class="bi bi-box-arrow-in-right align-items-center"></i>
-  </button>
 </div>
 <hr class="line" />
 <p class="select-value">Selecione o Valor:</p>
+<form [formGroup]="saqueForm">
 
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-auto">
     <div class="value-set">
       <div class="col-auto">
-        <button class="button mb-2 mx-2">R$ 10,00</button>
-        <button class="button mx-2">R$ 20,00</button>
-        <button class="button mt-2 mx-2">R$ 50,00</button>
+        <button
+          class="button mb-2 mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          (click)="setInputValue('valorSaque', '10')"
+        >
+          R$ 10,00
+        </button>
+        <button
+          class="button mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          (click)="setInputValue('valorSaque', '20')"
+        >
+          R$ 20,00
+        </button>
+        <button
+          class="button mt-2 mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          (click)="setInputValue('valorSaque', '50')"
+        >
+          R$ 50,00
+        </button>
       </div>
       <div class="col-auto">
-        <button class="button mt-2 mb-2 mx-2">R$ 100,00</button>
-        <button class="button mx-2">R$ 500,00</button>
-        <button class="button mt-2 mx-2">R$ 1.000,00</button>
+        <button
+          class="button mt-2 mb-2 mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          (click)="setInputValue('valorSaque', '100')"
+        >
+          R$ 100,00
+        </button>
+        <button
+          class="button mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          (click)="setInputValue('valorSaque', '500')"
+        >
+          R$ 500,00
+        </button>
+        <button
+          class="button mt-2 mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          (click)="setInputValue('valorSaque', '1000')"
+        >
+          R$ 1.000,00
+        </button>
       </div>
     </div>
   </div>
   <div class="col-auto">
-    <form class="form-value justify-content-center align-items-center">
+    <section class="form-value justify-content-center align-items-center">
       <div class="col-auto">
         <label for="valor" class="txt-value form-label"
           >Ou Digite o Valor Desejado:</label
@@ -60,24 +103,76 @@
       </div>
       <div class="input col-auto">
         <input
-          type="text"
+          type="number"
           class="value form-control"
-          id="valor"
-          name="valor"
-          required
+          id="valorSaque"
+          step="10"
+          name="valorSaque"
           placeholder="R$ 0,00"
+          formControlName="valorSaque"
+          required
         />
       </div>
-    </form>
+    </section>
     <p class="text-notice">*Notas disponíveis (R$): 10, 20, 50 e 100.</p>
-    <button class="sign justify-content-center align-items-center">
-      <i class="bi bi-cash-coin me-2"></i>Confirmar
-    </button>
   </div>
 </div>
-
-<div>
-  <button class="back justify-content-center align-items-center">
+</form>
+<div class="transfer-buttons d-flex justify-content-center">
+  <button type="button" class="btn" [routerLink]="['/external/home']">
     <i class="bi bi-arrow-left-square me-2"></i>Voltar
   </button>
+  <button
+    type="submit"
+    class="btn"
+    data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop"
+  >
+    <i class="bi bi-cash-coin me-2"></i>Sacar
+  </button>
+  <button type="reset" class="btn" (click)="limparCampos()">
+    <i class="bi bi-x-square me-2"></i>Limpar
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          Saque em processamento
+        </h1>
+      </div>
+      <div class="modal-body">
+        Aguarde a contagem e Retire as cédulas abaixo.
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="limparCampos()"
+        >
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="efetuarSaque()"
+        >
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
