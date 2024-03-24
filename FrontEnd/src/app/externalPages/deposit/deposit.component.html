@@ -1,3 +1,7 @@
+<app-alert-error [alertOpen]="alertFailOpen" [alertDetails]="alertCustom" />
+<app-alert-success [alertOpen]="alertSuccesOpen" [alertDetails]="alertCustom" />
+<app-loading-spinner [isActive]="loadingSpinner" />
+
 <header>
   <div
     id="header-desktop-screen"
@@ -33,39 +37,42 @@
 <p class="text-value">Valor limite por envelope : R$ 5.000,00.</p>
 
 <div class="">
-  <form class="formulario-deposito" #formulario="ngForm">
+  <form class="formulario-deposito" [formGroup]="depositForm">
     <div class="row justify-content-center align-items-center mb-3">
       <div class="col-auto">
-        <label for="conta" class="form-label">Número do envelope:</label>
+        <label for="codigoEnvelope" class="form-label"
+          >Número do envelope:</label
+        >
       </div>
       <div class="col-auto">
         <input
-          type="number"
+          type="text"
           class="form-control"
-          id="conta"
-          name="conta"
-          [(ngModel)]="conta"
+          id="codigoEnvelope"
+          name="codigoEnvelope"
           required
           placeholder="Inserir numero"
+          formControlName="codigoEnvelope"
         />
       </div>
     </div>
 
     <div class="row justify-content-center align-items-center mb-3">
       <div class="col-auto">
-        <label for="valor" class="form-label">Valor:*</label>
+        <label for="valorDeposito" class="form-label">Valor:*</label>
       </div>
       <div class="col-auto">
         <input
-          type="number"
+          type="text"
           class="camp-value form-control"
-          id="valor"
-          name="valor"
+          id="valorDeposito"
+          name="valorDeposito"
           min="0"
           step="0.01"
-          [(ngModel)]="valor"
           required
           placeholder="R$ 0,00"
+          (input)="valueFormatter($event)"
+          formControlName="valorDeposito"
         />
       </div>
     </div>
@@ -78,11 +85,10 @@
     <i class="bi bi-arrow-left-square me-2"></i>Voltar
   </button>
   <button
-    type="submit"
     class="btn"
+    [disabled]="!depositForm.valid"
     data-bs-toggle="modal"
     data-bs-target="#staticBackdrop"
-    [disabled]="!formulario.valid"
   >
     <i class="bi bi-bank me-2"></i>Depositar
   </button>
@@ -124,7 +130,7 @@
           type="button"
           class="btn btn-primary"
           data-bs-dismiss="modal"
-          [routerLink]="['/external/home']"
+          (click)="realizarDeposito()"
         >
           Inserir e Depositar
         </button>
