@@ -68,5 +68,47 @@ export class ExternalWithdrawComponent {
     input.value = value
     this.saqueForm.controls['valorSaque'].setValue(value);
   }
+
+  efetuarSaque(): void {
+    let saque = this.saqueForm.value as SaqueDTO
+    if (!this.validarCampos()) {
+        this.alertCustom = new AlertCustom("Erro: ", "É permitido efetuar um saque de no minimo R$ 10,00")
+            this.loadingSpinner = false
+            this.alertFailOpen = true;
+            setTimeout(() => {
+              this.alertFailOpen = false
+            }, 3000)
+      return
+    }
+    this.loadingSpinner = true
+    this.saqueServicos.sacar(saque).subscribe(
+        {
+          next: res => {
+            this.alertCustom = new AlertCustom("Sucesso: ", "Saque efetuado com sucesso")
+            this.loadingSpinner = false
+            this.alertSuccesOpen = true;
+            setTimeout(() => {
+              this.alertSuccesOpen = false
+              this._router.navigateByUrl("/external/home")
+            }, 4000)
+          },
+          error: err => {
+            this.alertCustom = new AlertCustom("Erro: ", "Erro ao efetuar saque")
+            this.loadingSpinner = false
+            this.alertFailOpen = true;
+            setTimeout(() => {
+              this.alertFailOpen = false
+            }, 5000)
+          }
+        }
+    )
+
+    
+  }
+  minimoValorValidator() {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const valor = parseFloat(control.value);
+      return valor >= 10.0 ? null : { minimo: { requiredMinimo: 10.0 } };
+    };
   }
 }
