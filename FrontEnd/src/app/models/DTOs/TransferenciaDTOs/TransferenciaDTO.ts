@@ -1,7 +1,7 @@
 export class TransferenciaDTO {
-    "beneficiario": string = "";
-    "agenciaDestino": string = "";
-    "numeroContaDestino": number = 0;
-    "contaOrigem": string = "";
-    "valor": number = 0
+  'beneficiario': string = '';
+  'agenciaDestino': string = '';
+  'numeroContaDestino': number = 0;
+  'contaOrigem': number = 0;
+  'valor': number = 0;
 }
