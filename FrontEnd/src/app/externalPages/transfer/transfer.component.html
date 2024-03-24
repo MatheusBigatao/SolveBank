@@ -1,3 +1,7 @@
+<app-alert-error [alertOpen]="alertFailOpen" [alertDetails]="alertCustom" />
+<app-alert-success [alertOpen]="alertSuccesOpen" [alertDetails]="alertCustom" />
+<app-loading-spinner [isActive]="loadingSpinner" />
+
 <body>
   <app-menu-home></app-menu-home>
   <div>
@@ -9,29 +13,30 @@
     <div class="transfer-form">
       <form [formGroup]="transferForm">
         <div class="form-group">
-          <label for="destinationAccount">Conta Destino</label>
+          <label for="destination-account">Conta Destino</label>
           <input
             type="text"
-            name="destinationAccount"
+            name="numeroContaDestino"
             id="destination-account"
-            formControlName="destinationAccount"
-            placeholder="12345678-9"
+            formControlName="numeroContaDestino"
+            placeholder="1234"
+            (blur)="buscarBeneficiario($event)"
           />
 
           <div
             class="required-field"
             *ngIf="
-              transferForm.get('destinationAccount')?.invalid &&
-              transferForm.get('destinationAccount')?.touched
+              transferForm.get('numeroContaDestino')?.invalid &&
+              transferForm.get('numeroContaDestino')?.touched
             "
           >
             <span
-              *ngIf="transferForm.get('destinationAccount')?.errors?.['required']"
+              *ngIf="transferForm.get('numeroContaDestino')?.errors?.['required']"
             >
               Campo obrigatório
             </span>
             <span
-              *ngIf="transferForm.get('destinationAccount')?.errors?.['pattern']"
+              *ngIf="transferForm.get('numeroContaDestino')?.errors?.['pattern']"
             >
               Conta Destino deve estar no formato 00000000-0
             </span>
@@ -39,29 +44,29 @@
         </div>
 
         <div class="form-group">
-          <label for="destinationBranch">Agência Destino</label>
+          <label for="destination-branch">Agência Destino</label>
           <input
             type="text"
-            name="destinationBranch"
+            name="agenciaDestino"
             id="destination-branch"
-            formControlName="destinationBranch"
+            formControlName="agenciaDestino"
             placeholder="0001"
           />
 
           <div
             class="required-field"
             *ngIf="
-              transferForm.get('destinationBranch')?.invalid &&
-              transferForm.get('destinationBranch')?.touched
+              transferForm.get('agenciaDestino')?.invalid &&
+              transferForm.get('agenciaDestino')?.touched
             "
           >
             <span
-              *ngIf="transferForm.get('destinationBranch')?.errors?.['required']"
+              *ngIf="transferForm.get('agenciaDestino')?.errors?.['required']"
             >
               Campo obrigatório
             </span>
             <span
-              *ngIf="transferForm.get('destinationBranch')?.errors?.['pattern']"
+              *ngIf="transferForm.get('agenciaDestino')?.errors?.['pattern']"
             >
               Agência Destino deve estar no formato 0000
             </span>
@@ -71,39 +76,25 @@
         <div class="form-group">
           <label for="beneficiary">Beneficiário</label>
           <input
-          class="form-control"
-          type="text"
-          name="beneficiary"
-          id="beneficiary"
-          placeholder="Nome do Beneficiário"
-          aria-label="Disabled input example"
-          disabled  
-          readonly
+            class="form-control"
+            type="text"
+            name="beneficiario"
+            id="beneficiary"
+            placeholder="Nome do Beneficiário"
+            aria-label="Disabled input example"
+            disabled
+            readonly
+            value="{{ nomeBeneficiario }}"
           />
-
-          <div
-            class="required-field"
-            *ngIf="
-              transferForm.get('beneficiary')?.invalid &&
-              transferForm.get('beneficiary')?.touched
-            "
-          >
-            <span *ngIf="transferForm.get('beneficiary')?.errors?.['required']">
-              Campo obrigatório
-            </span>
-            <span *ngIf="transferForm.get('beneficiary')?.errors?.['pattern']">
-              Beneficiário deve conter apenas letras
-            </span>
-          </div>
-        </div>        
+        </div>
 
         <div class="form-group">
-          <label for="value">Valor</label>
+          <label for="valor">Valor</label>
           <input
             type="text"
-            name="value"
-            id="value"
-            formControlName="value"
+            name="valor"
+            id="valor"
+            formControlName="valor"
             placeholder="R$ 0,00"
             (input)="valueFormatter($event)"
           />
@@ -111,20 +102,26 @@
           <div
             class="required-field"
             *ngIf="
-              transferForm.get('value')?.invalid &&
-              transferForm.get('value')?.touched
+              transferForm.get('valor')?.invalid &&
+              transferForm.get('valor')?.touched
             "
           >
-            <span *ngIf="transferForm.get('value')?.errors?.['required']">
+            <span *ngIf="transferForm.get('valor')?.errors?.['required']">
               Campo obrigatório
             </span>
           </div>
         </div>
 
         <div class="transfer-buttons d-flex justify-content-center">
-          <button type="button" class="btn" [routerLink]="['/external/home']"><i class="bi bi-arrow-left-square me-2"></i>Voltar</button>
-          <button type="submit" class="btn"><i class="bi bi-arrow-left-right me-2"></i>Transferir</button>
-          <button type="reset" class="btn"><i class="bi bi-x-square me-2"></i>Limpar</button>
+          <button type="button" class="btn" [routerLink]="['/external/home']">
+            <i class="bi bi-arrow-left-square me-2"></i>Voltar
+          </button>
+          <button type="submit" class="btn" (click)="transferir()">
+            <i class="bi bi-arrow-left-right me-2"></i>Transferir
+          </button>
+          <button type="reset" class="btn">
+            <i class="bi bi-x-square me-2"></i>Limpar
+          </button>
         </div>
       </form>
     </div>
