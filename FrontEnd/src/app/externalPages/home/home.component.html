@@ -25,7 +25,7 @@
         data-bs-parent="#accordionBalance"
       >
         <div class="accordion-body d-flex gap-4">
-          <strong>R$ 21.535,91</strong>Saldo + Limite
+          <strong>R$ {{saldoDaConta.toFixed(2)}}</strong>Saldo + Limite
         </div>
       </div>
     </div>
@@ -47,6 +47,6 @@
   </section>
 
   <section class="d-flex justify-content-center">
-    <a class="btn btn-danger btn-exit my-5 py-3 px-5" [routerLink]="['/external/login']">Encerrar Atendimento</a>
+    <a class="btn btn-danger btn-exit my-5 py-3 px-5" (click)="logoutUser()">Encerrar Atendimento</a>
   </section>
 </main>

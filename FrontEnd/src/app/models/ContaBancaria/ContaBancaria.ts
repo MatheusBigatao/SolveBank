@@ -4,7 +4,7 @@ import { Transacao } from "../Transacoes/Transacao"
 
 export class ContaBancaria {
 
-    Id: string = ""
+    id: string = ""
     agencia: string = ""
     numero: number = 0
     saldo: number = 0

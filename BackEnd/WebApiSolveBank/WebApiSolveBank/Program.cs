@@ -33,7 +33,7 @@ builder.Services.AddDbContext<SolveBankDbConfig>(options =>
     options.UseMySQL(configuration.GetConnectionString("MySqlKingHost"));
 });
 
-//Adicionando Autorização e Autenticação
+//Adicionando Autorizaï¿½ï¿½o e Autenticaï¿½ï¿½o
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -60,10 +60,10 @@ builder.Services.AddAuthorization(auth =>
         .Build());
 });
 
-//Adicionando Congiguração de E-mail
+//Adicionando Congiguraï¿½ï¿½o de E-mail
 builder.Services.Configure<EmailConfiguracao>(builder.Configuration.GetSection("SmptConfig"));
 
-//Adidicionando Configuração de CORS
+//Adidicionando Configuraï¿½ï¿½o de CORS
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
