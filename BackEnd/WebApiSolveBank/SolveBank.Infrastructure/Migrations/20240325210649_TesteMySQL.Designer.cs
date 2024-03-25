@@ -11,15 +11,14 @@ using SolveBank.Infrastructure.Configuration;
 namespace SolveBank.Infrastructure.Migrations
 {
     [DbContext(typeof(SolveBankDbConfig))]
-    [Migration("20240324013830_dbMySqlV1")]
-    partial class dbMySqlV1
+    [Migration("20240325210649_TesteMySQL")]
+    partial class TesteMySQL
     {
-        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "6.0.25")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -407,8 +406,7 @@ namespace SolveBank.Infrastructure.Migrations
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasMaxLength(21)
-                        .HasColumnType("varchar(21)");
+                        .HasColumnType("longtext");
 
                     b.Property<decimal>("Valor")
                         .HasPrecision(18, 2)
@@ -421,8 +419,6 @@ namespace SolveBank.Infrastructure.Migrations
                     b.ToTable("Transacoes");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Transacao");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("SolveBank.Entities.Models.TransacaoCartao", b =>
@@ -479,7 +475,7 @@ namespace SolveBank.Infrastructure.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("NomeCompleto")
                         .IsRequired()
@@ -586,17 +582,12 @@ namespace SolveBank.Infrastructure.Migrations
 
                     b.Property<string>("Beneficiario")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("TPagamento_Beneficiario");
 
                     b.Property<string>("NumeroBoleto")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.ToTable("Transacoes", t =>
-                        {
-                            t.Property("Beneficiario")
-                                .HasColumnName("TPagamento_Beneficiario");
-                        });
 
                     b.HasDiscriminator().HasValue("TPagamento");
                 });

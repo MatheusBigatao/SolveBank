@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SolveBank.Entities.Models;
-using System.Reflection.Emit;
 
 namespace SolveBank.Infrastructure.Configuration
 {

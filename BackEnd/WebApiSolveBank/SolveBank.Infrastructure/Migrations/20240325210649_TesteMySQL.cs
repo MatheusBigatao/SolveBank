@@ -6,10 +6,8 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace SolveBank.Infrastructure.Migrations
 {
-    /// <inheritdoc />
-    public partial class dbMySqlV1 : Migration
+    public partial class TesteMySQL : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterDatabase()
@@ -87,7 +85,7 @@ namespace SolveBank.Infrastructure.Migrations
                     PhoneNumber = table.Column<string>(type: "longtext", nullable: true),
                     PhoneNumberConfirmed = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     TwoFactorEnabled = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetime", nullable: true),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true),
                     LockoutEnabled = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     AccessFailedCount = table.Column<int>(type: "int", nullable: false)
                 },
@@ -349,7 +347,7 @@ namespace SolveBank.Infrastructure.Migrations
                     CodigoDoBanco = table.Column<string>(type: "varchar(3)", maxLength: 3, nullable: false),
                     Valor = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     DataTransacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Discriminator = table.Column<string>(type: "varchar(21)", maxLength: 21, nullable: false),
+                    Discriminator = table.Column<string>(type: "longtext", nullable: false),
                     Agencia = table.Column<string>(type: "longtext", nullable: true),
                     NumeroDaConta = table.Column<long>(type: "bigint", nullable: true),
                     CodigoDoEnvelope = table.Column<string>(type: "longtext", nullable: true),
@@ -523,7 +521,6 @@ namespace SolveBank.Infrastructure.Migrations
                 column: "UsuarioID");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
