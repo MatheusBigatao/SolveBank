@@ -86,7 +86,8 @@
                   "
                 >
                   <span *ngIf="signUpForm.get('cpf_cnpj')?.errors?.['required']"
-                    >Campo obrigatório</span
+                    >Campo obrigatório: CPF-CNPJ deve conter no mínimo 11
+                    caracteres</span
                   >
                   <span *ngIf="signUpForm.get('cpf_cnpj')?.errors?.['pattern']"
                     >CPF-CNPJ Deve conter no mínimo 11 caracteres</span
