@@ -76,6 +76,7 @@
                   placeholder="Insira seu CPF OU CNPJ"
                   formControlName="cpf_cnpj"
                   maxlength="15"
+                  (keydown)="allowOnlyNumbers($event)"
                 />
                 <div
                   class="campo-obrigatorio"
@@ -191,6 +192,7 @@
                   name="celular"
                   placeholder="Insira o seu Número para Contato"
                   formControlName="telefone"
+                  (keydown)="allowOnlyNumbers($event)"
                 />
                 <div
                   class="campo-obrigatorio"

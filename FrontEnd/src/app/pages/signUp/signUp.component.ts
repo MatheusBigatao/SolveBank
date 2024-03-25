@@ -62,6 +62,24 @@ export class SignUpComponent implements OnInit {
       telefone: new FormControl('', Validators.required),
     });
   }
+  // Função para permitir apenas números no campo CPF-CNPJ
+  allowOnlyNumbers(event: KeyboardEvent) {
+    const inputChar = String.fromCharCode(event.keyCode);
+    const pattern = /[0-9]/;
+
+    if (
+      event.key === 'Backspace' ||
+      event.key === 'Delete' ||
+      event.key === 'ArrowLeft' ||
+      event.key === 'ArrowRight' ||
+      event.key === 'Enter'
+    ) {
+      return;
+    }
+    if (!pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
   validatePasswords(): boolean {
     const password = this.signUpForm.get('senha')?.value;
     const confirmPassword = this.signUpForm.get('confirmarSenha')?.value;
