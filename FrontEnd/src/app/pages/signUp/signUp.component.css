@@ -94,6 +94,22 @@ input[type="email"] {
   font-size: 0.75rem;
   color: var(--danger);
 }
+
+.min-caracter {
+  font-size: 0.78rem;
+}
+@media only screen and (max-width: 600px) {
+  .min-caracter {
+    font-size: 0.6rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .min-caracter {
+    font-size: 0.55rem;
+  }
+}
+
 .btn-criar-conta {
   background-color: var(--secondary);
   color: var(--text);
