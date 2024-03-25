@@ -168,7 +168,11 @@
                   (input)="validatePasswords()"
                 />
                 <div class="campo-obrigatorio">
-                  <span *ngIf="!signUpForm.get('confirmarSenha')?.valid"
+                  <span
+                    *ngIf="
+                      !signUpForm.get('confirmarSenha')?.valid &&
+                      signUpForm.get('confirmarSenha')?.touched
+                    "
                     >Campo obrigatório
                   </span>
                   <span *ngIf="!validatePasswords()"
