@@ -54,20 +54,22 @@ export class SignUpComponent implements OnInit {
         senha: new FormControl('', [
           Validators.required,
           Validators.minLength(6),
+          Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/)
         ]),
-        confirmarSenha: new FormControl('', [Validators.required]),
+        confirmarSenha: new FormControl('', [Validators.required,Validators.minLength(6)]),
         telefone: new FormControl('', Validators.required),
-      },
-      { validators: this.validatePasswords }
+      },      
     );
   }
-  validatePasswords(control: AbstractControl): { [key: string]: any } | null {
-    const password = control.get('senha')?.value;
-    const confirmPassword = control.get('confirmarSenha')?.value;
-    if (password !== confirmPassword) {
-      return { passwordsNotMatch: true };
-    }
-    return null;
+  validatePasswords():boolean{
+    const password = this.signUpForm.get('senha')?.value;
+    const confirmPassword = this.signUpForm.get('confirmarSenha')?.value;
+    if (password === confirmPassword) return true
+    return false;
+  }
+
+  get passwordValidation() {
+    return this.signUpForm.get('senha');
   }
 
   //Metodos Usuário API
@@ -79,7 +81,7 @@ export class SignUpComponent implements OnInit {
         this.alertSuccesOpen = true;
         setTimeout(() => {
           this.alertSuccesOpen = false;
-          this._route.navigateByUrl('/login');
+          this._route.navigateByUrl('/external/login');
         }, 5000)        
       },
       error: err => {               

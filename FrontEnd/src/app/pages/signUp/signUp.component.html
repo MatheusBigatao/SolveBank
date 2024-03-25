@@ -1,5 +1,5 @@
 <app-alert-error [alertOpen]="alertFailOpen" [alertDetails]="alertCustom" />
-<app-alert-success [alertOpen]="alertSuccesOpen" [alertDetails]="alertCustom"/>
+<app-alert-success [alertOpen]="alertSuccesOpen" [alertDetails]="alertCustom" />
 
 <main>
   <div class="cadastro-form">
@@ -10,30 +10,20 @@
     <div>
       <h1 class="title">Crie a sua conta!</h1>
     </div>
-    <form [formGroup]="signUpForm">     
+    <form [formGroup]="signUpForm">
       <div id="formprincipal row">
         <div class="col-md-12">
           <div class="row">
             <div class="coluna-nome col-md-6 mb-3">
               <div class="form-group nome">
                 <label for="nome">Nome:</label>
-                <input
-                  formControlName="nome"
-                  class="inputdados"
-                  type="text"
-                  placeholder="Insira o seu Nome"
-                  id="nome"
-                />
-                <div
-                  class="campo-obrigatorio-nome"
-                  *ngIf="
+                <input formControlName="nome" class="inputdados" type="text" placeholder="Insira o seu Nome"
+                  id="nome" />
+                <div class="campo-obrigatorio-nome" *ngIf="
                     signUpForm.get('nome')?.invalid &&
                     signUpForm.get('nome')?.touched
-                  "
-                >
-                  <span *ngIf="signUpForm.get('nome')?.errors?.['required']"
-                    >Campo obrigatório</span
-                  >
+                  ">
+                  <span *ngIf="signUpForm.get('nome')?.errors?.['required']">Campo obrigatório</span>
                 </div>
               </div>
             </div>
@@ -41,24 +31,13 @@
             <div class="coluna-sobrenome col-md-6 mb-3">
               <div class="form-group sobrenome">
                 <label for="sobrenome">Sobrenome:</label>
-                <input
-                  type="text"
-                  id="sobrenome"
-                  name="sobrenome"
-                  placeholder="Insira o seu Sobrenome"
-                  formControlName="sobrenome"
-                />
-                <div
-                  class="campo-obrigatorio"
-                  *ngIf="
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Insira o seu Sobrenome"
+                  formControlName="sobrenome" />
+                <div class="campo-obrigatorio" *ngIf="
                     signUpForm.get('sobrenome')?.invalid &&
                     signUpForm.get('sobrenome')?.touched
-                  "
-                >
-                  <span
-                    *ngIf="signUpForm.get('sobrenome')?.errors?.['required']"
-                    >Campo obrigatório</span
-                  >
+                  ">
+                  <span *ngIf="signUpForm.get('sobrenome')?.errors?.['required']">Campo obrigatório</span>
                 </div>
               </div>
             </div>
@@ -69,27 +48,15 @@
             <div class="coluna-cpf col-md-6 mb-3">
               <div class="form-group cpf">
                 <label for="cpf_cnpj">CPF-CNPJ:</label>
-                <input
-                  type="text"
-                  id="cpf_cnpj"
-                  name="cpf_cnpj"
-                  placeholder="Insira seu CPF OU CNPJ"
-                  formControlName="cpf_cnpj"
-                  maxlength="15"
-                />
-                <div
-                  class="campo-obrigatorio"
-                  *ngIf="
+                <input type="text" id="cpf_cnpj" name="cpf_cnpj" placeholder="Insira seu CPF OU CNPJ"
+                  formControlName="cpf_cnpj" maxlength="15" />
+                <div class="campo-obrigatorio" *ngIf="
                     signUpForm.get('cpf_cnpj')?.invalid &&
                     signUpForm.get('cpf_cnpj')?.touched
-                  "
-                >
-                  <span *ngIf="signUpForm.get('cpf_cnpj')?.errors?.['required']"
-                    >Campo obrigatório</span
-                  >
-                  <span *ngIf="signUpForm.get('cpf_cnpj')?.errors?.['pattern']"
-                    >CPF-CNPJ Deve conter no mínimo 11 caracteres</span
-                  >
+                  ">
+                  <span *ngIf="signUpForm.get('cpf_cnpj')?.errors?.['required']">Campo obrigatório</span>
+                  <span *ngIf="signUpForm.get('cpf_cnpj')?.errors?.['pattern']">CPF-CNPJ Deve conter no mínimo 11
+                    caracteres</span>
                 </div>
               </div>
             </div>
@@ -97,26 +64,13 @@
             <div class="coluna-email col-md-6 mb-3">
               <div class="form-group email">
                 <label for="email">E-mail:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Insira o seu E-mail"
-                  formControlName="email"
-                />
-                <div
-                  class="campo-obrigatorio"
-                  *ngIf="
+                <input type="email" id="email" name="email" placeholder="Insira o seu E-mail" formControlName="email" />
+                <div class="campo-obrigatorio" *ngIf="
                     signUpForm.get('email')?.invalid &&
                     signUpForm.get('email')?.touched
-                  "
-                >
-                  <span *ngIf="signUpForm.get('email')?.errors?.['required']"
-                    >Campo obrigatório</span
-                  >
-                  <span *ngIf="signUpForm.get('email')?.errors?.['email']"
-                    >Email inválido</span
-                  >
+                  ">
+                  <span *ngIf="signUpForm.get('email')?.errors?.['required']">Campo obrigatório</span>
+                  <span *ngIf="signUpForm.get('email')?.errors?.['email']">Email inválido</span>
                 </div>
               </div>
             </div>
@@ -127,26 +81,18 @@
             <div class="coluna-senha col-md-6 mb-3">
               <div class="form-group senha">
                 <label for="senha">Senha:</label>
-                <input
-                  type="password"
-                  id="senha"
-                  name="senha"
-                  placeholder="Insira a sua Senha"
-                  formControlName="senha"
-                />
-                <div
-                  class="campo-obrigatorio"
-                  *ngIf="
+                <input type="password" id="senha" name="senha" placeholder="Insira a sua Senha"
+                  formControlName="senha" />
+                <div *ngIf="passwordValidation?.hasError('pattern') && passwordValidation?.dirty"
+                  class="error-message fs-6 m-0 p-0">
+                  <p class="text-danger m-0 p-0 mb-2 ">
+                    Mínimo 6 caracteres e *uma letra maiúscula *um número e um caractere especial.
+                  </p>                  
+                </div>
+                <div class="campo-obrigatorio" *ngIf="
                     signUpForm.get('senha')?.invalid &&
                     signUpForm.get('senha')?.touched
-                  "
-                >
-                  <span *ngIf="signUpForm.get('senha')?.errors?.['required']"
-                    >Campo obrigatório</span
-                  >
-                  <span *ngIf="signUpForm.get('senha')?.errors?.['minlength']"
-                    >Senha deve ter pelo menos 6 caracteres</span
-                  >
+                  ">                  
                 </div>
               </div>
             </div>
@@ -154,32 +100,12 @@
             <div class="coluna-confirmar col-md-6 mb-3">
               <div class="form-group confirmeSenha">
                 <label for="confirmarSenha">Confirmar Senha:</label>
-                <input
-                  type="password"
-                  id="confirmarSenha"
-                  name="confirmarSenha"
-                  placeholder="Confirme sua Senha"
-                  formControlName="confirmarSenha"
-                />
-                <div
-                  class="campo-obrigatorio"
-                  *ngIf="
-                    signUpForm.get('confirmarSenha')?.invalid &&
-                    signUpForm.get('confirmarSenha')?.touched
-                  "
-                >
-                  <span
-                    *ngIf="signUpForm.get('confirmarSenha')?.errors?.['required']"
-                    >Campo obrigatório</span
-                  >
-                  <span
-                    *ngIf="signUpForm.get('confirmarSenha')?.errors?.['senhaNaoCoincide']"
-                    >As senhas não coincidem</span
-                  >
-                  <span
-                    *ngIf="signUpForm.get('confirmarSenha')?.errors?.['senhaNaoCoincide']"
-                    >As senhas não coincidem</span
-                  >
+                <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua Senha"
+                  formControlName="confirmarSenha" (input)="validatePasswords()"  />
+                <div class="campo-obrigatorio">
+                  <span *ngIf="!signUpForm.get('confirmarSenha')?.valid">Campo obrigatório </span>
+                  <span *ngIf="!validatePasswords()">As senhas não
+                    coincidem</span>                  
                 </div>
               </div>
             </div>
@@ -187,23 +113,13 @@
             <div class="coluna-celular justify-content-center col-md-6 mb-3">
               <div class="form-group celular">
                 <label for="celular">Celular:</label>
-                <input
-                  type="text"
-                  id="celular"
-                  name="celular"
-                  placeholder="Insira o seu Número para Contato"
-                  formControlName="telefone"
-                />
-                <div
-                  class="campo-obrigatorio"
-                  *ngIf="
+                <input type="text" id="celular" name="celular" placeholder="Insira o seu Número para Contato"
+                  formControlName="telefone" />
+                <div class="campo-obrigatorio" *ngIf="
                     signUpForm.get('telefone')?.invalid &&
                     signUpForm.get('telefone')?.touched
-                  "
-                >
-                  <span *ngIf="signUpForm.get('telefone')?.errors?.['required']"
-                    >Campo obrigatório</span
-                  >
+                  ">
+                  <span *ngIf="signUpForm.get('telefone')?.errors?.['required']">Campo obrigatório</span>
                 </div>
               </div>
             </div>
@@ -211,12 +127,7 @@
         </div>
       </div>
       <div>
-        <button
-          type="submit"
-          [disabled]="signUpForm.invalid"
-          class="btn-criar-conta"
-          (click)="createUser()"
-        >
+        <button type="submit" [disabled]="signUpForm.invalid" class="btn-criar-conta" (click)="createUser()">
           Criar Conta
         </button>
       </div>

@@ -1,1 +1,1 @@
-export const uri = 'https://api-solvebank.codesolvebrasil.com/api/';
+export const uri = 'https://localhost:44373/api/';

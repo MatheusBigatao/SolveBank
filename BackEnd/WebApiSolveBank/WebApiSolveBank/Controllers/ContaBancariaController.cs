@@ -37,7 +37,7 @@ namespace WebApiSolveBank.Controllers
             {
                 contentType = "application/json",
                 statusCode = 200,
-                beneficiario= nomeBeneficiario
+                beneficiario = nomeBeneficiario
             };
             return new ObjectResult(respostaNomeBeneficiaro);            
         }
