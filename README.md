@@ -17,7 +17,11 @@
 
 ## Nosso Aplicativo
 
-**Nosso aplicativo é o seu portal para todas as suas necessidades financeiras.** Com uma interface intuitiva e recursos poderosos, estamos aqui para ajudá-lo a gerenciar seu dinheiro de forma inteligente e eficiente. Aqui estão alguns dos recursos que você encontrará em nosso aplicativo:
+**Nosso aplicativo é o seu portal para todas as suas necessidades financeiras.** Com uma interface intuitiva e recursos poderosos, estamos aqui para ajudá-lo a gerenciar seu dinheiro de forma inteligente e eficiente. Você pode acessar o aplicativo pelo site https://solvebank.codesolvebrasil.com .
+
+É possível acessar a simulação do caixa eletrônico pelo site https://solvebank.codesolvebrasil.com/external/login .
+
+Aqui estão alguns dos recursos que você encontrará em nosso aplicativo:
 
 ### 1. Conta Bancária
 
@@ -28,11 +32,6 @@
 
 - **Proteção de dados:** Utilize autenticação biométrica, como impressão digital ou reconhecimento facial, para garantir a segurança de suas informações financeiras.
 - **Transações seguras:** Conte com medidas de segurança avançadas para proteger suas transações online contra fraudes e ameaças cibernéticas.
-
-### 3. Suporte ao Cliente
-
-- **Atendimento dedicado:** Entre em contato com nossa equipe de suporte dedicada a qualquer momento para obter assistência personalizada e solucionar suas dúvidas.
-- **Recursos de autoatendimento:** Acesse uma ampla variedade de recursos de autoatendimento, incluindo perguntas frequentes e tutoriais em vídeo, para resolver suas questões de forma rápida e fácil.
 
 ## Tecnologias
 
